@@ -1,0 +1,11 @@
+# Gotchas (collected from retro RE projects)
+- MZ relocations: segment words are patched at load, so raw byte search misses far calls; use a relocation-aware xref.
+- Decompress first: compressed images are opaque; always disassemble the unpacked image.
+- Two-level pointer tables: a flat decode shows pointers, not targets; follow them.
+- Tile index is not VRAM address: remap/attribute tables sit between; validate against the emulator.
+- Do not grep for composed text: menus, scores, dialogue are built from format strings + tables; trace control flow.
+- Banked ROMs: cross-bank byte matches are false positives; filter xrefs by bank.
+- Game Boy WRAM tilemap buffers may use a 20-column stride, not 32.
+- Struct stride off by one corrupts all later records; cross-check fields with a memory dump.
+- Floating or fixed-point formulas: record the exact format (q8, b8) and rounding; reproduce frame order of updates.
+- Keep a single fixed-step simulation clock in the port; render separately.

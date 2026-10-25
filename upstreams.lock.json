@@ -1,0 +1,1594 @@
+{
+  "schema": 1,
+  "repositories": [
+    {
+      "id": 1,
+      "repository": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "category": "A",
+      "purpose": "증거 기반 다중 런타임 조사 CLI/MCP",
+      "status": "cloned",
+      "commit": "6381aa0b1dcb7092673db5ac739af57ce220ed37",
+      "tracked_file_count": 6310,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        ".agents/skills/rea-analysis-optimization/SKILL.md",
+        ".agents/skills/rea-changelog-update/SKILL.md",
+        ".agents/skills/rea-ci-tests-audit/SKILL.md",
+        ".agents/skills/rea-tool-design/SKILL.md",
+        ".agents/skills/reverse-engineer-anything/SKILL.md",
+        "README.md"
+      ],
+      "skills": [
+        "app-forensic-rebuild",
+        "app-index",
+        "app-internals"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 2,
+      "repository": "Jakeschincariol/replica-skill",
+      "url": "https://github.com/Jakeschincariol/replica-skill",
+      "category": "A",
+      "purpose": "앱 재구현의 조사·설계·구현·출시 및 parity 도구",
+      "status": "cloned",
+      "commit": "77c9436fb3d18c3d58169efb8caf4fe906b0dc51",
+      "tracked_file_count": 39,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "replica-architect/SKILL.md",
+        "replica-backend/SKILL.md",
+        "replica-brand/SKILL.md",
+        "replica-build/SKILL.md",
+        "replica-deploy/SKILL.md",
+        "replica-design/SKILL.md",
+        "replica-diff/SKILL.md",
+        "replica-entrepreneur/SKILL.md",
+        "replica-launch/SKILL.md",
+        "replica-recon/SKILL.md",
+        "replica-test/SKILL.md"
+      ],
+      "skills": [
+        "app-brand-deploy",
+        "app-build",
+        "app-index",
+        "app-parity-test",
+        "app-recon",
+        "app-spec"
+      ],
+      "bundled_files": [
+        {
+          "path": "scripts/brand.py",
+          "sha256": "b77f8b37efcba10b1b5b104c1a0a6405bf897e21fce89e0cd6f39eb6caf85cbd"
+        },
+        {
+          "path": "skills/app-parity-test/scripts/imgdiff.py",
+          "sha256": "8b3e892bd344962255e8021553750462e222b858c304449a229e17f8da50612f"
+        },
+        {
+          "path": "skills/app-parity-test/scripts/parity.py",
+          "sha256": "b63baac9ecca5f163194d29a360db4311c58ff693ed9494516a06909c8133aa0"
+        }
+      ],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 3,
+      "repository": "thenavidm/remaster",
+      "url": "https://github.com/thenavidm/remaster",
+      "category": "A",
+      "purpose": "사용자 불만 조사와 clean-room 재제작 단계별 게이트",
+      "status": "cloned",
+      "commit": "10a59350a132d847df3d4568bb1f1e23f049e146",
+      "tracked_file_count": 88,
+      "license": "Apache-2.0",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "skills/clone/SKILL.md"
+      ],
+      "skills": [
+        "app-brand-deploy",
+        "app-build",
+        "app-forensic-rebuild",
+        "app-index",
+        "app-parity-test",
+        "app-recon",
+        "app-spec"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 4,
+      "repository": "Birkenpapier/ai-app-cloner",
+      "url": "https://github.com/Birkenpapier/ai-app-cloner",
+      "category": "A",
+      "purpose": "스크린샷 중심 React Native 앱 재구현",
+      "status": "cloned",
+      "commit": "3a6d932d519773612cf79289c3102082bb76bb41",
+      "tracked_file_count": 95,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        ".claude/skills/clone-app/SKILL.md",
+        ".codex/skills/clone-app/SKILL.md",
+        ".github/skills/clone-app/SKILL.md",
+        "README.md",
+        "skills/clone-app/SKILL.md"
+      ],
+      "skills": [
+        "app-brand-deploy",
+        "app-build",
+        "app-forensic-rebuild",
+        "app-index",
+        "app-internals",
+        "app-parity-test",
+        "app-recon",
+        "app-spec",
+        "shot-analyze",
+        "shot-compare-iterate",
+        "shot-index",
+        "shot-to-rn"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 5,
+      "repository": "boyang-hu/website-rebuild-skill",
+      "url": "https://github.com/boyang-hu/website-rebuild-skill",
+      "category": "A",
+      "purpose": "웹 미러·코드 복구·동등성 검증",
+      "status": "cloned",
+      "commit": "ac60c9d8a2ab40045a89b5403c3457f1404e92b3",
+      "tracked_file_count": 157,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "skills/website-rebuild/SKILL.md"
+      ],
+      "skills": [
+        "app-brand-deploy",
+        "app-build",
+        "app-forensic-rebuild",
+        "app-index",
+        "app-internals",
+        "app-parity-test",
+        "app-recon",
+        "app-spec"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 6,
+      "repository": "santowilem/skills",
+      "url": "https://github.com/santowilem/skills",
+      "category": "B",
+      "purpose": "스크린샷·URL·HTML UI 재구현",
+      "status": "cloned",
+      "commit": "2caf2e1dd0e58d974d8a72d803d7273f9f774ac5",
+      "tracked_file_count": 9,
+      "license": "no root license found",
+      "license_files": [],
+      "entrypoints": [
+        "README.md",
+        "skills/clone-ui/SKILL.md"
+      ],
+      "skills": [
+        "web-build-parallel",
+        "web-capture",
+        "web-extract-styles",
+        "web-index",
+        "web-mirror-rebrand"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 7,
+      "repository": "braxtonROSE4/clone-any-website",
+      "url": "https://github.com/braxtonROSE4/clone-any-website",
+      "category": "B",
+      "purpose": "DOM·CSS·동작을 측정하는 웹 재구현",
+      "status": "cloned",
+      "commit": "cb08fe2a92d3a8cccf3b891afca83c0351e27352",
+      "tracked_file_count": 26,
+      "license": "no root license found",
+      "license_files": [],
+      "entrypoints": [
+        "README.md",
+        "SKILL.md"
+      ],
+      "skills": [
+        "web-build-parallel",
+        "web-capture",
+        "web-extract-styles",
+        "web-index",
+        "web-mirror-rebrand"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 8,
+      "repository": "yournextstore/yournextstore",
+      "url": "https://github.com/yournextstore/yournextstore",
+      "category": "B",
+      "purpose": "상점 앱 및 clone-website 에이전트 스킬",
+      "status": "cloned",
+      "commit": "31add9f0adabea3ece344ed3b6f471a76a76ba76",
+      "tracked_file_count": 313,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE.md"
+      ],
+      "entrypoints": [
+        ".agents/skills/agent-browser/SKILL.md",
+        ".agents/skills/audit/SKILL.md",
+        ".agents/skills/clone-website/SKILL.md",
+        ".agents/skills/critique/SKILL.md",
+        ".agents/skills/frontend-design/SKILL.md",
+        ".agents/skills/migrate-radix-to-base/SKILL.md",
+        ".agents/skills/prettify/SKILL.md",
+        ".agents/skills/shadcn/SKILL.md",
+        ".agents/skills/store-propagate/SKILL.md",
+        ".agents/skills/theme-rebase/SKILL.md",
+        ".agents/skills/vercel-react-best-practices/SKILL.md",
+        "README.md"
+      ],
+      "skills": [
+        "web-build-parallel",
+        "web-capture",
+        "web-extract-styles",
+        "web-index",
+        "web-mirror-rebrand"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 9,
+      "repository": "julianromli/ai-skills",
+      "url": "https://github.com/julianromli/ai-skills",
+      "category": "B",
+      "purpose": "범용 스킬 모음 중 clone-website 워크플로",
+      "status": "cloned",
+      "commit": "aa1a9233aa3019aa26b64fa402ca52fb05332db6",
+      "tracked_file_count": 278,
+      "license": "no root license found",
+      "license_files": [],
+      "entrypoints": [
+        "README.md",
+        "skills/agent-browser/SKILL.md",
+        "skills/brainstorming/SKILL.md",
+        "skills/clone-website/SKILL.md",
+        "skills/collapsible-sidebar/SKILL.md",
+        "skills/composition-patterns/SKILL.md",
+        "skills/convex-best-practices/SKILL.md",
+        "skills/deploy-to-vercel/SKILL.md",
+        "skills/frontend-design/SKILL.md",
+        "skills/frontend-skill/SKILL.md",
+        "skills/gpt-tasteskill/SKILL.md",
+        "skills/grainy-gradient/SKILL.md",
+        "skills/hermes-wag-summarizer/SKILL.md",
+        "skills/landing-page-copywriter/SKILL.md",
+        "skills/make-interfaces-feel-better/SKILL.md",
+        "skills/pdf/SKILL.md",
+        "skills/prd/SKILL.md",
+        "skills/react-best-practices/SKILL.md",
+        "skills/react-native-skills/SKILL.md",
+        "skills/react-view-transitions/SKILL.md",
+        "skills/receiving-code-review/SKILL.md",
+        "skills/refactor-clean/SKILL.md",
+        "skills/requesting-code-review/SKILL.md",
+        "skills/seo-audit/SKILL.md",
+        "skills/shadcn/SKILL.md",
+        "skills/skeleton-dither/SKILL.md",
+        "skills/social-content/SKILL.md",
+        "skills/supabase-postgres-best-practices/SKILL.md",
+        "skills/systematic-debugging/SKILL.md",
+        "skills/ui-ux-pro-max/SKILL.md",
+        "skills/web-design-guidelines/SKILL.md"
+      ],
+      "skills": [
+        "web-build-parallel",
+        "web-capture",
+        "web-extract-styles",
+        "web-index"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 10,
+      "repository": "ericshang98/perfect-web-clone-skill",
+      "url": "https://github.com/ericshang98/perfect-web-clone-skill",
+      "category": "B",
+      "purpose": "캡처·구현·비교·수정 웹 harness",
+      "status": "cloned",
+      "commit": "9de21d14cf54b2b5f66591de97861013389e1971",
+      "tracked_file_count": 5,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "SKILL.md"
+      ],
+      "skills": [
+        "web-build-parallel",
+        "web-capture",
+        "web-extract-styles",
+        "web-index",
+        "web-mirror-rebrand"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 11,
+      "repository": "minosdevs/copycat-skill",
+      "url": "https://github.com/minosdevs/copycat-skill",
+      "category": "B",
+      "purpose": "미접근: 기능과 소스 미검증",
+      "status": "unavailable",
+      "reason": "Clone failed; unauthenticated GitHub API returned 404. Not analyzed.",
+      "skills": []
+    },
+    {
+      "id": 12,
+      "repository": "Core-Mate/Pixel-Perfect-Web-Replica",
+      "url": "https://github.com/Core-Mate/Pixel-Perfect-Web-Replica",
+      "category": "B",
+      "purpose": "페이지 미러·시각 비교·브랜드 교체",
+      "status": "cloned",
+      "commit": "4673cf86f895c4371c32eb9e0963aaed1dec4cac",
+      "tracked_file_count": 25,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "SKILL.md"
+      ],
+      "skills": [
+        "web-build-parallel",
+        "web-capture",
+        "web-extract-styles",
+        "web-index",
+        "web-mirror-rebrand"
+      ],
+      "bundled_files": [
+        {
+          "path": "skills/web-mirror-rebrand/scripts/mirror_public_page.py",
+          "sha256": "e05b2b1fb48c1f821763b51dc1ba8d7d8f97fac5252433bac563a52f3c57128c"
+        }
+      ],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 13,
+      "repository": "niuniu122/pixel-perfect-website-clone-skill",
+      "url": "https://github.com/niuniu122/pixel-perfect-website-clone-skill",
+      "category": "B",
+      "purpose": "브라우저 증거와 독립 QA",
+      "status": "cloned",
+      "commit": "80847e1ceee7f8ed0ea76ac83609f8233c72e311",
+      "tracked_file_count": 11,
+      "license": "no root license found",
+      "license_files": [],
+      "entrypoints": [
+        "README.md",
+        "SKILL.md"
+      ],
+      "skills": [
+        "web-index",
+        "web-qa-independent",
+        "web-verify-pixel",
+        "web-webgl"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 14,
+      "repository": "KeiaiLab/webEmbedding",
+      "url": "https://github.com/KeiaiLab/webEmbedding",
+      "category": "B",
+      "purpose": "웹 캡처·복원·검증 및 임베딩",
+      "status": "cloned",
+      "commit": "0a2f792bfd9bde6748f4c57b711b5c6091061a6a",
+      "tracked_file_count": 120,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "bundle/source-first-clone/skills/exact-clone-intake/SKILL.md"
+      ],
+      "skills": [
+        "web-firecrawl-analyze",
+        "web-index",
+        "web-qa-independent",
+        "web-verify-pixel"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 15,
+      "repository": "xintongw431-arch/webgl-runtime-cloner-skill",
+      "url": "https://github.com/xintongw431-arch/webgl-runtime-cloner-skill",
+      "category": "B",
+      "purpose": "WebGL·Three.js·Rive 런타임 재현",
+      "status": "cloned",
+      "commit": "93d025ba29fe0c5fc19972c17d4d504eafed843f",
+      "tracked_file_count": 11,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "SKILL.md"
+      ],
+      "skills": [
+        "web-index",
+        "web-qa-independent",
+        "web-webgl"
+      ],
+      "bundled_files": [
+        {
+          "path": "skills/web-webgl/scripts/runtime-qa.mjs",
+          "sha256": "4d245c8bcfedf3f6ca46cdc60f550b84ac251def3ff81b238e0e8b1686316d1b"
+        }
+      ],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 16,
+      "repository": "Paidax01/web-to-design-md",
+      "url": "https://github.com/Paidax01/web-to-design-md",
+      "category": "B",
+      "purpose": "사이트 디자인 규칙 추출",
+      "status": "cloned",
+      "commit": "8a08b3e8339bff21da059c6fb84380cb996e3fbf",
+      "tracked_file_count": 11,
+      "license": "no root license found",
+      "license_files": [],
+      "entrypoints": [
+        "README.md",
+        "SKILL.md"
+      ],
+      "skills": [
+        "web-design-md",
+        "web-index"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 17,
+      "repository": "Amanuel2x/clone-skill",
+      "url": "https://github.com/Amanuel2x/clone-skill",
+      "category": "B",
+      "purpose": "Firecrawl/Playwright 분석",
+      "status": "cloned",
+      "commit": "22c1f291fb3a457937d8472b8cd33e43a9f65a62",
+      "tracked_file_count": 3,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "SKILL.md"
+      ],
+      "skills": [
+        "web-design-md",
+        "web-firecrawl-analyze",
+        "web-index",
+        "web-verify-pixel"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 18,
+      "repository": "JCodesMore/ai-website-cloner-template",
+      "url": "https://github.com/JCodesMore/ai-website-cloner-template",
+      "category": "B",
+      "purpose": "재구현용 에이전트 템플릿",
+      "status": "cloned",
+      "commit": "ee3f5a2f31fd549b9593fa4f7cf6d2955ee593bb",
+      "tracked_file_count": 48,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        ".agents/skills/clone-website/SKILL.md",
+        "README.md"
+      ],
+      "skills": [
+        "web-design-md",
+        "web-index",
+        "web-verify-pixel",
+        "web-webgl"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 19,
+      "repository": "sevzq/screenshot-to-html",
+      "url": "https://github.com/sevzq/screenshot-to-html",
+      "category": "C",
+      "purpose": "스크린샷→HTML 및 실제 렌더 검증",
+      "status": "cloned",
+      "commit": "7b5469b2c2c95091f4c2e87f125b19f644f9aff0",
+      "tracked_file_count": 102,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "SKILL.md"
+      ],
+      "skills": [
+        "shot-analyze",
+        "shot-compare-iterate",
+        "shot-design-pipeline",
+        "shot-index",
+        "shot-to-qml",
+        "shot-to-rn",
+        "shot-to-unocss",
+        "shot-to-web"
+      ],
+      "bundled_files": [
+        {
+          "path": "skills/shot-analyze/scripts/crop.mjs",
+          "sha256": "2abd34f01f007d24d458f315e86f864e90e1e682f38469bf18bbae1f6539743b"
+        },
+        {
+          "path": "skills/shot-compare-iterate/scripts/shot.mjs",
+          "sha256": "622bace0d86c43365bfe4afb7dde012a8be760792dc4a6bbcdc522caa137304c"
+        }
+      ],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 20,
+      "repository": "onewave-ai/claude-skills",
+      "url": "https://github.com/onewave-ai/claude-skills",
+      "category": "C",
+      "purpose": "범용 스킬 모음 중 screenshot-to-code",
+      "status": "cloned",
+      "commit": "b2267d9171af4f56848d82992381b20b89b44056",
+      "tracked_file_count": 681,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "accessibility-auditor/SKILL.md",
+        "agent-army/SKILL.md",
+        "agent-eval-harness/SKILL.md",
+        "agent-swarm-deployer/SKILL.md",
+        "agent-team-builder/SKILL.md",
+        "agent-to-agent/SKILL.md",
+        "ai-coding-guardrails/SKILL.md",
+        "ai-readiness-assessment/SKILL.md",
+        "animate/SKILL.md",
+        "api-documentation-writer/SKILL.md",
+        "api-endpoint-scaffolder/SKILL.md",
+        "api-load-tester/SKILL.md",
+        "athlete-social-media-manager/SKILL.md",
+        "before-you-build/SKILL.md",
+        "bi-measure-builder/SKILL.md",
+        "board-deck-generator/SKILL.md",
+        "bookkeeping-close/SKILL.md",
+        "bracket-predictor/SKILL.md",
+        "brand-consistency-checker/SKILL.md",
+        "brand-voice-analyzer/SKILL.md",
+        "browser-test-loop/SKILL.md",
+        "budget-optimizer/SKILL.md",
+        "cash-flow-forecaster/SKILL.md",
+        "champion-identifier/SKILL.md",
+        "churn-autopsy/SKILL.md",
+        "claude-design-critic/SKILL.md",
+        "claude-design-system-architect/SKILL.md",
+        "claude-landing-composer/SKILL.md",
+        "claude-md-writer/SKILL.md",
+        "client-health-dashboard/SKILL.md",
+        "client-proposal-generator/SKILL.md",
+        "code-review-pro/SKILL.md",
+        "cold-email-sequence-generator/SKILL.md",
+        "color-palette-extractor/SKILL.md",
+        "commercial-lease-analyzer/SKILL.md",
+        "company-announcement-writer/SKILL.md",
+        "competitor-content-analyzer/SKILL.md",
+        "competitor-intel-agent/SKILL.md",
+        "competitor-price-tracker/SKILL.md",
+        "compliance-checker/SKILL.md",
+        "contact-hunter/SKILL.md",
+        "content-repurposer/SKILL.md",
+        "context-budget/SKILL.md",
+        "contract-analyzer/SKILL.md",
+        "contract-redliner/SKILL.md",
+        "conversation-archaeologist/SKILL.md",
+        "cowork-calendar-defrag/SKILL.md",
+        "cowork-contract-renewal-radar/SKILL.md",
+        "cowork-data-room-builder/SKILL.md",
+        "cowork-deal-room/SKILL.md",
+        "cowork-expense-audit/SKILL.md",
+        "cowork-folder-organizer/SKILL.md",
+        "cowork-hiring-screener/SKILL.md",
+        "cowork-home-inventory/SKILL.md",
+        "cowork-inbox-triage/SKILL.md",
+        "cowork-invoice-chaser/SKILL.md",
+        "cowork-medical-bill-auditor/SKILL.md",
+        "cowork-qbr-builder/SKILL.md",
+        "cowork-rfp-response/SKILL.md",
+        "cowork-sop-writer/SKILL.md",
+        "cowork-tax-prep-organizer/SKILL.md",
+        "cowork-vendor-comparison/SKILL.md",
+        "crm-data-cleanup/SKILL.md",
+        "cross-conversation-project-manager/SKILL.md",
+        "css-animation-creator/SKILL.md",
+        "csv-excel-merger/SKILL.md",
+        "customer-journey-mapper/SKILL.md",
+        "customer-panel-of-experts/SKILL.md",
+        "customer-review-aggregator/SKILL.md",
+        "dark-mode-converter/SKILL.md",
+        "data-pipeline-builder/SKILL.md",
+        "database-migrator/SKILL.md",
+        "database-schema-designer/SKILL.md",
+        "deal-closer-playbook/SKILL.md",
+        "deal-momentum-analyzer/SKILL.md",
+        "deal-review-framework/SKILL.md",
+        "debate-simulator/SKILL.md",
+        "dependency-auditor/SKILL.md",
+        "design-export-repair/SKILL.md",
+        "design-style-installer/SKILL.md",
+        "design-system-generator/SKILL.md",
+        "design-tokens-sync/SKILL.md",
+        "devils-advocate/SKILL.md",
+        "docker-debugger/SKILL.md",
+        "email-subject-line-optimizer/SKILL.md",
+        "email-template-generator/SKILL.md",
+        "employee-handbook-builder/SKILL.md",
+        "env-setup-wizard/SKILL.md",
+        "error-boundary-creator/SKILL.md",
+        "executive-dashboard-generator/SKILL.md",
+        "expansion-revenue-finder/SKILL.md",
+        "expert-panel/SKILL.md",
+        "fantasy-lineup-optimizer/SKILL.md",
+        "financial-goal-planner/SKILL.md",
+        "financial-parser/SKILL.md",
+        "flashcard-generator/SKILL.md",
+        "font-pairing-suggester/SKILL.md",
+        "fresh-library-docs/SKILL.md",
+        "full-codebase-migrator/SKILL.md",
+        "game-builder/SKILL.md",
+        "game-recap-generator/SKILL.md",
+        "game-strategy-simulator/SKILL.md",
+        "gillby-water/SKILL.md",
+        "git-pr-reviewer/SKILL.md",
+        "gmail-to-crm-pipeline/SKILL.md",
+        "grill-the-brief/SKILL.md",
+        "highlight-reel-scripter/SKILL.md",
+        "hiring-scorecard/SKILL.md",
+        "hyperframes-ad-director/SKILL.md",
+        "hyperframes-explainer-builder/SKILL.md",
+        "hyperframes-local-promo/SKILL.md",
+        "hyperframes-sales-demo-builder/SKILL.md",
+        "hyperframes-testimonial-builder/SKILL.md",
+        "hypothesis-testing-engine/SKILL.md",
+        "icp-deep-scanner/SKILL.md",
+        "inbound-lead-qualifier/SKILL.md",
+        "incident-responder/SKILL.md",
+        "injury-report-tracker/SKILL.md",
+        "intent-signal-aggregator/SKILL.md",
+        "internal-email-composer/SKILL.md",
+        "inventory-reorder-planner/SKILL.md",
+        "investor-update-writer/SKILL.md",
+        "itinerary-optimizer/SKILL.md",
+        "jev-audit/SKILL.md",
+        "jev-eval/SKILL.md",
+        "jev-integrate/SKILL.md",
+        "job-application-optimizer/SKILL.md",
+        "job-post-writer/SKILL.md",
+        "job-profitability-analyzer/SKILL.md",
+        "knowledge-base-builder/SKILL.md",
+        "landing-page-copywriter/SKILL.md",
+        "landing-page-optimizer/SKILL.md",
+        "lead-scoring-model/SKILL.md",
+        "linkedin-post-optimizer/SKILL.md",
+        "linkedin-sales-navigator-alt/SKILL.md",
+        "local-seo-optimizer/SKILL.md",
+        "lookalike-customer-finder/SKILL.md",
+        "market-sizing/SKILL.md",
+        "mcp-server-builder/SKILL.md",
+        "meeting-intelligence/SKILL.md",
+        "meeting-to-tasks/SKILL.md",
+        "motion-language-designer/SKILL.md",
+        "multi-agent-client-onboarding/SKILL.md",
+        "mvp-case-builder/SKILL.md",
+        "objection-pattern-detector/SKILL.md",
+        "okr-generator/SKILL.md",
+        "onboarding-checklist/SKILL.md",
+        "overnight-repo-auditor/SKILL.md",
+        "performance-profiler/SKILL.md",
+        "personalization-at-scale/SKILL.md",
+        "pipeline-health-analyzer/SKILL.md",
+        "pitch-deck-reviewer/SKILL.md",
+        "plan-in-files/SKILL.md",
+        "play-by-play-generator/SKILL.md",
+        "player-comparison-tool/SKILL.md",
+        "plugins/agent-army/skills/agent-army/SKILL.md",
+        "plugins/scout-pro/skills/scout-pro/SKILL.md",
+        "plugins/scout/skills/scout/SKILL.md",
+        "podcast-content-suite/SKILL.md",
+        "podcast-studio/SKILL.md",
+        "portfolio-analyzer/SKILL.md",
+        "post-game-press-conference-simulator/SKILL.md",
+        "practice-plan-creator/SKILL.md",
+        "presentation-design-enhancer/SKILL.md",
+        "pricing-change-strategist/SKILL.md",
+        "pricing-strategy/SKILL.md",
+        "product-launch-war-room/SKILL.md",
+        "prospect-panel-simulator/SKILL.md",
+        "prospect-research-compiler/SKILL.md",
+        "quiz-maker/SKILL.md",
+        "quota-setting-calculator/SKILL.md",
+        "raise-negotiation-prep/SKILL.md",
+        "ramping-rep-tracker/SKILL.md",
+        "react-component-generator/SKILL.md",
+        "reddit-analyzer/SKILL.md",
+        "regex-debugger/SKILL.md",
+        "renewal-predictor/SKILL.md",
+        "rep-performance-scorecard/SKILL.md",
+        "responsive-layout-builder/SKILL.md",
+        "review-response-writer/SKILL.md",
+        "roi-calculator/SKILL.md",
+        "runbook-generator/SKILL.md",
+        "saas-replacement-planner/SKILL.md",
+        "sales-call-prep-assistant/SKILL.md",
+        "sales-coaching-plan-generator/SKILL.md",
+        "sales-comp-plan-designer/SKILL.md",
+        "sales-forecast-builder/SKILL.md",
+        "sales-methodology-implementer/SKILL.md",
+        "scout-pro/SKILL.md",
+        "scout/SKILL.md",
+        "scouting-report-builder/SKILL.md",
+        "screenshot-to-code/SKILL.md",
+        "sec-filing-puller/SKILL.md",
+        "security-pentest-planner/SKILL.md",
+        "seo-keyword-cluster-builder/SKILL.md",
+        "seo-optimizer/SKILL.md",
+        "session-handoff/SKILL.md",
+        "skill-composer-studio/SKILL.md",
+        "skill-navigator/SKILL.md",
+        "slack-message-formatter/SKILL.md",
+        "sms-text-optimizer/SKILL.md",
+        "social-repurposer/SKILL.md",
+        "social-selling-content-generator/SKILL.md",
+        "sow-generator/SKILL.md",
+        "sports-betting-analyzer/SKILL.md",
+        "sports-meme-creator/SKILL.md",
+        "sports-podcast-outline-generator/SKILL.md",
+        "sports-trivia-builder/SKILL.md",
+        "spreadsheet-model-auditor/SKILL.md",
+        "spreadsheet-qa/SKILL.md",
+        "statement-extract-and-prove/SKILL.md",
+        "static-analysis-sweep/SKILL.md",
+        "stock-photo-finder/SKILL.md",
+        "sub-agent-orchestrator/SKILL.md",
+        "tax-strategy-optimizer/SKILL.md",
+        "team-chemistry-evaluator/SKILL.md",
+        "tech-due-diligence/SKILL.md",
+        "technical-writer/SKILL.md",
+        "template-deck-builder/SKILL.md",
+        "territory-planning-optimizer/SKILL.md",
+        "test-coverage-improver/SKILL.md",
+        "trade-quote-builder/SKILL.md",
+        "training-log-analyzer/SKILL.md",
+        "trash-talk-generator/SKILL.md",
+        "typography-scale-builder/SKILL.md",
+        "utm-link-generator/SKILL.md",
+        "utm-parameter-generator/SKILL.md",
+        "weak-signal-synthesizer/SKILL.md",
+        "webinar-content-repurposer/SKILL.md",
+        "webinar-to-content-multiplier/SKILL.md",
+        "weekly-business-report/SKILL.md",
+        "workflow-automator/SKILL.md",
+        "workout-program-designer/SKILL.md"
+      ],
+      "skills": [
+        "shot-analyze",
+        "shot-compare-iterate",
+        "shot-design-pipeline",
+        "shot-index",
+        "shot-to-qml",
+        "shot-to-rn",
+        "shot-to-unocss",
+        "shot-to-web"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 21,
+      "repository": "glebrati-cloud/screenshot-to-code",
+      "url": "https://github.com/glebrati-cloud/screenshot-to-code",
+      "category": "C",
+      "purpose": "React·Vue·Svelte·HTML 화면 코드",
+      "status": "cloned",
+      "commit": "a460be65330172bc79f8d966bd7a2c2cc9dba9b4",
+      "tracked_file_count": 3,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "SKILL.md"
+      ],
+      "skills": [
+        "shot-analyze",
+        "shot-design-pipeline",
+        "shot-index",
+        "shot-to-qml",
+        "shot-to-rn",
+        "shot-to-unocss",
+        "shot-to-web"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 22,
+      "repository": "oil-oil/draw-ui",
+      "url": "https://github.com/oil-oil/draw-ui",
+      "category": "C",
+      "purpose": "설계 시안·UI 코드 제작 절차",
+      "status": "cloned",
+      "commit": "e4e03662144ae94ed1140811d054f2a3b255e3e4",
+      "tracked_file_count": 73,
+      "license": "no root license found",
+      "license_files": [],
+      "entrypoints": [
+        "README.md",
+        "SKILL.md"
+      ],
+      "skills": [
+        "shot-analyze",
+        "shot-compare-iterate",
+        "shot-design-pipeline",
+        "shot-index",
+        "shot-to-qml",
+        "shot-to-unocss",
+        "shot-to-web"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 23,
+      "repository": "fitoe/DesignToCode",
+      "url": "https://github.com/fitoe/DesignToCode",
+      "category": "C",
+      "purpose": "디자인→UnoCSS 및 자산 정책 도구",
+      "status": "cloned",
+      "commit": "80070c17f4e3c0ada2c6ad45195fbea663e60e65",
+      "tracked_file_count": 75,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "skills/design-to-code/SKILL.md"
+      ],
+      "skills": [
+        "shot-analyze",
+        "shot-compare-iterate",
+        "shot-design-pipeline",
+        "shot-index",
+        "shot-to-qml",
+        "shot-to-unocss",
+        "shot-to-web"
+      ],
+      "bundled_files": [
+        {
+          "path": "skills/shot-to-unocss/asset-policy.config.json",
+          "sha256": "9ce40c27a55880bec45a15dadbbf2886e5f64a0454f83f6d205023bbdc8a5e38"
+        },
+        {
+          "path": "skills/shot-to-unocss/scripts/asset-policy/asset-record.mjs",
+          "sha256": "3b1d72728e0d53cf61c92b0e00ecd347e32bb4396191007895ec0776d8dcbfca"
+        },
+        {
+          "path": "skills/shot-to-unocss/scripts/asset-policy/atlas-utils.mjs",
+          "sha256": "3e730ac321c9c1a61c90f1b18593e16be98d172174f47d8655cd0d36f8e6dccf"
+        },
+        {
+          "path": "skills/shot-to-unocss/scripts/asset-policy/constants.mjs",
+          "sha256": "2c09af0eae2d5240363f1a594332b7f60daf31180e689a102bc73f23a1affa48"
+        },
+        {
+          "path": "skills/shot-to-unocss/scripts/asset-policy/crop-atlas.mjs",
+          "sha256": "a4a24051cb1306fceeb841a344755c0cf5ea4373a33b11c51fc15c776a663d78"
+        },
+        {
+          "path": "skills/shot-to-unocss/scripts/asset-policy/optimize-assets.mjs",
+          "sha256": "0cb13fcfa92f689034e5d26df8cbea292f807bfd071bebda7ee8371f7c1d06bb"
+        },
+        {
+          "path": "skills/shot-to-unocss/scripts/asset-policy/path-utils.mjs",
+          "sha256": "3a6a7b9d448140a2fb2dfa6506c285002372dff798c8f30e1b06d74a74378a88"
+        },
+        {
+          "path": "skills/shot-to-unocss/scripts/asset-policy/policy-loader.mjs",
+          "sha256": "a32ab05dc95c1a7e644f3d3d508d48b8f372fb3a4c8ad4c556f504795a1e83db"
+        },
+        {
+          "path": "skills/shot-to-unocss/scripts/asset-policy/scan-assets.mjs",
+          "sha256": "eb0c1dc0daa3f2e95e356b76f63b014c39c94d17773b9495b4fee0924ef6819f"
+        },
+        {
+          "path": "skills/shot-to-unocss/scripts/asset-policy/scan-utils.mjs",
+          "sha256": "c7bbd8078370bdd9daa53854469f35cc7c8538e75e7aa6fa2a19d77dcb865180"
+        },
+        {
+          "path": "skills/shot-to-unocss/scripts/asset-policy/validate-atlas.mjs",
+          "sha256": "f77855beed81e4063b24953bf8e22e60055974c5c4215d0b77c5de42257f1ff6"
+        }
+      ],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 24,
+      "repository": "ozaysahin/screenshot-to-qml",
+      "url": "https://github.com/ozaysahin/screenshot-to-qml",
+      "category": "C",
+      "purpose": "Qt Quick/QML UI 재구현",
+      "status": "cloned",
+      "commit": "43225449e8ca7518591c0685da21c583fd59b90f",
+      "tracked_file_count": 715,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "skills/screenshot-to-qml/SKILL.md"
+      ],
+      "skills": [
+        "shot-analyze",
+        "shot-compare-iterate",
+        "shot-index",
+        "shot-to-qml"
+      ],
+      "bundled_files": [
+        {
+          "path": "skills/shot-analyze/scripts/probe.py",
+          "sha256": "8007afd3803bc6822db23578951a1bbcf01be65c795374b7a3357a8d7ee7345c"
+        }
+      ],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 25,
+      "repository": "vishnu-madhavan-git/9designer-skills",
+      "url": "https://github.com/vishnu-madhavan-git/9designer-skills",
+      "category": "C",
+      "purpose": "시안·자산·프론트엔드 제작 파이프라인",
+      "status": "cloned",
+      "commit": "b9b9289feec3bdfa42799a136623d163460d2fd8",
+      "tracked_file_count": 57,
+      "license": "Apache-2.0",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "skills/9assets-website/SKILL.md",
+        "skills/9design-assets/SKILL.md",
+        "skills/9design-kit/SKILL.md",
+        "skills/9designer/SKILL.md",
+        "skills/9image-design/SKILL.md"
+      ],
+      "skills": [
+        "shot-analyze",
+        "shot-compare-iterate",
+        "shot-design-pipeline",
+        "shot-index",
+        "shot-to-unocss",
+        "shot-to-web"
+      ],
+      "bundled_files": [
+        {
+          "path": "skills/shot-compare-iterate/scripts/capture_visual_qa.mjs",
+          "sha256": "fd78045c5e52ccd74863eddaf05ad7de84e5724cbd4c2741cdfcf8dd951f4bc0"
+        },
+        {
+          "path": "skills/shot-compare-iterate/scripts/compare_visual_qa.mjs",
+          "sha256": "fe2d1247f257de7014dd242616824d6e9863b40244c7c0850b37ed41630d2817"
+        }
+      ],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 26,
+      "repository": "SimoneAvogadro/android-reverse-engineering-skill",
+      "url": "https://github.com/SimoneAvogadro/android-reverse-engineering-skill",
+      "category": "D",
+      "purpose": "Android 정적 분석과 Kotlin·API 도구",
+      "status": "cloned",
+      "commit": "0c7cf89830993df7dfc178498f69952262808bea",
+      "tracked_file_count": 28,
+      "license": "Apache-2.0",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "plugins/android-reverse-engineering/skills/android-reverse-engineering/SKILL.md"
+      ],
+      "skills": [
+        "mobile-android-apk",
+        "mobile-api-extraction",
+        "mobile-index"
+      ],
+      "bundled_files": [
+        {
+          "path": "skills/mobile-android-apk/references/third_party_hosts.txt",
+          "sha256": "33e293d3e3d141ce3f0b139c86106553eb37cd975721403a6aba63290059a8b6"
+        },
+        {
+          "path": "skills/mobile-android-apk/scripts/check-deps.sh",
+          "sha256": "f149fa307df55762e6fbb6756c94aa194b60efb406836495a7af1c5e014a9d7f"
+        },
+        {
+          "path": "skills/mobile-android-apk/scripts/decompile.sh",
+          "sha256": "ea366e59a0b087689eebce3099034c471cf181c99bd1168fb4a32d7deadf8627"
+        },
+        {
+          "path": "skills/mobile-android-apk/scripts/find-api-calls.sh",
+          "sha256": "4891968317da5a928807e27f89bd62ec9842331d8761b0add2ef8a3e870ca46a"
+        },
+        {
+          "path": "skills/mobile-android-apk/scripts/fingerprint.sh",
+          "sha256": "0b653898492d22b818a0a09804f163e1c52b71128a7591382b8e8fd7ad33e293"
+        },
+        {
+          "path": "skills/mobile-android-apk/scripts/lookup-name.sh",
+          "sha256": "a711b491d14c10dbcdd07f650401461ed4b2bf7e49f589da96dd0f28e22f2131"
+        },
+        {
+          "path": "skills/mobile-android-apk/scripts/recover-kotlin-names.sh",
+          "sha256": "c0fdfefc82293fb50ae9e6120aa651d6406ce4897a830f0a5fb1af88b9e6ed8c"
+        }
+      ],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 27,
+      "repository": "incogbyte/android-reverse-engineering-claude-skill",
+      "url": "https://github.com/incogbyte/android-reverse-engineering-claude-skill",
+      "category": "D",
+      "purpose": "Android 코드·네트워크 흐름 분석",
+      "status": "cloned",
+      "commit": "68ba6ced8ef38ee1bba7899c1b44cb74578351f0",
+      "tracked_file_count": 24,
+      "license": "Unlicense",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "plugins/android-reverse-engineering/skills/android-reverse-engineering/SKILL.md"
+      ],
+      "skills": [
+        "mobile-android-apk",
+        "mobile-api-extraction",
+        "mobile-index"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 28,
+      "repository": "inliver233/reverse-skills",
+      "url": "https://github.com/inliver233/reverse-skills",
+      "category": "D",
+      "purpose": "Flutter/Dart AOT와 장치 ABI 분석",
+      "status": "cloned",
+      "commit": "d98b78e4fc3acd0aee3d7bf48b36dac6be473aa2",
+      "tracked_file_count": 28,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "SKILL.md"
+      ],
+      "skills": [
+        "mobile-flutter-dart",
+        "mobile-frida-runtime",
+        "mobile-index"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 29,
+      "repository": "incogbyte/iOS-reverse-engineering-claude-skill",
+      "url": "https://github.com/incogbyte/iOS-reverse-engineering-claude-skill",
+      "category": "D",
+      "purpose": "iOS 패키지·Mach-O·API 분석",
+      "status": "cloned",
+      "commit": "ced35231baa4506e2087efb1bf3aa1ef53101ea1",
+      "tracked_file_count": 28,
+      "license": "Unlicense",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "skills/ios-reverse-engineering/SKILL.md"
+      ],
+      "skills": [
+        "mobile-api-extraction",
+        "mobile-index",
+        "mobile-ios-ipa"
+      ],
+      "bundled_files": [
+        {
+          "path": "skills/mobile-ios-ipa/scripts/check-deps.sh",
+          "sha256": "811a0568a798b7365aa589cd98c93a37499eefcbf41689110cbfad66d29114aa"
+        },
+        {
+          "path": "skills/mobile-ios-ipa/scripts/extract-ipa.sh",
+          "sha256": "982aa28c0dcb0863e22f13a7256ec15f5b4a68839cc6922e767f9835022aec53"
+        },
+        {
+          "path": "skills/mobile-ios-ipa/scripts/find-api-calls.sh",
+          "sha256": "a4e3ac4dc5b451929c4a87d682b7856ecb225ea25940fcd8a3a730339d3f6add"
+        },
+        {
+          "path": "skills/mobile-ios-ipa/scripts/lib/plist.sh",
+          "sha256": "a1eaee23201f13f29632541921e2a57504eb375ddc69b888dd052923469e5ef2"
+        }
+      ],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 30,
+      "repository": "th3vib3coder/RevEng",
+      "url": "https://github.com/th3vib3coder/RevEng",
+      "category": "D",
+      "purpose": "저장소·바이너리·Android 조사 및 parity",
+      "status": "cloned",
+      "commit": "d66dd939d8b67436d5bb735f7f2110a30d4f4504",
+      "tracked_file_count": 63,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "skills/android-reverse-engineering/SKILL.md",
+        "skills/binary-triage/SKILL.md",
+        "skills/ghidra-headless/SKILL.md",
+        "skills/ioc-extraction/SKILL.md",
+        "skills/re-parity-review/SKILL.md",
+        "skills/repo-reverse-engineering/SKILL.md",
+        "skills/reverse-engineering/SKILL.md",
+        "skills/unpacking-analysis/SKILL.md"
+      ],
+      "skills": [
+        "mobile-flutter-dart",
+        "mobile-index",
+        "mobile-unity-il2cpp",
+        "native-ghidra",
+        "native-trace",
+        "native-triage"
+      ],
+      "bundled_files": [
+        {
+          "path": "skills/native-ghidra/scripts/ghidra_export_summary.py",
+          "sha256": "9033d30a59fa1114328e695606289efa8f147a2d8e6313f60abdd04bf19134a5"
+        }
+      ],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 31,
+      "repository": "EncidXVII/claude-reverse-engineering-skill",
+      "url": "https://github.com/EncidXVII/claude-reverse-engineering-skill",
+      "category": "D",
+      "purpose": "다중 패키지/바이너리 분석과 엔드포인트 스캔",
+      "status": "cloned",
+      "commit": "9a857bd2ee62bd13aa66b3942bd17c89eabf6b8a",
+      "tracked_file_count": 37,
+      "license": "Apache-2.0",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "skills/reverse-engineering/SKILL.md"
+      ],
+      "skills": [
+        "mobile-android-apk",
+        "mobile-api-extraction",
+        "mobile-index",
+        "mobile-ios-ipa"
+      ],
+      "bundled_files": [
+        {
+          "path": "skills/mobile-api-extraction/scripts/extract_endpoints.py",
+          "sha256": "3fb4ca8731259c8d990739f71006a4f676425ddeffba7ec7732a1c67fd856da0"
+        }
+      ],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 32,
+      "repository": "zhaoxuya520/reverse-skill",
+      "url": "https://github.com/zhaoxuya520/reverse-skill",
+      "category": "D",
+      "purpose": "런타임과 목적별 분석 도구 라우팅",
+      "status": "cloned",
+      "commit": "cab634bd855fc287f6e420c1f36fd1a6b9245960",
+      "tracked_file_count": 599,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "CTF-Sandbox-Orchestrator/competition-ad-certificate-abuse/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-agent-cloud/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-android-hooking/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-browser-persistence/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-bundle-sourcemap-recovery/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-cloud-metadata-path/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-container-runtime/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-crypto-mobile/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-custom-protocol-replay/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-dpapi-credential-chain/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-file-parser-chain/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-firmware-layout/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-forensic-timeline/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-graphql-rpc-drift/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-identity-windows/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-ios-runtime/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-jwt-claim-confusion/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-k8s-control-plane/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-kerberos-delegation/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-kernel-container-escape/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-linux-credential-pivot/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-lsass-ticket-material/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-mailbox-abuse/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-malware-config/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-oauth-oidc-chain/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-pcap-protocol/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-prompt-injection/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-queue-worker-drift/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-race-condition-state-drift/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-relay-coercion-chain/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-request-normalization-smuggling/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-reverse-pwn/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-runtime-routing/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-ssrf-metadata-pivot/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-stego-media/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-supply-chain/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-template-render-path/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-web-runtime/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-websocket-runtime/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-windows-pivot/SKILL.md",
+        "CTF-Sandbox-Orchestrator/competition-zip-archive/SKILL.md",
+        "CTF-Sandbox-Orchestrator/ctf-sandbox-orchestrator/SKILL.md",
+        "README.md",
+        "plugins/reverse-skill/skills/reverse-skill-router/SKILL.md",
+        "skills/SKILL.md",
+        "skills/api-security/SKILL.md",
+        "skills/apk-reverse/SKILL.md",
+        "skills/attack-chain/SKILL.md",
+        "skills/binary-diff/SKILL.md",
+        "skills/binary-ninja-reverse/SKILL.md",
+        "skills/browser-automation/SKILL.md",
+        "skills/browser-extension-reverse/SKILL.md",
+        "skills/case-review/SKILL.md",
+        "skills/cloud-k8s/SKILL.md",
+        "skills/code-audit/SKILL.md",
+        "skills/ctf-sandbox/SKILL.md",
+        "skills/database-security/SKILL.md",
+        "skills/diagram-generator/SKILL.md",
+        "skills/digital-forensics/SKILL.md",
+        "skills/docs-generator/SKILL.md",
+        "skills/dotnet-reverse/SKILL.md",
+        "skills/edr-bypass-re/SKILL.md",
+        "skills/email-security/SKILL.md",
+        "skills/firmware-pentest/SKILL.md",
+        "skills/ghidra-reverse/SKILL.md",
+        "skills/go-rust-reverse/SKILL.md",
+        "skills/hardware-security/SKILL.md",
+        "skills/ida-reverse/SKILL.md",
+        "skills/identity-federation/SKILL.md",
+        "skills/js-reverse/SKILL.md",
+        "skills/llm-security/SKILL.md",
+        "skills/macos-reverse/SKILL.md",
+        "skills/malware-analysis/SKILL.md",
+        "skills/mobile-reverse/SKILL.md",
+        "skills/ot-ics/SKILL.md",
+        "skills/patch-diff-exploit/SKILL.md",
+        "skills/pentest-tools/SKILL.md",
+        "skills/pentest-tools/src-hunter/SKILL.md",
+        "skills/protocol-reverse/SKILL.md",
+        "skills/pwn-chain/SKILL.md",
+        "skills/radare2/SKILL.md",
+        "skills/radio-sdr/SKILL.md",
+        "skills/reverse-engineering/SKILL.md",
+        "skills/reverse-engineering/dsl-vm-reverse/SKILL.md",
+        "skills/supply-chain-security/SKILL.md",
+        "skills/thick-client/SKILL.md",
+        "skills/threat-hunting/SKILL.md",
+        "skills/threat-intelligence/SKILL.md",
+        "skills/wifi-wireless/SKILL.md",
+        "skills/windows-ad/SKILL.md"
+      ],
+      "skills": [
+        "mobile-flutter-dart",
+        "mobile-frida-runtime",
+        "mobile-index",
+        "mobile-unity-il2cpp"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 33,
+      "repository": "P4nda0s/reverse-skills",
+      "url": "https://github.com/P4nda0s/reverse-skills",
+      "category": "D",
+      "purpose": "Frida·IL2CPP·IDA 등 전문 분석 스킬",
+      "status": "cloned",
+      "commit": "a2baa31c58a3567977188414da68c8c842057152",
+      "tracked_file_count": 12,
+      "license": "no root license found",
+      "license_files": [],
+      "entrypoints": [
+        "README.md",
+        "skills/rev-dex-dumper/SKILL.md",
+        "skills/rev-frida/SKILL.md",
+        "skills/rev-idapython/SKILL.md",
+        "skills/rev-struct/SKILL.md",
+        "skills/rev-symbol/SKILL.md",
+        "skills/rev-u3d-dump/SKILL.md",
+        "skills/rev-unicorn-debug/SKILL.md"
+      ],
+      "skills": [
+        "mobile-frida-runtime",
+        "mobile-index",
+        "mobile-unity-il2cpp",
+        "native-ghidra",
+        "native-trace",
+        "native-triage"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 34,
+      "repository": "tihanyin/REx-skill",
+      "url": "https://github.com/tihanyin/REx-skill",
+      "category": "E",
+      "purpose": "증거 중심 바이너리 triage 및 검증",
+      "status": "cloned",
+      "commit": "e85bd6f6115e0cd086ce30e803ccfa00ddbf4cf7",
+      "tracked_file_count": 85,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "claude-skill/skills/reverse-engineering/SKILL.md"
+      ],
+      "skills": [
+        "native-ghidra",
+        "native-index",
+        "native-reconstruct",
+        "native-trace",
+        "native-triage"
+      ],
+      "bundled_files": [
+        {
+          "path": "skills/native-triage/scripts/strings_report.py",
+          "sha256": "07b46b6eee8f3aaeacd31289a748b3b5cba2cb10757ebbf53af137a5a9b14c6f"
+        }
+      ],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 35,
+      "repository": "cellebrite-labs/ghidra-rpc",
+      "url": "https://github.com/cellebrite-labs/ghidra-rpc",
+      "category": "E",
+      "purpose": "Ghidra 원격 제어와 함수 분석",
+      "status": "cloned",
+      "commit": "5b5cb7ba4666215122718ce1ac5a1299ea3db722",
+      "tracked_file_count": 59,
+      "license": "no root license found",
+      "license_files": [],
+      "entrypoints": [
+        "README.md",
+        "SKILL.md"
+      ],
+      "skills": [
+        "native-ghidra",
+        "native-index"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 36,
+      "repository": "GeReV/ghidra-iterative-re",
+      "url": "https://github.com/GeReV/ghidra-iterative-re",
+      "category": "E",
+      "purpose": "반복적인 Ghidra 타입·심볼 수정과 신뢰 모델",
+      "status": "cloned",
+      "commit": "f5c1f109e77ea6ec01f5e4777793312c0dc34f03",
+      "tracked_file_count": 16,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "SKILL.md"
+      ],
+      "skills": [
+        "native-game-port",
+        "native-ghidra",
+        "native-index",
+        "native-reconstruct",
+        "native-trace",
+        "native-triage"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 37,
+      "repository": "xxmisaoxx/t-rex",
+      "url": "https://github.com/xxmisaoxx/t-rex",
+      "category": "E",
+      "purpose": "값 흐름 추적·빌드 비교·조사 재개",
+      "status": "cloned",
+      "commit": "0606444a1b61e181ddccd5c1f4771c6b10eadba7",
+      "tracked_file_count": 94,
+      "license": "GPL (see upstream license for version and terms)",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "skills/reverse-engineering-investigator/SKILL.md"
+      ],
+      "skills": [
+        "native-ghidra",
+        "native-index",
+        "native-trace",
+        "native-triage"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 38,
+      "repository": "haikow/claude-reverse-skills",
+      "url": "https://github.com/haikow/claude-reverse-skills",
+      "category": "E",
+      "purpose": "IDA/radare2/JavaScript 분석 스킬",
+      "status": "cloned",
+      "commit": "8491b3bff62ff5fcd34c7ffee84f9325aeb864d6",
+      "tracked_file_count": 51,
+      "license": "no root license found",
+      "license_files": [],
+      "entrypoints": [
+        "README.md",
+        "skills/apk-reverse/SKILL.md",
+        "skills/ida-reverse/SKILL.md",
+        "skills/mcp-js-reverse-playbook/SKILL.md",
+        "skills/radare2/SKILL.md",
+        "skills/reverse-engineering/SKILL.md"
+      ],
+      "skills": [
+        "native-ghidra",
+        "native-index",
+        "native-js-reverse",
+        "native-trace",
+        "native-triage"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 39,
+      "repository": "Dryxio/reagent",
+      "url": "https://github.com/Dryxio/reagent",
+      "category": "E",
+      "purpose": "바이너리 기반 C/C++ 재구성 및 비교",
+      "status": "cloned",
+      "commit": "d12cea338c61898b06a86fe8adb25275fa9d5615",
+      "tracked_file_count": 136,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md"
+      ],
+      "skills": [
+        "native-game-port",
+        "native-index",
+        "native-reconstruct"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    },
+    {
+      "id": 40,
+      "repository": "vgrichina/re-skill",
+      "url": "https://github.com/vgrichina/re-skill",
+      "category": "E",
+      "purpose": "게임 코드·자산 조사와 웹 이식",
+      "status": "cloned",
+      "commit": "64c3bffb54ae4b9d99804a03fa4f179f4dd080c5",
+      "tracked_file_count": 8,
+      "license": "MIT",
+      "license_files": [
+        "LICENSE"
+      ],
+      "entrypoints": [
+        "README.md",
+        "SKILL.md"
+      ],
+      "skills": [
+        "native-game-port",
+        "native-index"
+      ],
+      "bundled_files": [],
+      "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."
+    }
+  ]
+}

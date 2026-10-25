@@ -1,0 +1,13 @@
+{
+  "name": "replica-suite-local",
+  "description": "프로그램과 사이트 분석·이식·재제작용 비공개 통합 플러그인",
+  "owner": { "name": "Replica Suite maintainers" },
+  "plugins": [
+    {
+      "name": "replica-suite",
+      "source": "./",
+      "description": "앱·웹·스크린샷·모바일·네이티브 분석과 재제작 통합 스킬",
+      "version": "0.2.0"
+    }
+  ]
+}

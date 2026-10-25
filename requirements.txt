@@ -1,0 +1,5 @@
+# PyYAML validates skill metadata. Image dependencies support optional helpers.
+PyYAML>=6.0,<7
+Pillow>=11.0,<13
+numpy>=2.0,<3
+opencv-python-headless>=4.10,<5

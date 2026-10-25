@@ -1,0 +1,7 @@
+{
+  "name": "replica-suite",
+  "version": "0.2.0",
+  "description": "Integrated plugin for analyzing and re-implementing apps, websites, screenshots, mobile apps and native programs. Skills are grouped by category: app-, web-, shot-, mobile-, native-.",
+  "author": { "name": "Replica Suite maintainers" },
+  "skills": "./skills"
+}
