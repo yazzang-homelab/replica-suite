@@ -9,7 +9,9 @@ description: Unity IL2CPP 앱 분석, global-metadata.dat와 네이티브 바이
 자체 빌드 또는 분석 허가를 받은 패키지만 사용한다. 자산·코드·폰트의 사용 권리는 별도로 기록한다. 복원한 타입 이름이나 dummy DLL을 원본 소스 복구라고 부르지 않는다. 보호 해제나 유료 기능 우회를 기본 절차로 수행하지 않는다.
 
 ## 절차
-1. `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/inspect_mobile.py" target.apk`로 멤버 목록과 해시, metadata 헤더를 조사한다. IPA도 지원한다. 도구는 패키지를 실행하거나 압축 해제하지 않는다.
+[공통 경로 규칙](../../references/runtime.md)에 따라 현재 스킬의 설치 경로에서 `REPLICA_SUITE_ROOT`를 설정한다.
+
+1. `python3 "${REPLICA_SUITE_ROOT}/scripts/inspect_mobile.py" target.apk`로 멤버 목록과 해시, metadata 헤더를 조사한다. IPA도 지원한다. 도구는 패키지를 실행하거나 압축 해제하지 않는다.
 2. 동일 빌드에서 나온 `libil2cpp.so` 또는 `UnityFramework`, `global-metadata.dat`, ABI, Unity 버전을 한 세트로 고정한다. 파일마다 SHA-256을 기록하고 다른 버전의 metadata를 섞지 않는다.
 3. metadata magic `0xFAB11BAF`와 버전을 확인한다. 버전 번호만으로 Unity 버전을 단정하지 않는다. Il2CppDumper/Cpp2IL의 현재 지원 표와 실제 바이너리를 대조해 버전·커밋을 고정한다. 특정 포크가 최신 metadata를 지원한다는 upstream 주장도 설치한 도구에서 검증한다.
 4. 읽기 전용 복사본과 빈 출력 폴더에서 분석한다. dump.cs, 타입 헤더, 메서드 매핑, 도구 로그를 보존한다. 비정상 종료를 정상 성공으로 취급하지 않는다. 출력이 일부 생성돼도 파싱·커버리지 검증 전에는 부분 결과다.

@@ -1,6 +1,6 @@
 {
   "name": "replica-suite",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "Evidence-backed app and website reconstruction skills with local verification tools",
   "license": "UNLICENSED",
@@ -11,7 +11,8 @@
     "validate": "python3 scripts/validate_plugin.py",
     "test": "python3 -m unittest discover -s tests -v",
     "test:e2e": "node tests/e2e_visual.mjs && node tests/e2e_runtime_mirror.mjs && node tests/e2e_shared_browser.mjs",
-    "check": "npm run validate && npm test"
+    "check": "npm run validate && npm test",
+    "check:clients": "python3 scripts/check_clients.py --client all"
   },
   "dependencies": {
     "pixelmatch": "7.1.0",

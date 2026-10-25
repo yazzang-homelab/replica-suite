@@ -42,9 +42,10 @@ Two modes: **mirror** (highest-fidelity local study copy of a static/public page
 7. **Resource list.** Ensure `REPLACEABLE_RESOURCES.md` covers brand assets, fonts, hero/app screenshots/videos, OG images, legal links, CTA URLs, and copy blocks.
 
 ## Rebrand workflow
+Resolve `REPLICA_SUITE_ROOT` from this skill's installed path using the [portable runtime guide](../../references/runtime.md).
 1. **Brand brief first.** Collect from the user: product name, tagline, voice, palette (hex), fonts (licensed or open), logo files (SVG preferred), real copy or permission to write placeholder copy, legal entity/links, analytics ids, contact. Missing items become explicit TODO placeholders in `brand-brief.md`, never invented facts or fake testimonials/metrics/logos of real companies.
-2. **Scan.** `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/brand.py" scan <out> --names "OldName,@old" --domains oldname.com --json` (also inspect emails, phone, addresses, `og:` and JSON-LD). Check asset *names* it lists. Exit 1 means remaining hits; exit 2 means invalid input.
-3. **Map and apply.** Write `mapping.json`. Dry-run with `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/brand.py" replace <out> --map mapping.json --json`; review hits, then repeat with `--apply`. Longest literal keys win; file names are reported, not automatically renamed. Hand-edit multi-word copy, headings, alt text, aria-labels, `<title>`, meta description, canonical, OG/Twitter tags, manifest `name`, JSON-LD, footer legal, `mailto:`/CTA hrefs.
+2. **Scan.** `python3 "${REPLICA_SUITE_ROOT}/scripts/brand.py" scan <out> --names "OldName,@old" --domains oldname.com --json` (also inspect emails, phone, addresses, `og:` and JSON-LD). Check asset *names* it lists. Exit 1 means remaining hits; exit 2 means invalid input.
+3. **Map and apply.** Write `mapping.json`. Dry-run with `python3 "${REPLICA_SUITE_ROOT}/scripts/brand.py" replace <out> --map mapping.json --json`; review hits, then repeat with `--apply`. Longest literal keys win; file names are reported, not automatically renamed. Hand-edit multi-word copy, headings, alt text, aria-labels, `<title>`, meta description, canonical, OG/Twitter tags, manifest `name`, JSON-LD, footer legal, `mailto:`/CTA hrefs.
 4. **Design swap.** Replace tokens (colors/fonts) in one place (CSS variables); swap logo/wordmark SVGs (keep `currentColor` inline), favicon set, OG image; replace hero/app screenshots/video with the user's own or neutral placeholders; keep layout, spacing and motion unchanged unless the user asks otherwise.
 5. **Residue check.** Re-run the scan: zero hits for old terms in text and names; grep for original CDN hosts, tracking ids, and `sourceMappingURL`; confirm no original asset hash names remain; fonts licensed or open.
 6. **Regression QA.** Re-run mirror QA: screenshots vs pre-rebrand baseline (layout must not shift from longer/shorter text), links click through, forms point to the user's endpoints (or are disabled), no console errors, no 404s.
@@ -55,7 +56,7 @@ Fidelity verification of the mirror/rebrand: `web-verify-*`, `web-qa-*`. Rebuilt
 
 ## References
 - `references/mirror-qa.md` - asset-loading triage, screenshot comparison list, common fixes, publish checklist.
-- `scripts/mirror_public_page.py` (MIT, credited in header), `${CLAUDE_PLUGIN_ROOT}/scripts/brand.py` (shared scanner/replacer).
+- `scripts/mirror_public_page.py` (MIT, credited in header), `${REPLICA_SUITE_ROOT}/scripts/brand.py` (shared scanner/replacer).
 
 ## Sources
 Derived from: Core-Mate/Pixel-Perfect-Web-Replica (mirror script, local-run workflow, replaceable-resource inventory, QA checklist, safety boundaries), braxtonROSE4/clone-any-website (static-export mirror route: SRI stripping, tracker blocklist audit, pre-hydration skeleton, publishing/font DMCA warning), santowilem/skills (clone-ui: strip-scripts-by-default mirror, untrusted-content rules), yournextstore/yournextstore (brand-kit idea: persist extracted brand guidelines), ericshang98/perfect-web-clone-skill (no hotlinks, no source fingerprints, honest handoff).

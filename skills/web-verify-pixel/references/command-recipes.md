@@ -3,11 +3,12 @@
 Paths assume `S=<plugin>/skills/web-verify-pixel/scripts` and a clone root `./site-clone/`.
 
 ## One-time setup (ask before installing)
+Resolve `REPLICA_SUITE_ROOT` using the [portable runtime guide](../../../references/runtime.md).
 ```bash
-npm ci --prefix "${CLAUDE_PLUGIN_ROOT}"                     # plugin-local browser dependency
+npm ci --prefix "${REPLICA_SUITE_ROOT}"                     # plugin-local browser dependency
 # From the plugin root: npx playwright install chromium
 # Linux without system libs: npx playwright install-deps chromium  (needs root/apt; ask first)
-python3 -m pip install -r "${CLAUDE_PLUGIN_ROOT}/requirements.txt"  # active virtualenv
+python3 -m pip install -r "${REPLICA_SUITE_ROOT}/requirements.txt"  # active virtualenv
 ```
 `pixel_diff.py` uses the shared Pillow PNG I/O in `lib/images.py`; it does not maintain its own decoder.
 Pure-Python diff costs a few seconds per megapixel: for very tall pages diff `top` first, or

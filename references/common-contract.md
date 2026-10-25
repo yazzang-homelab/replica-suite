@@ -28,7 +28,9 @@
 이들은 공유 이미지 I/O 또는 라이브러리를 사용해도 지표는 독립적으로 유지한다. 브라우저 stop-animation과 finish-animation 역시 같은 상태가 아니다. 임의의 통합 '정확도 %'를 만들지 않는다.
 
 ## 통합 도구 위치
-- 브랜드 검사·치환: `${CLAUDE_PLUGIN_ROOT}/scripts/brand.py`의 `scan` / `replace`.
+[클라이언트 공통 경로 규칙](runtime.md)을 먼저 읽고, 현재 선택한 SKILL.md의 실제 설치 경로에서 `REPLICA_SUITE_ROOT`를 명시적으로 설정한다. 이 변수는 호스트가 자동 제공하지 않는다.
+
+- 브랜드 검사·치환: `${REPLICA_SUITE_ROOT}/scripts/brand.py`의 `scan` / `replace`.
 - Python PNG I/O: `lib/images.py` (Pillow). layout용 흰색 합성과 RGBA 보존을 명시적으로 구분한다.
 - 브라우저 실행·대기·motion 안정화: `lib/browser.mjs` (Playwright). 개별 스킬은 상태 캡처·모바일 flow·WebGL 조건을 추가한다.
 

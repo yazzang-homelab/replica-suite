@@ -1,0 +1,12 @@
+{
+  "name": "replica-suite-local",
+  "interface": { "displayName": "Reverse Anything" },
+  "plugins": [
+    {
+      "name": "replica-suite",
+      "source": { "source": "local", "path": "./" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

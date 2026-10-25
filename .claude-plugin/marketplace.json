@@ -7,7 +7,7 @@
       "name": "replica-suite",
       "source": "./",
       "description": "앱·웹·스크린샷·모바일·네이티브 분석과 재제작 통합 스킬",
-      "version": "0.2.0"
+      "version": "0.3.0"
     }
   ]
 }

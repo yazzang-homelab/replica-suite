@@ -12,10 +12,47 @@ from urllib.parse import unquote, urlsplit
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
+README_FILES = ("README.md", "README.ko.md", "README.zh-CN.md", "README.ja.md")
+
+
+def validate_client_metadata(root):
+    errors = []
+    paths = ("package.json", "plugin.json", ".claude-plugin/plugin.json",
+             ".claude-plugin/marketplace.json", ".agents/plugins/marketplace.json")
+    try:
+        package, portable, claude, market, codex_market = [json.loads((root / p).read_text()) for p in paths]
+    except (OSError, ValueError) as exc:
+        return [f"Client manifest cannot be read: {exc}"]
+    for label, manifest in (("portable", portable), ("Claude/GJC", claude)):
+        if (manifest.get("name"), manifest.get("version")) != (package.get("name"), package.get("version")):
+            errors.append(f"{label} manifest identity/version differs from package.json")
+    if portable.get("$schema") != "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json":
+        errors.append("Portable Agent Plugins schema is missing")
+    if market.get("name") != codex_market.get("name"):
+        errors.append("Client marketplace IDs differ")
+    for label, catalog in (("Claude/GJC", market), ("Codex", codex_market)):
+        entries = catalog.get("plugins", [])
+        if len(entries) != 1 or entries[0].get("name") != package.get("name"):
+            errors.append(f"{label} marketplace must contain this plugin exactly once")
+            continue
+        entry = entries[0]
+        if label == "Codex":
+            if entry.get("source") != {"source": "local", "path": "./"}:
+                errors.append("Codex marketplace must retain the entire shared bundle root")
+            if entry.get("policy") != {"installation": "AVAILABLE", "authentication": "ON_INSTALL"}:
+                errors.append("Codex local installation policy differs from the documented contract")
+        elif entry.get("source") != "./" or entry.get("version") != package.get("version"):
+            errors.append("Claude/GJC marketplace source or version differs from the bundle")
+    if (root / "gajae-plugin.json").exists():
+        errors.append("Binding-only GJC bundle manifest would hide the marketplace skills")
+    for name in README_FILES:
+        if not (root / name).is_file():
+            errors.append(f"Missing localized documentation: {name}")
+    return errors
 
 
 def validate(root=ROOT):
-    errors = []
+    errors = validate_client_metadata(root)
     plugin = json.loads((root / ".claude-plugin/plugin.json").read_text())
     market = json.loads((root / ".claude-plugin/marketplace.json").read_text())
     package = json.loads((root / "package.json").read_text())
@@ -70,7 +107,11 @@ def validate(root=ROOT):
         if "from lib.images import" not in text or "import zlib" in text:
             errors.append(f"{relative}: image I/O is not consolidated")
     documents = [p for base in (root / "skills", root / "references") for p in base.rglob("*.md")]
+    documents.extend(root / name for name in README_FILES if (root / name).is_file())
     for path in documents:
+        if path.is_relative_to(root / "skills") or path.is_relative_to(root / "references"):
+            if re.search(r"\$\{(?:CLAUDE|GJC)_PLUGIN_ROOT\}", path.read_text()):
+                errors.append(f"{path.relative_to(root)}: host-specific root substitution is not portable")
         if any(old in path.read_text() for old in ("scripts/sweep.py", "scripts/rebrand_scan.py")):
             errors.append(f"{path.relative_to(root)}: retired brand command reference")
         for target in re.findall(r"\[[^\]]*\]\(([^\s)]+)\)", path.read_text()):

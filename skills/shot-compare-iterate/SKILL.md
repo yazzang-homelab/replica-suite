@@ -14,8 +14,9 @@ After the first draft exists; whenever the user says it "doesn't match"; before 
 Only run against your own build and a reference image the user is entitled to use. Do not scrape or screenshot third-party live sites with this skill (use the web-* skills with permission checks for that).
 
 ## Setup (once)
+Resolve `REPLICA_SUITE_ROOT` from this skill's installed path using the [portable runtime guide](../../references/runtime.md).
 ```bash
-npm ci --prefix "${CLAUDE_PLUGIN_ROOT}"
+npm ci --prefix "${REPLICA_SUITE_ROOT}"
 # From the plugin root: npx playwright install chromium
 ```
 Bundled Chromium is the default. `shot.mjs --channel chrome` explicitly selects installed Chrome; no silent browser fallback. Shared `lib/browser.mjs` resolves dependencies from the plugin, independent of the target CWD. Font/image waits are bounded by `--timeout` (default 15000 ms), and navigation or stabilization errors fail rather than capturing an unready page. Scripts live in `scripts/` (credits: scripts/NOTICE.md).

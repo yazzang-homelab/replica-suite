@@ -5,7 +5,7 @@ Date: ____  Commit: ____  User's go: yes / not yet
 ## Preflight (all must pass; any failure stops the deploy; say which and why)
 - [ ] e2e suite green (n/n)           - [ ] no open S1/S2 bugs
 - [ ] parity: must-haves n/n, feature score n, verdict >= shippable
-- [ ] `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/brand.py" scan . --config appclone/brand-scan.json` exit 0
+- [ ] Resolve the installed root via the [runtime guide](../../../references/runtime.md), then `python3 "${REPLICA_SUITE_ROOT}/scripts/brand.py" scan . --config appclone/brand-scan.json` exit 0
 - [ ] store listing checks pass (if shipping to stores)
 - [ ] production build passes         - [ ] dependency audit reviewed
 - [ ] privacy policy + terms live, every processor listed; cookie banner if non-essential cookies in EU/UK
