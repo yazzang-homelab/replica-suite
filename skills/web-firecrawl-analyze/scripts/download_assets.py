@@ -6,8 +6,7 @@ JSON list of URLs. Output: files under --dest/{img,fonts,video,other}/ and <dest
 mapping source URL -> local path, content-type, sniffed format, bytes, status.
 
 Why verify: a ".png" URL may return AVIF/WebP/HTML-error; fonts may be 403 HTML. The sniffed format
-(magic bytes) is recorded and the file gets the REAL extension. Only fetch assets of pages the user
-is authorised to clone; respects --max-mb and a polite --delay. No cookies/auth are sent.
+(magic bytes) is recorded and the file gets the REAL extension; respects --max-mb and a --delay. No cookies/auth are sent.
 """
 import argparse
 import hashlib

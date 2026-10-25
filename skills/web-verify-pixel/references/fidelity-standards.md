@@ -21,7 +21,7 @@ record. Same flags for reference and replica, always.
   font loading; return to top; await `document.fonts.ready`.
 - Freeze: disable CSS animation/transition, pause every `<video>` at `currentTime=0`, hide caret.
   Scripted/JS-driven animation (GSAP, canvas) is NOT stopped by CSS: set a fixed timeline
-  position, stub `requestAnimationFrame`/`Date.now` only if you own the replica, or mask the
+  position, stub `requestAnimationFrame`/`Date.now` on the replica, or mask the
   region and verify it separately (see web-webgl).
 - Same browser build, same `deviceScaleFactor=1`, same fonts installed, same locale/timezone.
 - Mask or document truly live content: clocks, tickers, ads, randomised hero, cookie banners

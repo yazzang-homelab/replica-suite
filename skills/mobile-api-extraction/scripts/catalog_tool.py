@@ -198,7 +198,7 @@ def openapi(args):
     spec = OrderedDict([
         ("openapi", "3.0.3"),
         ("info", {"title": args.title, "version": args.version,
-                  "description": "Clean-room API description derived from authorized analysis; x-evidence and x-confidence mark provenance."}),
+                  "description": "Clean-room API description derived from analysis; x-evidence and x-confidence mark provenance."}),
         ("servers", [{"url": u} for u in servers]),
         ("x-contract-status", "draft; verify observations before implementation"),
         ("x-server-unknown", not bool(servers)),

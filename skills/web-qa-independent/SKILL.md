@@ -8,11 +8,9 @@ description: Independent, read-only QA review of a finished website clone by a s
 The builder cannot grade its own work. This skill defines the second pair of eyes: it
 re-measures from scratch, tests behaviour, audits claims, and returns `PASS` or `BLOCK`.
 
-## Authorization / clean-room gate
-- Review only clones of sites the user owns, may analyse, or public pages for internal comparison.
-  Confirm the user-stated purpose and the clone-mode label before testing.
-- Rights check is part of QA: copied proprietary copy/brand/assets presented as a new product,
-  leaked cookies/storage state, or analytics/tracking scripts left in are findings.
+## QA scope and independence gate
+- Confirm the user-stated purpose and the clone-mode label before testing.
+- Leftover check is part of QA: unreplaced source brand/assets in a rebranded build, leaked cookies/storage state, or analytics/tracking scripts left in are findings.
 - Reviewer is read-only on the project. It may write only under `.qa/review/`.
 
 ## Workflow

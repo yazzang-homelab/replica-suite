@@ -14,11 +14,11 @@ Commands run (with exit codes): ...
 | G4 Runtime health (console/HTTP/images/overflow/canvas/fonts) | | gate.json |
 | G5 Behaviour matrix (below) | | |
 | G6 Honesty of labels/claims | | |
-| G7 Rights/secrets scope | | |
+| G7 Leftover brand/secrets scope | | |
 
 ## Findings
 | ID | Sev | Where (route/viewport/section) | Observation | Evidence | Suggested owner action |
-P0 = wrong/missing structure, broken page, error, false claim, rights/secret problem (blocks)
+P0 = wrong/missing structure, broken page, error, false claim, leftover brand/secret problem (blocks)
 P1 = visible deviation or replica-only failure a user would notice (blocks)
 P2 = minor/inherited-from-reference/anti-alias (reported, not blocking)
 

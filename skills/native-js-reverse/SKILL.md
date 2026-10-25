@@ -1,6 +1,6 @@
 ---
 name: native-js-reverse
-description: "Front-end JavaScript reverse engineering with browser-debugger tooling: locate how a web app builds request signatures/encrypted parameters, trace XHR/fetch/WebSocket initiators, sample runtime values at minimal intrusion, rebuild the algorithm in Node with evidence-driven environment patching, then optionally deobfuscate. Use for: signature chain, sign/token/encrypted param analysis for your own or authorized site, js-reverse MCP, breakpoint on XHR, env patching (补环境), first divergence. Korean triggers: 프론트엔드 JS 리버싱, 서명 파라미터 분석, 암호화 파라미터 추적, XHR 브레이크포인트, 런타임 샘플링, Node 환경 복원, 난독화 해제."
+description: "Front-end JavaScript reverse engineering with browser-debugger tooling: locate how a web app builds request signatures/encrypted parameters, trace XHR/fetch/WebSocket initiators, sample runtime values at minimal intrusion, rebuild the algorithm in Node with evidence-driven environment patching, then optionally deobfuscate. Use for: signature chain, sign/token/encrypted param analysis, js-reverse MCP, breakpoint on XHR, env patching (补环境), first divergence. Korean triggers: 프론트엔드 JS 리버싱, 서명 파라미터 분석, 암호화 파라미터 추적, XHR 브레이크포인트, 런타임 샘플링, Node 환경 복원, 난독화 해제."
 ---
 
 # native-js-reverse
@@ -8,11 +8,11 @@ description: "Front-end JavaScript reverse engineering with browser-debugger too
 Reconstruct how a page computes a request field (signature, token, encrypted payload) from runtime evidence, then reproduce it locally. Principles: **observe first, hook before breakpoint, breakpoint last, evidence over guessing, rebuild-oriented.**
 
 ## When to use
-- You need to understand or interoperate with signing/encryption in a web client you own or are authorized to test (own app, contracted audit, documented public API client, CTF).
+- You need to understand or interoperate with signing/encryption in a web client.
 - Not for native binaries/APKs/DLLs (`native-triage`, `native-ghidra`, mobile skills via `native-index`).
 
-## Authorization gate (do first)
-Write `jsre/SCOPE.md`: target origin, owner/authorization basis, purpose. Stop if absent. Do not use results to evade rate limits, anti-fraud/risk controls, paywalls or access controls of third-party services, or to scrape data you may not access. Use test accounts; never log real user credentials. Keep captured cookies/tokens out of committed artifacts.
+## Scope and hygiene gate (do first)
+Write `jsre/SCOPE.md`: target origin, purpose, and tool mapping. Use test accounts where applicable; never log real user credentials. Keep captured cookies/tokens out of committed artifacts.
 
 ## Tools
 Bind to whatever debugger tooling the host exposes (typical MCP `js-reverse_*` set): new/navigate/select page and frame; list/get/search scripts; list network requests and request initiator; break on XHR; set breakpoint on text; evaluate script; get paused info; pause/resume; websocket messages; screenshot. Record the exact tool-name mapping in `jsre/SCOPE.md` once; if names change, update the mapping rather than guessing. If no debugger tool exists, fall back to browser devtools via Playwright/CDP scripts. Detail: [references/phases.md](references/phases.md).
@@ -34,7 +34,7 @@ breakpoint -> back to request observation; source guessing -> runtime evidence; 
 ## Output artifact layout
 ```
 jsre/
-  SCOPE.md           authorization + tool mapping
+  SCOPE.md           target scope + tool mapping
   task.md            running log; every patch decision: what, why, divergence before/after
   samples/*.json     request sample, initiator stack, inputs/outputs (secrets redacted)
   repro/             node entry, shims, run script, expected-vs-actual diff

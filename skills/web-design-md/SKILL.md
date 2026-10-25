@@ -9,13 +9,9 @@ Goal: another agent can build new pages in the same visual language without seei
 This is documentation of a design system, not a clone. For rebuilding pixels use `web-extract-styles`
 + `web-build-parallel`; for token extraction feeding a build use `web-extract-styles`.
 
-## Authorization / clean-room gate
-- Analyse only sites the user owns, has permission to study, or public pages for learning/internal
-  reference. Do not bypass login, paywall, captcha, bot protection or rate limits. Document only
-  what is publicly accessible; a login shell is not the private app.
-- Output is a description of rules (colours, scales, behaviours), not copied assets. Do not copy long
-  copy, logos, icons, fonts files or trademarks into the deliverable; name fonts and licences instead.
-  Remind the user that using another brand's identity commercially needs their permission.
+## Clean-room gate
+- Document what is observable from the rendered DOM and stylesheets; a login shell is not the inner app.
+- Output is a description of rules (colours, scales, behaviours), not copied assets. Do not copy long copy, logos, icon files, font binaries or trademarks into the deliverable; name fonts and roles instead.
 
 ## Workflow
 1. **Scope.** Normalise URLs; default outputs `DESIGN.md` and `DESIGN-preview.html` in the user's

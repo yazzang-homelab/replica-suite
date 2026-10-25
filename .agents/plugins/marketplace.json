@@ -1,6 +1,6 @@
 {
   "name": "replica-suite-local",
-  "interface": { "displayName": "Reverse Anything" },
+  "interface": { "displayName": "Replica Suite" },
   "plugins": [
     {
       "name": "replica-suite",

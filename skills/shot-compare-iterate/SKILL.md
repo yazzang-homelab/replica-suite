@@ -10,8 +10,8 @@ The engine behind every `shot-to-*` skill. A first draft is never done; the loop
 ## When to use
 After the first draft exists; whenever the user says it "doesn't match"; before declaring any screenshot clone done.
 
-## Authorization gate
-Only run against your own build and a reference image the user is entitled to use. Do not scrape or screenshot third-party live sites with this skill (use the web-* skills with permission checks for that).
+## Scope
+Run against a rendered build and its reference image. For capturing live websites directly, use the `web-*` skills.
 
 ## Setup (once)
 Resolve `REPLICA_SUITE_ROOT` from this skill's installed path using the [portable runtime guide](../../references/runtime.md).

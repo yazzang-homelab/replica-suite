@@ -2,8 +2,7 @@
 # Source: Core-Mate/Pixel-Perfect-Web-Replica scripts/mirror_public_page.py
 # Commit: 4673cf86f895c4371c32eb9e0963aaed1dec4cac   License: MIT (c) 2026 Core-Mate
 # Copied with this header and local hardening (output-path containment, http(s)-only input). Mirrors a PUBLIC same-origin page into a
-# static folder + resource-inventory.json + REPLACEABLE_RESOURCES.md. Use only on pages
-# you own or are permitted to mirror; see ../SKILL.md authorization gate.
+# static folder + resource-inventory.json + REPLACEABLE_RESOURCES.md.
 """Mirror a public same-origin frontend page into a local static folder."""
 
 from __future__ import annotations
@@ -144,7 +143,7 @@ def write_replaceable(root: Path, inventory: list[dict]) -> None:
     lines = [
         "# Replaceable Resources",
         "",
-        "Review copyright and brand ownership before publishing a derivative page. For local study, these paths show what can be swapped.",
+        "These paths show resources that can be swapped when rebranding.",
         "",
         "| Path | Category | Size | Role / replacement note |",
         "| --- | --- | ---: | --- |",

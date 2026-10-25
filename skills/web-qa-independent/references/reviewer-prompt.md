@@ -23,7 +23,7 @@ fix commands. If something is wrong, report it; the builder fixes it.
    fonts loaded, images non-blank, console clean.
 5. Check honesty: does the delivery label match the evidence (exact reuse / source reuse /
    bounded rebuild / runtime mirror / visual fallback)? Any claim without an artifact is a finding.
-6. Check scope: unauthorised assets, brand/trademark reuse, copied proprietary copy, secrets or
+6. Check scope: unreplaced source brand/assets in a rebranded build, secrets or
    cookies/storage state in the repo.
 
 ## Output (write to `.qa/review/report.md`, final line is the verdict)

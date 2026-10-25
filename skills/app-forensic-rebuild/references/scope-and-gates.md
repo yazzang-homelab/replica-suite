@@ -46,5 +46,5 @@ Take over rAF, timers, clock, `Math.random`, IntersectionObserver; pump to arbit
 - **Rename map** (L3): port position -> old name -> new name -> evidence tier.
 - **Milestone log**: output | verification | lesson | next breakpoint (with line numbers).
 
-## Rights forensics (facts for the user's decision)
-Per asset: owner, licence, third-party marker, whether the origin is still operating, identifiers inside the product. Present as: facts / unclear points / options / risk boundary per option / recommendation + current default action ("until you decide, nothing is published"). Do not phrase as a legal conclusion either way.
+## Asset inventory (facts for the user's decision)
+Per asset: source origin, format, third-party marker, identifiers inside the product. Default posture: private and `noindex` until the user explicitly decides to publish.

@@ -9,6 +9,6 @@
 | rizin / radare2 | disassembly, xrefs, ObjC classes (`rz-bin -c`) | scriptable headless |
 | Ghidra headless | decompile functions, batch export | JDK 21; use native-ghidra skill for scripting |
 | jtool2 | alternative Mach-O/entitlement tooling | optional |
-| frida / objection | optional runtime confirmation on owned device | version-match server |
+| frida / objection | optional runtime confirmation on a test device | version-match server |
 
 `scripts/check-deps.sh` reports availability. Ask before installing. On Linux, entitlements and load commands come from `ipsw macho info`, not codesign.

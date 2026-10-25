@@ -8,13 +8,9 @@ description: Analyze a live website for cloning using Firecrawl (sitemap map + r
 Produces evidence, not code. Output lets builders (`web-extract-styles`, `web-build-parallel`,
 `web-mirror-rebrand`) work without reopening the site, and lets `web-verify-pixel` compare later.
 
-## Authorization / clean-room gate
-- Proceed only for sites the user owns, has permission to analyse, or public pages for study.
-  Record the basis in `page-brief.md`. Respect robots.txt and terms; throttle; stop on 403/429/
-  captcha — never bypass auth, paywalls, bot protection or rate limits; never rotate identities.
-- Analysis captures facts about layout, tokens, behaviour; copy, images, fonts and brand marks
-  remain the owner's. Hand off to builders with a clean-room note: rebuild from behaviour/spec,
-  swap assets/copy/brand unless the user has rights to reuse them.
+## Clean-room and hygiene gate
+- Record the scope and target in `page-brief.md`.
+- Analysis captures facts about layout, tokens, and behaviour. Hand off to builders with a clean-room note: rebuild from behaviour/spec, and list assets/copy/brand that need replacement when rebranding.
 - Never write API keys or sessions into files; redact cookies/headers in notes.
 
 ## Workflow
@@ -23,8 +19,8 @@ Produces evidence, not code. Output lets builders (`web-extract-styles`, `web-bu
 2. **Tool check** (`references/mcp-setup.md`): Playwright MCP/browser is mandatory; Firecrawl is
    optional (degrade gracefully, tell the user). Gate 1: tools confirmed connected.
 3. **Scout.** `firecrawl_map` (or sitemap.xml + nav crawl) -> report "found N pages: top 10", agree
-   scope (default: `/` plus obvious key pages). Check `robots.txt`; run the permission/routing
-   preflight in `references/routing-and-handoff.md` (prefer owner-exposed embed/source over rebuild).
+   scope (default: `/` plus obvious key pages). Run the routing
+   preflight in `references/routing-and-handoff.md` (prefer exposed embed/source over rebuild).
 4. **Render like a user.** Navigate at 1440x900; wait for fonts; scroll in ~60% viewport steps with
    pauses to trigger lazy media and IntersectionObserver reveals; return to top; take the master
    full-page screenshot. Repeat at 768x1024 and 390x844. Gate 2.
@@ -63,12 +59,12 @@ stop, do not fake it from static HTML.
 ## References
 - `references/mcp-setup.md` — Playwright/Firecrawl setup, call settings, fallbacks.
 - `references/analysis-artifacts.md` — file layout, brief and manifest schemas, quality gates.
-- `references/routing-and-handoff.md` — source-first routing, permission preflight, build handoff.
+- `references/routing-and-handoff.md` — source-first routing, routing preflight, build handoff.
 - `scripts/inventory_page.js`, `scripts/download_assets.py` (original, tested).
 
 ## Sources
 Derived from Amanuel2x/clone-skill (Playwright + Firecrawl MCP prerequisites, map/scrape/priming-
 scroll/token/motion/asset capture stages; MIT), KeiaiLab/webEmbedding (source-first routing,
-permission/robots/PII guardrails, needs-session/blocked statuses; MIT), and JCodesMore/
+routing, needs-session/blocked statuses; MIT), and JCodesMore/
 ai-website-cloner-template (page brief, route map, state-driver evidence, asset provenance and
 format verification, build-order handoff; MIT).

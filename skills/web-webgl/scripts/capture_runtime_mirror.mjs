@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Capture a public, authorized page's runtime (HTML/JS/CSS/models/textures/wasm/workers/fonts/media)
+// Capture a page's runtime (HTML/JS/CSS/models/textures/wasm/workers/fonts/media)
 // into a local static folder you can serve, so a WebGL/Three.js/Rive scene keeps working.
 // Original implementation; architecture follows the runtime-mirror notes of
 // xintongw431-arch/webgl-runtime-cloner-skill (MIT) - no upstream code copied.

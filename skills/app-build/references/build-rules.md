@@ -18,8 +18,8 @@ Rebuild the **effect**, never the **scene**: own models, textures, shaders, foot
 ## Feature mode (one feature into an existing app)
 Read the host app first: routes, components, data layer, auth, conventions, design doc. Use the host's components/tokens, match style, change nothing else, add tests to the host suite, and keep its existing tests green.
 
-## Migrate mode (user owns the source site)
-Copying content is the point. Keep every URL (301 where a path must change), carry titles, descriptions, canonicals, OG/structured data, forms, embeds, analytics, redirects. Verify each old URL ends in 200 within one redirect and pixel parity per page (~95%). Check font/image licences still cover the new host.
+## Migrate mode (site migration)
+Copying content is the point. Keep every URL (301 where a path must change), carry titles, descriptions, canonicals, OG/structured data, forms, embeds, analytics, redirects. Verify each old URL ends in 200 within one redirect and pixel parity per page (~95%).
 
 ## Honest recovery limits (screenshot-only inputs)
 Rasters cannot yield vector icons, brand illustrations or photos; re-create with an open icon set or own art and state this in `build-log.md`. Estimated spacing/colour values stay marked as estimates until the diff loop confirms them.

@@ -1,21 +1,16 @@
 # Source-first routing and build handoff
 
 ## Prefer, in order (webEmbedding-style)
-1. **Direct reuse** of an owner-exposed route: the page is frameable/embeddable and the user is
-   allowed to embed it (check `X-Frame-Options`, CSP `frame-ancestors`, owner intent). No rebuild.
-2. **Original export / preview / remix / source** supplied by the owner (Webflow/Framer export,
+1. **Direct reuse** of an exposed route: the page is frameable/embeddable (check `X-Frame-Options`, CSP `frame-ancestors`). No rebuild.
+2. **Original export / preview / remix / source** (Webflow/Framer export,
    repo, design file).
 3. **Bounded rebuild** from captured evidence (this pipeline), reported with measured fidelity.
 4. **Visual fallback** for canvas/native-like surfaces (see `web-webgl`), labelled approximation.
 Never present 3 or 4 as "exact". Frame-blocked, login-gated or app-gated pages -> record
 `needs-session` / `manual-review` / `blocked`; do not fake private views.
 
-## Permission and licence preflight (record in the brief)
-Owned or explicit permission · intentionally exposed embed/preview · licence evidence · internal
-review decision. "All rights reserved" with no permission -> stop at analysis; produce a structural
-and design-language study (`web-design-md`) instead of reusable output. Record whether robots/ToS
-were reviewed. Never accept `file://` or non-http(s) inputs; never use session artifacts without the
-user supplying them; redact cookies, auth headers, tokens in HAR/network notes.
+## Routing preflight (record in the brief)
+Never accept `file://` or non-http(s) inputs; use session artifacts only when supplied by the user; redact cookies, auth headers, tokens in HAR/network notes.
 
 ## Handoff contract to builders (web-extract-styles, web-build-parallel, web-mirror-rebrand)
 Provide: route map, page-brief per page, tokens.json, motion-manifest.json, assets-map.json with

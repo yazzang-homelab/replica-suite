@@ -4,7 +4,7 @@
   "version": "0.3.0",
   "description": "Evidence-backed reconstruction of apps, websites, screenshots, mobile packages and native programs.",
   "author": { "name": "Replica Suite maintainers" },
-  "repository": "https://github.com/yazzang-homelab/reverse-anything",
+  "repository": "https://github.com/yazzang-homelab/replica-suite",
   "license": "UNLICENSED",
   "keywords": [
     "reimplementation",

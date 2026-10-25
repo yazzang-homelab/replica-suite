@@ -1,6 +1,6 @@
 ---
 name: native-ghidra
-description: Drive Ghidra for native reverse engineering headlessly (analyzeHeadless, PyGhidra, a ghidra-rpc style daemon, or Ghidra MCP servers) with an iterative checkpoint-apply-cascade-verify loop and the SourceType trust model so the agent never corroborates its own guesses; includes pointers for IDAPython/IDALib and radare2/rabin2 when Ghidra is not the tool. Use for "Ghidra", "analyzeHeadless", "PyGhidra", "rename functions/retype structs in Ghidra", "decompile and annotate", "Ghidra MCP", "IDAPython", "idalib", "radare2 r2 script", "patch diff two binaries", "고드라/기드라 분석", "헤드리스 디컴파일", "함수 이름 적용", "구조체 복구", "IDA 스크립트", "radare2 사용". Authorized software only.
+description: Drive Ghidra for native reverse engineering headlessly (analyzeHeadless, PyGhidra, a ghidra-rpc style daemon, or Ghidra MCP servers) with an iterative checkpoint-apply-cascade-verify loop and the SourceType trust model so the agent never corroborates its own guesses; includes pointers for IDAPython/IDALib and radare2/rabin2 when Ghidra is not the tool. Use for "Ghidra", "analyzeHeadless", "PyGhidra", "rename functions/retype structs in Ghidra", "decompile and annotate", "Ghidra MCP", "IDAPython", "idalib", "radare2 r2 script", "patch diff two binaries", "고드라/기드라 분석", "헤드리스 디컴파일", "함수 이름 적용", "구조체 복구", "IDA 스크립트", "radare2 사용".
 ---
 
 # Native Ghidra control
@@ -8,7 +8,7 @@ description: Drive Ghidra for native reverse engineering headlessly (analyzeHead
 Ghidra is an inference engine with a persistent database: what you apply changes what the decompiler shows next. Use that, but never let your own applications become evidence for the claims that motivated them.
 
 ## Gate
-1. Ownership/authorization confirmed (see `native-triage`); static analysis only. Ghidra never executes the target; anything that would (debugger, emulation of live malware, network) needs `native-trace` sandbox rules.
+1. Static analysis only. Ghidra never executes the target; anything that would (debugger, emulation, network) needs `native-trace` sandbox rules.
 2. Project lives **outside** the sample directory and outside any dot-directory (Ghidra project paths with dot-dirs break). Original sample stays read-only; import a copy.
 3. Record Ghidra version, JDK, program SHA-256, language/compiler spec, image base in `ghidra/manifest.json`. Wrong language/endianness/base at import poisons everything: verify before analysing; import with no-analysis first on large or odd targets, fix memory map/language, then analyse once.
 

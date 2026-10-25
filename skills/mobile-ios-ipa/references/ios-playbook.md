@@ -5,7 +5,7 @@
 Fat binaries: `lipo -info` / `ipsw macho info` shows slices; thin with `--thin arm64`.
 
 ## Encryption (cryptid)
-`otool -l App | grep -A4 LC_ENCRYPTION_INFO` : `cryptid 1` = encrypted. App Store builds are encrypted per-device; own Xcode/enterprise/ad-hoc builds are not. Decrypted dumps come from running the app on a device the user owns and capturing memory. That is a user-authorized runtime action; document tool and device. Frameworks may be unencrypted even when the main binary is not.
+`otool -l App | grep -A4 LC_ENCRYPTION_INFO` : `cryptid 1` = encrypted. App Store builds are encrypted per-device; Xcode/enterprise/ad-hoc builds are not. Decrypted dumps come from running the app on a device and capturing memory; document tool and device. Frameworks may be unencrypted even when the main binary is not.
 
 ## Static reading order
 1. Info.plist + entitlements + provisioning profile.
@@ -21,8 +21,8 @@ Fat binaries: `lipo -info` / `ipsw macho info` shows slices; thin with `--thin a
 - Cordova/Capacitor: `www/` folder, read directly.
 - WebView-heavy apps: endpoints often live in bundled JS and remote config, not in Mach-O.
 
-## Dynamic confirmation (owned device, approved)
-Hook `NSURLSession dataTaskWithRequest:`, `-[NSMutableURLRequest setValue:forHTTPHeaderField:]`, or Swift `URLSession` wrappers to log method/URL/headers with secrets masked; or proxy with a user-installed CA. Pinning bypass only on your own app/test build.
+## Dynamic confirmation
+Hook `NSURLSession dataTaskWithRequest:`, `-[NSMutableURLRequest setValue:forHTTPHeaderField:]`, or Swift `URLSession` wrappers to log method/URL/headers with secrets masked; or proxy with a test CA.
 
 ## Pitfalls
 Stripped Swift binaries hide method bodies; absence of a string does not mean absence of an endpoint (runtime concatenation, base64/XOR-obfuscated literals, remote config). Report these as unknowns.

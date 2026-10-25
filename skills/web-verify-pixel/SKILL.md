@@ -7,12 +7,9 @@ description: Prove a website clone matches its reference with a multi-breakpoint
 
 Treat the live reference as truth. Every "matches" claim needs diff artifacts plus numbers.
 
-## Authorization / clean-room gate
-- Only capture sites the user owns, has permission to analyse, or public pages for internal
-  comparison. No bypass of auth, paywalls, bot protection, rate limits. Use a session only if the
-  user supplied it (`--storage-state`); never print or store cookies in reports.
-- The replica under test must be a legitimate rebuild or a permitted mirror; this skill only
-  measures, it never makes a copy "more exact" by pulling in extra proprietary assets.
+## Clean-room and hygiene gate
+- Use a session only if the user supplied it (`--storage-state`); never print or store cookies in reports.
+- This skill only measures fidelity against the reference; it never makes a copy "more exact" by pulling in unverified assets.
 
 ## Inputs
 Reference URL, replica URL (running locally), route list, extra breakpoints, accepted-dynamic

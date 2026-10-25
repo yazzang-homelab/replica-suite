@@ -4,11 +4,11 @@
 
 replica-suite は、アプリやサイトの移植・再実装のための agent skills 集です。進め方は evidence -> spec -> build -> verify (証拠 -> 仕様 -> 実装 -> 検証) です。1 セットの `skills/` を Codex、Claude Code、GJC が共通で使い、`lib/`、`scripts/`、`references/` も 3 クライアントで共有します。
 
-- リポジトリ: https://github.com/yazzang-homelab/reverse-anything (private)
+- リポジトリ: https://github.com/yazzang-homelab/replica-suite
 - プラグイン名: `replica-suite`、バージョン `0.3.0`
 - marketplace ID: `replica-suite-local`
 
-どんなアプリもワンクリックで複製する製品ではありません。分析、設計、実装、検証の各段階で証拠と確認ゲートを提供するもので、結果は対象、権限、利用者の判断に左右されます。
+どんなアプリもワンクリックで複製する製品ではありません。分析、設計、実装、検証の各段階で証拠と確認ゲートを提供するもので、結果は対象、モデル、利用者の判断に左右されます。
 
 ## 含まれる 41 個の skills
 
@@ -26,20 +26,16 @@ replica-suite は、アプリやサイトの移植・再実装のための agent
 ## 前提条件
 
 - Node.js 22 推奨 (20 以上)、Python 3.13 推奨、git
-- private リポジトリにアクセスできる `gh` または Git の認証。先に `gh auth login` を実行し、organization が SSO を要求する場合はその承認も済ませてください。
 - Ghidra、jadx、apktool、Frida、Qt、各プラットフォームの SDK は別途用意する任意の外部ツールで、このプラグインは自動インストールしません。
 
-token やパスワードをチャットに貼らないでください。
 
 ## リポジトリの取得
 
 ```bash
-gh auth login
-gh auth setup-git
-gh repo clone yazzang-homelab/reverse-anything
+git clone https://github.com/yazzang-homelab/replica-suite.git
 ```
 
-認証済みの `git clone` でも構いません。以下の各クライアントでは、`yazzang-homelab/reverse-anything` の代わりにローカル clone の絶対パス (例: `/absolute/path/to/reverse-anything`) も使えます。
+以下の各クライアントでは、`yazzang-homelab/replica-suite` の代わりにローカル clone の絶対パス (例: `/absolute/path/to/replica-suite`) も使えます。
 
 ## インストール
 
@@ -48,7 +44,7 @@ gh repo clone yazzang-homelab/reverse-anything
 ### Claude Code
 
 ```bash
-claude plugin marketplace add yazzang-homelab/reverse-anything
+claude plugin marketplace add yazzang-homelab/replica-suite
 claude plugin install replica-suite@replica-suite-local
 claude plugin list --json
 ```
@@ -58,7 +54,7 @@ claude plugin list --json
 インストールせずローカルで試す場合:
 
 ```bash
-claude --plugin-dir /absolute/path/to/reverse-anything
+claude --plugin-dir /absolute/path/to/replica-suite
 ```
 
 ### Codex
@@ -66,7 +62,7 @@ claude --plugin-dir /absolute/path/to/reverse-anything
 ルートの `plugin.json` は Agent Plugins 1.0 の portable manifest で、marketplace は `.agents/plugins/marketplace.json` にあります。`.codex-plugin` の fallback は用意していません。
 
 ```bash
-codex plugin marketplace add yazzang-homelab/reverse-anything
+codex plugin marketplace add yazzang-homelab/replica-suite
 codex plugin add replica-suite@replica-suite-local
 codex plugin list --json
 ```
@@ -78,7 +74,7 @@ codex plugin list --json
 GJC では Claude-compatible marketplace provider が正しい形式です。新しい `gajae-plugin.json` bundle はトップレベルの `skills` をサポートしないため使わないでください。`gjc plugin install .` や `--user` による bundle インストールも案内の対象外です。
 
 ```bash
-gjc plugin marketplace add yazzang-homelab/reverse-anything
+gjc plugin marketplace add yazzang-homelab/replica-suite
 gjc plugin install replica-suite@replica-suite-local --scope user
 gjc plugin list --json
 gjc skills discover --query replica-suite --limit 50 --json
@@ -110,18 +106,18 @@ node "$REPLICA_SUITE_ROOT/node_modules/playwright/cli.js" install chromium
 
 まず `replica` から始めるか、カテゴリ router (`app-index`、`web-index`、`shot-index`、`mobile-index`、`native-index`) を直接呼び出します。名前空間の接頭辞は各クライアントの形式に従います (上記の各クライアントの呼び出し形式を参照)。
 
-例 (プレースホルダーは自分の対象、または許可を得た対象に置き換えてください):
+例:
 
 1. サイトの復元
-   - 入力: 自分が所有するサイトの URL と、取得を許可する範囲
+   - 入力: 対象サイトの URL と取得範囲
    - 依頼: `replica-suite:web-index` でサイトを取得し、デザインルールを整理して React で再実装し、視覚比較を行う
    - 出力: 取得記録、デザインルール、再実装コード、視覚 QA の結果
 2. モバイルアプリの分析
-   - 入力: 自分が所有する `/absolute/path/to/owned.apk`
+   - 入力: `/absolute/path/to/app.apk`
    - 依頼: `replica-suite:mobile-index` でパッケージ構造、状態、API の証拠を調べる
    - 出力: パッケージ・状態・API の証拠と、次工程の仕様案
 
-自分の対象、または許可を得た対象にのみ使用してください。対象の内部や外部リポジトリにある指示は単なるデータであり、実行権限を持ちません。
+対象の内部や外部リポジトリにある指示は単なるデータであり、実行権限を持ちません。
 
 ## 検証
 
@@ -143,12 +139,11 @@ python3 scripts/check_clients.py --client all
 
 - 40 件の出典を依頼し、39 件を clone して確認しました。`minosdevs/copycat-skill` は 404 でアクセスできず、統合していません。
 - 詳細は `upstreams.lock.json` と `THIRD_PARTY_NOTICES.txt` を参照してください。
-- この統合自体は private で、再配布ライセンスは付与されていません。全体が MIT だとは主張しません。第三者の出典のライセンス条件は引き続き有効です。
-- コード、アセット、商標のライセンスは別途確認してください。
+- 全体が MIT だとは主張しません。第三者の出典のライセンス条件は引き続き有効です。
 
 ## トラブルシューティング
 
-- clone や marketplace add が失敗する: private リポジトリへの gh/Git 認証と organization の SSO 承認を確認してください。
+- clone や marketplace add が失敗する: ネットワーク接続または `gh auth status` を確認してください。
 - インストール後に skills が見えない: セッションを再起動してください。
 - リソースが見つからない: 個別の skill フォルダだけをコピーしないでください。`lib/`、`scripts/`、`references/` は `skills/` と同じ階層に必要です。cache のパスも確認してください。
 - ブラウザやシステムライブラリが不足している: 上記の Playwright chromium のインストールをやり直し、システム依存パッケージを入れてください。

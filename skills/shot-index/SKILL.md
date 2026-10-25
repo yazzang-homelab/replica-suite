@@ -7,7 +7,7 @@ description: Router for the screenshot/image-to-UI-code skill family (shot-*) - 
 
 Start here when the input is an **image** (screenshot, mockup, Figma PNG export, phone capture, reference photo) and the output is UI code or a design.
 
-## Authorization / clean-room gate (applies to every shot-* skill)
+## Common contract (applies to every shot-* skill)
 Read and apply the [common execution contract](../../references/common-contract.md). For image-only inputs, explicitly state which interactions, hidden states and responsive rules cannot be recovered from pixels.
 
 ## Intent -> skill

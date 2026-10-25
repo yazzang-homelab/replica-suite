@@ -1,17 +1,17 @@
 ---
 name: mobile-api-extraction
-description: Turn mobile-app evidence (decompiled Android/iOS output, JS bundles, authorized HAR/proxy captures) into a deduplicated endpoint catalog, then an OpenAPI 3 / API spec for a clean-room reimplementation, bridging to app-spec. Use for "앱 API 정리", "엔드포인트 카탈로그", "OpenAPI 스펙 작성", "모바일 앱 백엔드 재구현", "API 명세 역추출", "extract app endpoints", "build API spec from APK/IPA", "endpoint inventory to openapi", "document the app's backend", "HAR to spec".
+description: Turn mobile-app evidence (decompiled Android/iOS output, JS bundles, HAR/proxy captures) into a deduplicated endpoint catalog, then an OpenAPI 3 / API spec for a clean-room reimplementation, bridging to app-spec. Use for "앱 API 정리", "엔드포인트 카탈로그", "OpenAPI 스펙 작성", "모바일 앱 백엔드 재구현", "API 명세 역추출", "extract app endpoints", "build API spec from APK/IPA", "endpoint inventory to openapi", "document the app's backend", "HAR to spec".
 ---
 
 # mobile-api-extraction
 
-Consumes raw leads from `mobile-android-apk`, `mobile-ios-ipa`, or captures and produces a verified catalog plus a spec that `app-spec` / `app-build` can implement against *your own* backend or a licensed public API.
+Consumes raw leads from `mobile-android-apk`, `mobile-ios-ipa`, or captures and produces a verified catalog plus a spec that `app-spec` / `app-build` can implement against a target backend.
 
-## Authorization / clean-room gate (do first)
-- Inputs must already be covered by an `appclone/internals/*/scope.md` (own app, licensed, or public-interface behaviour). If not, stop and run the matching `mobile-*` skill's gate or `app-internals`.
-- Static evidence by default. Do NOT call the original vendor's private endpoints, replay tokens, or use harvested keys/credentials. Live probing is allowed only against a backend the user owns or an official public API with the user's own key.
-- The spec describes behaviour (shapes, status semantics, auth contract), not the vendor's code, internal names, or proprietary data. Rename identity fields; the reimplementation owns its brand, domain and data.
-- Secrets found in evidence are never copied to the catalog or spec: record `<redacted:len=N>` + location, and flag for rotation.
+## Scope and clean-room gate (do first)
+- Inputs should be linked to `appclone/internals/*/scope.md`.
+- Static evidence by default. Do not replay harvested tokens or credentials against remote backends.
+- The spec describes behaviour (shapes, status semantics, auth contract), not vendor internal code. Rename identity fields for the reimplementation.
+- Secrets found in evidence are never copied to the catalog or spec: record `<redacted:len=N>` + location.
 
 ## Workflow
 1. **Collect leads** into `appclone/api/leads/`: run `python scripts/extract_endpoints.py <decompiled-or-extracted-dir> --json > leads/extract-<src>.json` for each tree (jadx output, apktool output, IPA `analysis/`, extracted RN/Cordova bundles, firmware roots). Merge with `find-api-calls.sh` reports and HAR files (`references/capture-to-catalog.md`).
@@ -47,7 +47,7 @@ Summary to the user: rows, first/third split, confidence histogram, auth type, t
 
 ## References
 - [catalog-rules.md](references/catalog-rules.md) - classification, dedup, confidence, DTO to schema, GraphQL/gRPC/WebSocket notes
-- [capture-to-catalog.md](references/capture-to-catalog.md) - authorized HAR/proxy captures, pinning, redaction
+- [capture-to-catalog.md](references/capture-to-catalog.md) - HAR/proxy captures, pinning, redaction
 - [to-app-spec.md](references/to-app-spec.md) - mapping the catalog into app-spec routes/schema
 
 ## Sources

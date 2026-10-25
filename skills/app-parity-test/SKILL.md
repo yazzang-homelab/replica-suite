@@ -7,10 +7,10 @@ description: Verifies a clone against its spec and the original - test plan from
 
 Reads flows and S-IDs from `appclone/recon.md`, `features.csv`, the running clone, and reference screenshots. Writes `test-plan.md`, tests, `bugs.md`, `parity.md`, diff images. Verification is a loop (measure, compare, review, fix biggest, repeat), not a final pass.
 
-## Clean-room / authorization gate
-- **Test your clone, never the original.** No load-testing, fuzzing, scripting or hammering the original's servers. Using it by hand as a normal user is fine.
-- Reference screenshots come only from public pages, the user's own account, or inputs the user supplied; they stay in `appclone/screens/` and are never shipped.
-- Do not chase pixel parity with the original's colours; its exact look is its identity and changes at brand time. Layout, structure and behaviour parity are the goals (exception: user-owned site migration, where pixel parity ~95% is the bar).
+## Clean-room gate
+- **Test your clone against the local server.** Do not run automated load-testing or fuzzing suites against remote servers.
+- Reference screenshots stay in `appclone/screens/` and are never shipped.
+- Do not chase pixel parity with the original's colours when rebranding; its exact look changes at brand time. Layout, structure and behaviour parity are the goals (exception: site migration, where pixel parity ~95% is the bar).
 - Report honest numbers: a clone at 62% is at 62%. A skipped check is a skip, never a pass.
 
 ## Workflow

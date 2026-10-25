@@ -22,6 +22,5 @@ logo position/size/fill, CTA shape and shadow, hero line breaks and rhythm, medi
 
 ## Publish checklist
 - `.web-clone/` and raw `reference/` dirs excluded (git-ignored).
-- Third-party assets listed with licence or removed; commercial fonts replaced or ignored.
-- README states what is derived from public layout study and what is original; no implied affiliation with the studied site.
+- Replaceable assets reviewed; commercial fonts replaced or git-ignored when rebranding.
 - Deploy only on explicit user instruction.

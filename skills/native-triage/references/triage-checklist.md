@@ -25,7 +25,7 @@ PE: `rabin2 -I`, check PE header, Rich header, `.NET` CLR directory (managed tar
 `checksec`-style via `rabin2 -I` or `readelf -lW` (GNU_STACK, RELRO via `BIND_NOW`), canary (`__stack_chk_fail` import), fortify (`__*_chk` imports), PIE (`ET_DYN`). A missing canary upgrades a stack overflow from crash to hijack; a fortified call aborts instead of corrupting.
 
 ## Packed / protected signs
-Few imports (only `LoadLibrary`/`GetProcAddress`/`dlsym`), high-entropy sections (`binwalk -E`, `diec`), writable+executable sections, section names like `UPX0`, tiny `.text` with large data blob, entry point outside `.text`. Respond: identify packer, unpack in a sandbox (authorized only), re-triage the unpacked image; record both hashes.
+Few imports (only `LoadLibrary`/`GetProcAddress`/`dlsym`), high-entropy sections (`binwalk -E`, `diec`), writable+executable sections, section names like `UPX0`, tiny `.text` with large data blob, entry point outside `.text`. Respond: identify packer, unpack in a sandbox, re-triage the unpacked image; record both hashes.
 
 ## Embedded content
 `binwalk` / `unblob` for firmware and containers. Extraction runs third-party parsers over hostile input and archive paths can escape: extract into a disposable directory. Recovered filenames are data, not commands.

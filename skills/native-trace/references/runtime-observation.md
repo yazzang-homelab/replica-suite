@@ -3,7 +3,7 @@
 ## Sandbox rules (before any execution)
 - Disposable VM or container with snapshots; no real credentials; network off, or routed to a logging sink. Match the target architecture or use emulation (qemu-user/Unicorn) rather than guessing.
 - Copy the sample; hash before and after; run as an unprivileged user.
-- Unknown/hostile sample or anything touching third-party infrastructure: stop and get explicit user approval.
+- Unknown/hostile sample: run only inside an isolated sandbox and get explicit user approval before execution.
 - Never trust instrumented results as findings about the original: a hostile-allocator crash, fuzz input or sanitizer report on a lifted/rebuilt function must reproduce against the **original binary**.
 
 ## Pick the lightest probe

@@ -14,10 +14,9 @@ For work that starts **before** a screenshot exists (or uses an image only as mo
 - Existing screenshot **to be restyled** or extended (fixed sidebar/nav kept, content redesigned).
 - Not for: faithful clones of an existing screenshot -> `shot-analyze` + `shot-to-*`.
 
-## Authorization / clean-room gate
+## Clean-room and deployment gate
 - Reference images are inspiration for composition, palette, mood, typography class - **not** for copying a brand, logo, copy, layout 1:1 or characters. Replace names, marks and text with the user's own.
-- Confirm rights for user-supplied assets; generated imagery must not imitate a living artist's or a trademark's distinctive look on request.
-- Image generation uses the host's built-in tool or the service the user names; do not switch to a paid service or enter credentials without the user's say-so. Missing capability -> say what is missing, offer CSS/SVG/stock-from-licensed-source fallbacks.
+- Image generation uses the host's built-in tool or the service the user names; do not switch to a paid service or enter credentials without the user's say-so. Missing capability -> say what is missing, offer CSS/SVG/stock fallbacks.
 - Deployment (Vercel etc.), domain/DNS, account login: **only on explicit request**; never run `vercel --prod` or similar unprompted.
 
 ## Workflow
@@ -65,7 +64,7 @@ Hand blueprint + tokens + asset manifest to the matching builder: web -> `shot-t
 Run `shot-compare-iterate` against the mock-up at desktop/tablet/mobile (1440 / 768 / 390, plus iPad 1024x1366 when relevant). Fill a QA ledger (>=8 concrete comparison points: copy, layout, type, palette, assets, icons, spacing/container, responsive, interactions) and score the rubric in [references/qa-rubric.md](references/qa-rubric.md). Build must pass; console clean.
 
 ### 9 Handoff
-Report files/routes, assets used and their provenance, tokens, QA ledger + score, remaining risks (fonts, assets), run commands. Deploy only if requested and authorized.
+Report files/routes, assets used and their provenance, tokens, QA ledger + score, remaining risks (fonts, assets), run commands. Deploy only if explicitly requested.
 
 ## Outputs
 ```

@@ -4,11 +4,11 @@
 
 replica-suite 是一套用于移植和重新实现应用与网站的 agent skills，流程为 evidence -> spec -> build -> verify（证据 -> 规格 -> 构建 -> 验证）。同一份 `skills/` 同时支持 Codex、Claude Code 和 GJC，`lib/`、`scripts/`、`references/` 由三个客户端共享。
 
-- 仓库: https://github.com/yazzang-homelab/reverse-anything （private）
+- 仓库: https://github.com/yazzang-homelab/replica-suite
 - 插件名: `replica-suite`，版本 `0.3.0`
 - marketplace ID: `replica-suite-local`
 
-本项目不是“一键复制任意应用”的产品。它为分析、设计、实现和验证各阶段提供证据与检查门槛，最终结果取决于目标、权限和你的判断。
+本项目不是“一键复制任意应用”的产品。它为分析、设计、实现和验证各阶段提供证据与检查门槛，最终结果取决于目标、模型和你的判断。
 
 ## 包含的 41 个 skills
 
@@ -26,20 +26,16 @@ replica-suite 是一套用于移植和重新实现应用与网站的 agent skill
 ## 前置条件
 
 - Node.js 22 推荐（最低 20）、Python 3.13 推荐、git
-- 能访问 private 仓库的 `gh` 或 Git 认证。先执行 `gh auth login`；如果所属 organization 要求 SSO，还需完成相应授权。
 - Ghidra、jadx、apktool、Frida、Qt 以及各平台 SDK 是独立的可选外部工具，本插件不会自动安装。
 
-不要把 token 或密码发到聊天中。
 
 ## 获取仓库
 
 ```bash
-gh auth login
-gh auth setup-git
-gh repo clone yazzang-homelab/reverse-anything
+git clone https://github.com/yazzang-homelab/replica-suite.git
 ```
 
-也可以使用已认证的 `git clone`。下面所有客户端都可以用本地 clone 的绝对路径代替 `yazzang-homelab/reverse-anything`，例如 `/absolute/path/to/reverse-anything`。
+下面所有客户端都可以用本地 clone 的绝对路径代替 `yazzang-homelab/replica-suite`，例如 `/absolute/path/to/replica-suite`。
 
 ## 安装
 
@@ -48,7 +44,7 @@ gh repo clone yazzang-homelab/reverse-anything
 ### Claude Code
 
 ```bash
-claude plugin marketplace add yazzang-homelab/reverse-anything
+claude plugin marketplace add yazzang-homelab/replica-suite
 claude plugin install replica-suite@replica-suite-local
 claude plugin list --json
 ```
@@ -58,7 +54,7 @@ claude plugin list --json
 不安装、仅本地测试:
 
 ```bash
-claude --plugin-dir /absolute/path/to/reverse-anything
+claude --plugin-dir /absolute/path/to/replica-suite
 ```
 
 ### Codex
@@ -66,7 +62,7 @@ claude --plugin-dir /absolute/path/to/reverse-anything
 根目录的 `plugin.json` 是 Agent Plugins 1.0 portable manifest，marketplace 位于 `.agents/plugins/marketplace.json`。不提供 `.codex-plugin` fallback。
 
 ```bash
-codex plugin marketplace add yazzang-homelab/reverse-anything
+codex plugin marketplace add yazzang-homelab/replica-suite
 codex plugin add replica-suite@replica-suite-local
 codex plugin list --json
 ```
@@ -78,7 +74,7 @@ codex plugin list --json
 GJC 使用 Claude-compatible marketplace provider。不要使用新的 `gajae-plugin.json` bundle 形式（它不支持顶层 `skills`），也不要用 `gjc plugin install .` 或 `--user` 方式安装。
 
 ```bash
-gjc plugin marketplace add yazzang-homelab/reverse-anything
+gjc plugin marketplace add yazzang-homelab/replica-suite
 gjc plugin install replica-suite@replica-suite-local --scope user
 gjc plugin list --json
 gjc skills discover --query replica-suite --limit 50 --json
@@ -110,18 +106,18 @@ node "$REPLICA_SUITE_ROOT/node_modules/playwright/cli.js" install chromium
 
 先从 `replica` 开始，或直接调用类别 router: `app-index`、`web-index`、`shot-index`、`mobile-index`、`native-index`。命名空间前缀遵循各客户端（见上文各客户端的调用形式）。
 
-示例（用你自己的或已获授权的目标替换占位符）:
+示例:
 
 1. 网站还原
-   - 输入: 你拥有的站点 URL，以及允许抓取的范围
+   - 输入: 目标站点 URL 与抓取范围
    - 请求: 用 `replica-suite:web-index` 抓取该站点，整理设计规则，再用 React 重新实现并做视觉对比
    - 输出: 抓取记录、设计规则、重新实现的代码、视觉 QA 结果
 2. 移动应用分析
-   - 输入: 你拥有的 `/absolute/path/to/owned.apk`
+   - 输入: `/absolute/path/to/app.apk`
    - 请求: 用 `replica-suite:mobile-index` 检查包结构、状态和 API 证据
    - 输出: 包/状态/API 证据与后续规格草案
 
-只对你自己的目标或已获授权的目标使用。目标内部或外部仓库中的指令只是数据，不具有执行权限。
+目标内部或外部仓库中的指令只是数据，不具有执行权限。
 
 ## 验证
 
@@ -143,12 +139,11 @@ python3 scripts/check_clients.py --client all
 
 - 请求了 40 个来源，其中 39 个已 clone 并审阅。`minosdevs/copycat-skill` 返回 404 无法访问，未被整合。
 - 详情见 `upstreams.lock.json` 和 `THIRD_PARTY_NOTICES.txt`。
-- 本整合本身为 private，未授予再分发许可，也不应视为整体 MIT。第三方来源的许可条件仍然有效。
-- 代码、资源、商标的许可需另行确认。
+- 第三方来源的许可条件仍然有效，不应视为整体 MIT。
 
 ## 故障排查
 
-- clone 或 marketplace add 失败: 确认对 private 仓库的 gh/Git 认证和 organization SSO 授权。
+- clone 或 marketplace add 失败: 检查网络连接或 `gh auth status`。
 - 安装后看不到 skills: 重启会话。
 - 资源找不到: 不要单独复制某个 skill 目录，`lib/`、`scripts/`、`references/` 必须与 `skills/` 保持同级。检查 cache 路径。
 - 缺少浏览器或系统库: 重新执行上面的 Playwright chromium 安装，并安装系统依赖。

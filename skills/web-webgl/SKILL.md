@@ -1,6 +1,6 @@
 ---
 name: web-webgl
-description: Clone or test an authorized WebGL / Three.js / Rive / canvas-heavy / scroll-scrubbed website by detecting the runtime, mirroring its public resources locally (models, textures, wasm, workers, shaders), serving it, and running multi-viewport runtime QA. Use for "WebGL 사이트 복제", "Three.js 3D 사이트 클론", "캔버스 애니메이션 그대로", "Rive 애니메이션", "runtime mirror", "my screenshot clone lost the 3D scene".
+description: Clone or test a WebGL / Three.js / Rive / canvas-heavy / scroll-scrubbed website by detecting the runtime, mirroring its resources locally (models, textures, wasm, workers, shaders), serving it, and running multi-viewport runtime QA. Use for "WebGL 사이트 복제", "Three.js 3D 사이트 클론", "캔버스 애니메이션 그대로", "Rive 애니메이션", "runtime mirror", "my screenshot clone lost the 3D scene".
 ---
 
 # web-webgl — canvas runtime mirroring and QA
@@ -10,14 +10,9 @@ animation, `.riv` files, scroll-driven camera paths. Decide first whether you ar
 **runtime mirror** (replay captured frontend) or a **clean-room rebuild** (author your own scene),
 and say which one in every report.
 
-## Authorization / clean-room gate
-- Mirror only sites the user owns, may test, or has written permission to replicate; public pages
-  for personal study/testing only. Respect robots/terms; never bypass auth, paywalls, bot
-  protection or rate limits. Captured code, models, textures, audio and video belong to their owner.
-- Never publish or commercialise a mirror of someone else's runtime or assets. For a shippable
-  product use the clean-room path: re-author the scene from measured behaviour with owned/licensed
-  assets (`references/runtime-mirror.md`, "Clean-room rebuild").
-- Do not commit captured runtime directories to shared repos; commit only your tooling/spec.
+## Mode and clean-room boundary
+- Distinguish **runtime mirror** (replaying captured frontend code/models/textures/wasm locally for inspection or fixture testing) from **clean-room rebuild** (re-authoring the scene from measured behaviour with your own or project assets; see `references/runtime-mirror.md`).
+- Do not commit captured runtime directories to shared repos unless requested; commit tooling and specs.
 
 ## Workflow
 1. **Reference first.** Screenshot the reference at 1440x900 and 390x844; note any consent/access
@@ -25,8 +20,8 @@ and say which one in every report.
 2. **Probe.** Run `scripts/probe_engine.js` in the page after it settles (before scrolling). Read
    `runtimeMirrorRecommended`, engine globals, canvas coverage, asset counts (models, textures,
    wasm, riv, shaders, video). Gate 1: canvas exists with real area, or stop and use `web-capture`.
-3. **Choose path** (table in `references/runtime-mirror.md`): mirror (owned/permitted, fidelity
-   or test fixture) vs clean-room rebuild (shippable). If DOM carries most visuals, use the normal
+3. **Choose path** (table in `references/runtime-mirror.md`): runtime mirror (fidelity
+   or test fixture) vs clean-room rebuild (editable source). If DOM carries most visuals, use the normal
    web-capture -> web-build-parallel pipeline instead.
 4. **Mirror path.** `npm i -D playwright && npx playwright install chromium` (ask first), then
    `node scripts/capture_runtime_mirror.mjs --url=<url> --out=./mirror --settle-ms=12000`. Gate 2:

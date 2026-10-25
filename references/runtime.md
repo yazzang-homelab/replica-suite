@@ -11,7 +11,7 @@ For shell examples, explicitly define `REPLICA_SUITE_ROOT` as that absolute bund
 ```bash
 # Run with the absolute SKILL.md path provided by your client.
 export REPLICA_SUITE_ROOT="$(python3 -c 'from pathlib import Path; import sys; print(Path(sys.argv[1]).resolve().parents[2])' /absolute/path/to/skills/replica/SKILL.md)"
-python3 "$REPLICA_SUITE_ROOT/scripts/inspect_mobile.py" /absolute/path/to/owned.apk
+python3 "$REPLICA_SUITE_ROOT/scripts/inspect_mobile.py" /absolute/path/to/app.apk
 ```
 
 The example path must be replaced with the real selected skill path. A missing path is a setup error, not permission to guess another checkout.

@@ -5,12 +5,12 @@ description: Makes a clone legally and visibly its own and ships it - name candi
 
 # app-brand-deploy
 
-Nothing launches under the original's identity, nothing launches as a straight copy, and nothing goes live without the user's explicit go for that step. Not legal advice: when money or a launch depends on it, tell the user to consult a lawyer in their jurisdiction.
+Nothing launches under the original's identity, nothing launches as a straight copy, and nothing goes live without the user's explicit go for that step.
 
-## Authorization / clean-room gate
-- Applies to clones of apps the user may analyse in the first place (see `app-recon`). For a user-owned site migration the brand is the user's own: skip naming, run the sweep only for third-party licence leftovers.
+## Clean-room and launch gate
+- For a site migration where the brand is kept: skip naming and run the sweep only for unwanted leftovers.
 - The **user** buys domains, creates accounts, enters cards, pastes live keys, signs in to consoles, and says "go". You write exact records, env var names and commands.
-- Default posture before a decision: private, `noindex`, not published. Moving towards public requires the user's explicit decision; present facts and risk boundaries, do not announce legal conclusions.
+- Default posture before a decision: private, `noindex`, not published. Moving towards public requires the user's explicit decision.
 - Never invent reviews, ratings, user counts, logos or testimonials. Reviewers' words are research, not landing-page proof.
 
 ## Workflow

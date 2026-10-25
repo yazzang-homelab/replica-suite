@@ -1,6 +1,6 @@
 # Screenshot mode (no instrumentation)
 
-Input: a folder of screenshots (default `appclone/screens/`) showing most states of an app you may analyse. No exact CSS values exist, so everything measured from pixels is an **estimate** and the visual-diff loop in `app-parity-test` corrects it later.
+Input: a folder of screenshots (default `appclone/screens/`) showing the states of the target app. No exact CSS values exist, so everything measured from pixels is an **estimate** and the visual-diff loop in `app-parity-test` corrects it later.
 
 ## Optional filename hints (honor if present, infer otherwise)
 - `home-empty.png`, `home-filled.png`, `profile-dark.png` -> screen + state

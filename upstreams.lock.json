@@ -381,7 +381,7 @@
       "bundled_files": [
         {
           "path": "skills/web-mirror-rebrand/scripts/mirror_public_page.py",
-          "sha256": "e05b2b1fb48c1f821763b51dc1ba8d7d8f97fac5252433bac563a52f3c57128c"
+          "sha256": "c75632246e6b6ff2e8f53257f029a7e3667983b73e7f9a4f98deb1087096690f"
         }
       ],
       "analysis_scope": "Relevant skills, helpers and documentation; not an exhaustive audit or execution of upstream projects."

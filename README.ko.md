@@ -4,11 +4,11 @@
 
 버전 0.3.0. 앱과 웹사이트 이식·재구현을 위한 41개 공통 skills를 Codex, Claude Code, GJC에서 설치해 쓸 수 있습니다. 흐름은 증거, 명세, 구현, 검증 순서입니다.
 
-저장소: https://github.com/yazzang-homelab/reverse-anything (비공개). 플러그인 이름: `replica-suite`. 마켓플레이스 ID: `replica-suite-local`.
+저장소: https://github.com/yazzang-homelab/replica-suite. 플러그인 이름: `replica-suite`. 마켓플레이스 ID: `replica-suite-local`.
 
 ## 무엇인가
 
-본인 소유이거나 분석 권한이 있는 앱과 사이트를 이식하거나 다시 만들 때 에이전트가 따르는 skill 묶음입니다. 범위는 다음과 같습니다.
+앱과 사이트를 이식하거나 다시 만들 때 에이전트가 따르는 skill 묶음입니다. 범위는 다음과 같습니다.
 
 - 웹: 캡처나 스크린샷에서 HTML, React, Vue, Svelte, React Native, UnoCSS, QML 생성.
 - 모바일 패키지: APK, IPA, Flutter, Unity.
@@ -31,28 +31,24 @@ skills 한 벌을 세 클라이언트가 공유합니다. `lib/`, `scripts/`, `r
 
 ## 사전 준비
 
-- 비공개 저장소를 읽을 수 있는 인증이 먼저 필요합니다: `gh auth login` 또는 Git 자격 증명. 토큰이나 비밀번호를 채팅에 붙여 넣지 마세요.
+- Git 또는 `gh` CLI.
 - Node 22 권장(>=20), Python 3.13 권장, git.
 - OS별 도구(Ghidra, jadx, apktool, Frida, Qt, 플랫폼 SDK)는 외부의 선택 사항이며 플러그인이 설치하지 않습니다.
 
 clone (로컬 경로로 설치할 때 필요):
 
 ```bash
-gh auth login
-gh auth setup-git
-gh repo clone yazzang-homelab/reverse-anything
+git clone https://github.com/yazzang-homelab/replica-suite.git
 ```
-
-`gh repo clone` 대신 인증된 `git clone https://github.com/yazzang-homelab/reverse-anything.git`을 사용해도 됩니다.
 
 ## 설치
 
-아래 원격 소스 `yazzang-homelab/reverse-anything` 대신 로컬 clone의 절대 경로를 써도 됩니다. 설치 후에는 새 세션을 시작하세요.
+아래 원격 소스 `yazzang-homelab/replica-suite` 대신 로컬 clone의 절대 경로를 써도 됩니다. 설치 후에는 새 세션을 시작하세요.
 
 ### Claude Code
 
 ```bash
-claude plugin marketplace add yazzang-homelab/reverse-anything
+claude plugin marketplace add yazzang-homelab/replica-suite
 claude plugin install replica-suite@replica-suite-local
 claude plugin list --json
 ```
@@ -62,7 +58,7 @@ claude plugin list --json
 설치 없이 로컬 테스트:
 
 ```bash
-claude --plugin-dir /absolute/path/to/reverse-anything
+claude --plugin-dir /absolute/path/to/replica-suite
 ```
 
 ### Codex
@@ -70,7 +66,7 @@ claude --plugin-dir /absolute/path/to/reverse-anything
 Codex는 루트 `plugin.json`(Agent Plugins 1.0 portable manifest)과 `.agents/plugins/marketplace.json`을 사용합니다. `.codex-plugin` fallback은 없습니다.
 
 ```bash
-codex plugin marketplace add yazzang-homelab/reverse-anything
+codex plugin marketplace add yazzang-homelab/replica-suite
 codex plugin add replica-suite@replica-suite-local
 codex plugin list --json
 ```
@@ -82,7 +78,7 @@ codex plugin list --json
 GJC는 이 저장소를 Claude 호환 마켓플레이스 provider로 읽습니다. 새 `gajae-plugin.json` 번들 형식은 최상위 skills를 지원하지 않으므로 쓰지 마세요. `gjc plugin install .`이나 번들용 `--user` 방식도 쓰지 마세요.
 
 ```bash
-gjc plugin marketplace add yazzang-homelab/reverse-anything
+gjc plugin marketplace add yazzang-homelab/replica-suite
 gjc plugin install replica-suite@replica-suite-local --scope user
 gjc plugin list --json
 gjc skills discover --query replica-suite --limit 50 --json
@@ -116,12 +112,12 @@ node "$REPLICA_SUITE_ROOT/node_modules/playwright/cli.js" install chromium
 
 `replica`에서 시작하거나 분류 라우터 `app-index`, `web-index`, `shot-index`, `mobile-index`, `native-index`를 직접 호출합니다. 접두사는 호스트를 따릅니다(Claude Code는 `/replica-suite:web-index`, Codex 선택기는 `replica-suite:web-index`, GJC는 `/skill:replica-suite:web-index`).
 
-예시(본인 소유이거나 분석 권한이 있는 대상에만 사용):
+예시:
 
-1. 웹: 본인 소유 URL을 주고 `web-index`로 캡처, 디자인 명세 작성, 재구현, 렌더 비교를 요청합니다.
-2. 모바일: 본인 소유 APK의 절대 경로를 주고 `mobile-index`로 패키지 구조와 API 호출의 증거를 정리하게 합니다.
+1. 웹: 대상 URL을 주고 `web-index`로 캡처, 디자인 명세 작성, 재구현, 렌더 비교를 요청합니다.
+2. 모바일: APK의 절대 경로를 주고 `mobile-index`로 패키지 구조와 API 호출의 증거를 정리하게 합니다.
 
-각 skill에 필요한 권한, 입력, 출력이 적혀 있습니다. 입력과 출력은 절대 경로로 넘기세요.
+각 skill에 필요한 입력과 출력이 적혀 있습니다. 입력과 출력은 절대 경로로 넘기세요.
 
 ## 검증
 
@@ -145,11 +141,11 @@ python3 scripts/check_clients.py --client all
 
 원본 40개를 요청했고 39개를 clone해 검토했습니다. `minosdevs/copycat-skill`은 접근 불가(404)여서 통합하지 않았습니다. `upstreams.lock.json`과 `THIRD_PARTY_NOTICES.txt`를 참고하세요.
 
-이 통합본은 비공개이며 재배포 라이선스가 없습니다. 서드파티 라이선스 조건은 그대로 유지됩니다. 전체에 MIT를 적용한다는 주장은 하지 않습니다. 본인 소유 또는 허가받은 대상에만 쓰고, 코드, 에셋, 상표의 라이선스는 별도로 확인하세요.
+서드파티 라이선스 조건은 그대로 유지됩니다. 전체에 MIT를 적용한다는 주장은 하지 않습니다.
 
 ## 문제 해결
 
-- clone이나 marketplace add 실패: 비공개 저장소 접근 권한, `gh auth status`, 조직 SSO 승인을 확인하세요.
+- clone이나 marketplace add 실패: 네트워크 연결 또는 `gh auth status`를 확인하세요.
 - 설치 후 skill이 보이지 않음: 세션을 다시 시작하세요.
 - 스크립트가 리소스를 찾지 못함: 개별 skill만 복사한 경우입니다. 번들 전체를 사용하세요.
 - 브라우저나 시스템 라이브러리 누락: 설치본에 위 Playwright 설치를 다시 실행하세요.

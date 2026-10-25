@@ -12,10 +12,9 @@ Turn decompiler evidence into clean C/C++ that behaves like the original, and pr
 - You maintain a partial source tree (e.g. a decompilation or compatibility project) and need to fill unimplemented functions.
 - Not for: first-pass triage (`native-triage`), driving Ghidra itself (`native-ghidra`), runtime tracing (`native-trace`), or re-creating a game (`native-game-port`).
 
-## Authorization / clean-room gate (do first)
-1. Record in `rebuild/SCOPE.md`: binary identity (path, sha256, version), who owns it, the permission basis (own software, licence permitting interoperability/analysis, public-interface behaviour).
-2. Stop if the basis is missing. Do not analyze software you lack permission to analyze.
-3. Output is a behavioural reimplementation. Do not paste proprietary source, assets or trademarks; keep original decompiler dumps in the private workspace, not in published code. Rename away vendor branding in public artifacts.
+## Scope and clean-room gate (do first)
+1. Record in `rebuild/SCOPE.md`: binary identity (path, sha256, version) and target scope.
+2. Output is a behavioural reimplementation. Keep original decompiler dumps in the workspace, not in published code, and rename vendor branding when rebranding.
 
 ## Workflow
 Details for each stage: [references/pipeline.md](references/pipeline.md).
@@ -35,7 +34,7 @@ Details for each stage: [references/pipeline.md](references/pipeline.md).
 ## Output artifact layout
 ```
 rebuild/
-  SCOPE.md            authorization + binary identity
+  SCOPE.md            binary identity + target scope
   manifest.tsv        plan and per-function status
   evidence/<addr>.json
   candidates/<addr>/  source, round logs, reviewer verdicts

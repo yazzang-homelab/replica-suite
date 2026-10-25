@@ -5,7 +5,7 @@ description: Router for whole-application analysis and clean-room re-implementat
 
 # app-index
 
-Read and apply the [common execution contract](../../references/common-contract.md), then pick the skill by intent. All `app-*` skills share the working folder `appclone/`. Distinguish clean-room rebuilding from an authorized own-site migration.
+Read and apply the [common execution contract](../../references/common-contract.md), then pick the skill by intent. All `app-*` skills share the working folder `appclone/`. Distinguish clean-room rebuilding from site migration.
 
 ## Intent -> skill
 | user intent | skill |
@@ -22,13 +22,13 @@ Read and apply the [common execution contract](../../references/common-contract.
 ```
 app-recon -> app-spec -> app-build -> app-parity-test -> (loop to app-build for gaps)
           -> app-brand-deploy
-app-internals  feeds evidence into app-recon / app-spec when the artifact is authorized
-app-forensic-rebuild  is a separate high-fidelity track (own sites, archival rescue, exact motion)
+app-internals  feeds evidence into app-recon / app-spec
+app-forensic-rebuild  is a separate high-fidelity track (site migration, archival rescue, exact motion)
 ```
 Each stage reads the previous stage's files in `appclone/` and ends at a verification gate; do not skip a gate or call a stage done while it fails. Ask the user only at: start (target, mode, slice), research verdict (go/no-go, angle), design direction, name pick, go-live.
 
 ## Modes (decide in app-recon)
-`full app` - `single feature into an existing app` - `own-site migration` (copying allowed, ownership confirmed) - `forensic` (use app-forensic-rebuild).
+`full app` - `single feature into an existing app` - `site migration` (direct porting) - `forensic` (use app-forensic-rebuild).
 
 ## Upstream -> skill map
 | upstream repo | primary skill(s) |

@@ -7,8 +7,8 @@ description: "Router for the native- category: reverse engineering compiled bina
 
 Pick the skill by intent; most investigations flow triage -> ghidra/trace -> reconstruct.
 
-## Authorization / clean-room gate (applies to every native- skill)
-Read and apply the [common execution contract](../../references/common-contract.md). Keep decompiler dumps in the private workspace. Use an isolated VM for malware and obtain approval before running unfamiliar binaries. Record ABI, load addresses and tool-generated annotations separately from observed program behavior.
+## Common contract (applies to every native- skill)
+Read and apply the [common execution contract](../../references/common-contract.md). Keep decompiler dumps in the workspace. Use an isolated VM or sandbox before running unfamiliar binaries. Record ABI, load addresses and tool-generated annotations separately from observed program behavior.
 
 ## Intent -> skill
 | User intent | Skill |
@@ -44,7 +44,7 @@ Read and apply the [common execution contract](../../references/common-contract.
 | vgrichina/re-skill | `native-game-port` |
 
 ## Shared conventions
-- Workspace per target: `SCOPE.md` (authorization, hash), notes/evidence files, `dead_ends.md` for failed approaches.
+- Workspace per target: `SCOPE.md` (target, hash, objective), notes/evidence files, `dead_ends.md` for failed approaches.
 - Prefer evidence over inference: label each claim with its source (decompiler, trace, doc). Verify before declaring done and state verification limits.
 - Ask before installing tools or running untrusted binaries.
 

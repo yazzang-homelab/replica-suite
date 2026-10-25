@@ -1,6 +1,6 @@
 ---
 name: native-game-port
-description: "Analyze an existing (retro) game binary or ROM you own, extract its assets and rules, and drive a documented, verified port or reimplementation to the web (HTML canvas). Use for: game reverse engineering, ROM/EXE disassembly with labels, sprite/tile/palette extraction, data table decoding, scriptable emulator for validation, web port of a DOS/NES/Game Boy/Amiga game, REVERSE.md project loop. Korean triggers: 게임 리버스, 롬 분석, 에셋 추출, 스프라이트 타일 팔레트 추출, 웹 포팅, 게임 재구현, 레트로 게임 복원, 에뮬레이터 대조 검증."
+description: "Analyze an existing (retro) game binary or ROM, extract its assets and rules, and drive a documented, verified port or reimplementation to the web (HTML canvas). Use for: game reverse engineering, ROM/EXE disassembly with labels, sprite/tile/palette extraction, data table decoding, scriptable emulator for validation, web port of a DOS/NES/Game Boy/Amiga game, REVERSE.md project loop. Korean triggers: 게임 리버스, 롬 분석, 에셋 추출, 스프라이트 타일 팔레트 추출, 웹 포팅, 게임 재구현, 레트로 게임 복원, 에뮬레이터 대조 검증."
 ---
 
 # native-game-port
@@ -8,14 +8,13 @@ description: "Analyze an existing (retro) game binary or ROM you own, extract it
 Run a long, resumable reverse-engineering project on a game binary, ending in a faithful web reimplementation validated against the original running in an emulator. Knowledge accumulates in files, not in chat.
 
 ## When to use
-- A ROM/EXE (NES, Game Boy, DOS MZ, Amiga hunk, similar flat or banked images) that the user owns, and the goal is understanding, asset extraction, or a port.
+- A ROM/EXE (NES, Game Boy, DOS MZ, Amiga hunk, similar flat or banked images), and the goal is understanding, asset extraction, or a port.
 - For modern engine games (Unity/IL2CPP, Unreal) use the mobile/native engine skills via `native-index`; for general binary triage use `native-triage`.
 
-## Authorization / clean-room gate (do first)
-1. Write in `REVERSE.md` header: who owns the copy, the permission basis (own legally obtained copy, abandonware status is NOT permission; or rights-holder consent).
-2. Keep original ROMs/binaries and extracted raw assets in the private workspace, git-ignored. Do not publish them.
-3. The shipped port is a clean-room reimplementation: behaviour, rules, timings and formulas as documented facts. Ship with new/user-provided art, audio and names unless the user confirms they hold rights to the originals; strip trademarks.
-4. Stop if ownership/permission cannot be stated.
+## Scope and clean-room gate (do first)
+1. Record the binary identity, hash, and target scope in the `REVERSE.md` header.
+2. Keep original ROMs/binaries and extracted raw assets in the workspace (git-ignored when publishing a clean-room port).
+3. Document behaviour, rules, timings and formulas as facts; replace or keep art, audio and names according to the project's target mode.
 
 ## Workflow (phases; each ends with a verification checkpoint)
 Phase detail and tool specs: [references/phases.md](references/phases.md).

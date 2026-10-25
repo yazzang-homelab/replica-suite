@@ -7,9 +7,8 @@ description: Router for the web- category — analyzing, capturing, rebuilding, 
 
 Pick the skill by intent. Most clones follow one pipeline; jump in at the stage you need.
 
-## Authorization / clean-room gate (applies to every web- skill)
+## Common contract (applies to every web- skill)
 Read and apply the [common execution contract](../../references/common-contract.md).
-For web targets, respect robots.txt and terms; do not bypass auth, paywalls, captcha or rate limits.
 Label exact reuse, runtime mirror, clean-room rebuild and visual fallback separately.
 
 ## Intent -> skill

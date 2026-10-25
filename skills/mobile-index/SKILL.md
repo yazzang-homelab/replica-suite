@@ -1,6 +1,6 @@
 ---
 name: mobile-index
-description: 모바일 앱 이식·재제작을 위한 Android APK, iOS IPA, Flutter, Unity, Frida 및 API 분석 분류 진입점. Route authorized mobile reverse engineering and reconstruction requests by runtime and evidence.
+description: 모바일 앱 이식·재제작을 위한 Android APK, iOS IPA, Flutter, Unity, Frida 및 API 분석 분류 진입점. Route mobile reverse engineering and reconstruction requests by runtime and evidence.
 ---
 
 # 모바일 분석 라우터
@@ -13,7 +13,7 @@ description: 모바일 앱 이식·재제작을 위한 Android APK, iOS IPA, Flu
 | APK/XAPK, Java/Kotlin, manifest, jadx | `mobile-android-apk` |
 | IPA, Mach-O, ObjC/Swift | `mobile-ios-ipa` |
 | libapp.so, Flutter, Dart AOT | `mobile-flutter-dart` |
-| 승인된 장치의 호출·상태 관측 | `mobile-frida-runtime` |
+| 장치의 호출·상태 관측 | `mobile-frida-runtime` |
 | libil2cpp.so, UnityFramework, metadata | `mobile-unity-il2cpp` |
 | API 후보를 검증된 자체 구현 계약으로 | `mobile-api-extraction` |
 | 스크린샷만으로 React Native 구현 | `shot-to-rn` |

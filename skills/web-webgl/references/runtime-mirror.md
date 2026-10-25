@@ -52,10 +52,10 @@ server-side mutations, DRM/protected media. List each as external in the deliver
 |---|---|---|
 | Fidelity | highest | depends on effort; shaders/camera/easing must be re-authored |
 | Editable | minified, hard | yes |
-| Rights | replays owner's code/assets: personal study/testing/permitted use only | needs owned or licensed assets |
-| Use when | user owns the site / has permission / needs a faithful test fixture | user needs a product they can ship |
-For a shippable product build the scene yourself from behaviour/spec: measure camera FOV/position,
-lights, material parameters, easing, scroll mapping; use owned/licensed models and textures
+| Assets | replays captured code/assets | uses project or custom assets |
+| Use when | faithful local replay or test fixture | editable source code |
+For a clean-room rebuild, author the scene from behaviour/spec: measure camera FOV/position,
+lights, material parameters, easing, scroll mapping; use project models and textures
 (three.js + GSAP ScrollTrigger / rive-runtime). Compare with `web-verify-pixel` in a controlled state.
 
 ## Clean-room rebuild measurements (when not mirroring)

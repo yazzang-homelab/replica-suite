@@ -2,7 +2,7 @@
 
 ```markdown
 # <Name> - build spec
-- Source: <files> | Rights basis: <owned / licensed / public-behaviour-only>
+- Source: <files> | Mode: <rebrand / verbatim / prototype>
 - Target: <html | react | vue | svelte | unocss | rn | qml> | Project conventions read: <yes/no, which>
 - Canvas: image <W>x<H>, DPR <n>, CSS design width <px>, scale <x>, second check width <px>
 

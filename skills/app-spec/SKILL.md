@@ -8,7 +8,7 @@ description: Turns an app-recon map into a buildable specification - stack choic
 Reads `appclone/recon.md` and `appclone/features.csv`; writes the spec that `app-build` implements. If there is no recon map, stop and run `app-recon` first: planning from memory of what an app does misses half of it.
 
 ## Clean-room gate
-- Spec from behaviour, measurements and public API docs only. Never from the original's source, bundle, decompiled binary or private endpoints. (Binary-derived facts must come through `app-internals` with its authorization gate, and enter the spec as cited evidence.)
+- Spec from behaviour, measurements and API docs. (Binary-derived facts come through `app-internals` and enter the spec as cited evidence.)
 - Keep the **system** (spacing base, type steps, density, layout widths, interaction patterns); change the **identity** (palette/brand hue, typeface, icons, imagery, copy, name). Signature colour plus signature layout is trade dress: change palette, type and signature details together.
 - The clone does not need the original's architecture; it needs the original's features.
 

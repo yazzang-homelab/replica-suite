@@ -10,7 +10,7 @@ jadx (via `scripts/decompile.sh`, or directly):
 apktool (use when jadx fails or you need smali/resources exactly):
 - `apktool d app.apk -o app_src` -> `smali*/`, `AndroidManifest.xml` as text, `res/`, `assets/`.
 - Smali is ground truth: look up a failed jadx method by class path under `smali*/`. Retrofit annotations appear as `.annotation runtime Lretrofit2/http/GET;` with `value = "..."`.
-- Do not rebuild/re-sign other people's apps. Rebuilding is only for your own debug builds.
+- Rebuilding (`apktool b`) requires re-signing with a debug/test keystore (`apksigner`).
 
 Split/bundle handling: XAPK is a zip with `manifest.json` plus APKs; AAB is not installable and is read with `unzip` + `bundletool`-style layout (`base/dex/`, `base/manifest/`). If jadx yields <=10 Java files and the APK contains inner `base.apk`, decompile the inner one.
 

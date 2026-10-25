@@ -1,6 +1,6 @@
 {
   "name": "replica-suite-local",
-  "description": "프로그램과 사이트 분석·이식·재제작용 비공개 통합 플러그인",
+  "description": "프로그램과 사이트 분석·이식·재제작용 통합 플러그인",
   "owner": { "name": "Replica Suite maintainers" },
   "plugins": [
     {
