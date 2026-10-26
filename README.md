@@ -2,6 +2,9 @@
 
 [English](README.md) | [한국어](README.ko.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
 
+<p align="center"><a href="https://raw.githubusercontent.com/yazzang-homelab/replica-suite/assets/demo.mp4"><img src="https://raw.githubusercontent.com/yazzang-homelab/replica-suite/assets/demo.webp" alt="replica-suite in 18 seconds: web, screenshot, mobile and native skills, evidence to spec to build to verify, one install for Claude Code, Codex and GJC" width="100%"></a></p>
+<p align="center"><sub>18 s overview. Click for the 1080p MP4 with sound. Rendered in code with <a href="https://github.com/yazzang-homelab/motion-studio">motion-studio</a>.</sub></p>
+
 Version 0.3.0. One set of 41 shared skills for app and website reconstruction, installable in Codex, Claude Code and GJC. The workflow is evidence, then spec, then build, then verify.
 
 Repository: https://github.com/yazzang-homelab/replica-suite. Plugin name: `replica-suite`. Marketplace ID: `replica-suite-local`.
