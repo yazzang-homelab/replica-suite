@@ -1,0 +1,115 @@
+test_apply_longest_first_and_map_preserved (test_brand.ReplaceTests.test_apply_longest_first_and_map_preserved) ... ok
+test_dry_run_changes_nothing (test_brand.ReplaceTests.test_dry_run_changes_nothing) ... ok
+test_include_evidence (test_brand.ReplaceTests.test_include_evidence) ... ok
+test_invalid_map_and_root (test_brand.ReplaceTests.test_invalid_map_and_root) ... ok
+test_no_rename_reports_remaining_names (test_brand.ReplaceTests.test_no_rename_reports_remaining_names) ... ok
+test_skips_binary_non_utf8_symlink_and_exclusions (test_brand.ReplaceTests.test_skips_binary_non_utf8_symlink_and_exclusions) ... ok
+test_binary_content_excluded_but_name_checked (test_brand.ScanTests.test_binary_content_excluded_but_name_checked) ... ok
+test_config_merge_and_config_excluded (test_brand.ScanTests.test_config_merge_and_config_excluded) ... ok
+test_domain_is_literal (test_brand.ScanTests.test_domain_is_literal) ... ok
+test_exclusions_and_evidence_flag (test_brand.ScanTests.test_exclusions_and_evidence_flag) ... ok
+test_invalid_inputs_exit_2 (test_brand.ScanTests.test_invalid_inputs_exit_2) ... ok
+test_name_variants_domain_color (test_brand.ScanTests.test_name_variants_domain_color) ... ok
+test_path_hits_for_files_and_dirs (test_brand.ScanTests.test_path_hits_for_files_and_dirs) ... ok
+test_symlinks_not_followed (test_brand.ScanTests.test_symlinks_not_followed) ... ok
+test_text_output (test_brand.ScanTests.test_text_output) ... ok
+test_different_methods_and_path_params (test_catalog.CatalogTest.test_different_methods_and_path_params) ... ok
+test_invalid_catalog_input (test_catalog.CatalogTest.test_invalid_catalog_input) ... ok
+test_same_path_on_two_hosts_keeps_both (test_catalog.CatalogTest.test_same_path_on_two_hosts_keeps_both) ... ok
+test_secrets_not_copied (test_catalog.CatalogTest.test_secrets_not_copied) ... ok
+test_seed_unknown_verbs_and_url_hosts (test_catalog.CatalogTest.test_seed_unknown_verbs_and_url_hosts) ... ok
+test_unclassified_party_is_not_assumed_first_party (test_catalog.CatalogTest.test_unclassified_party_is_not_assumed_first_party) ... ok
+test_unknown_contract_fields_are_not_invented (test_catalog.CatalogTest.test_unknown_contract_fields_are_not_invented) ... ok
+test_unknown_method_skipped_unknown_auth_flagged (test_catalog.CatalogTest.test_unknown_method_skipped_unknown_auth_flagged) ... ok
+test_client_version_drift_is_rejected (test_client_packaging.ClientPackagingTests.test_client_version_drift_is_rejected) ... ok
+test_every_translation_is_required_and_cross_linked (test_client_packaging.ClientPackagingTests.test_every_translation_is_required_and_cross_linked) ... ok
+test_marketplace_drift_and_binding_only_manifest_are_rejected (test_client_packaging.ClientPackagingTests.test_marketplace_drift_and_binding_only_manifest_are_rejected) ... ok
+test_moved_resource_or_corrupt_copy_is_rejected (test_client_packaging.ClientPackagingTests.test_moved_resource_or_corrupt_copy_is_rejected) ... ok
+test_settings_are_isolated_and_tokens_not_forwarded (test_client_packaging.ClientPackagingTests.test_settings_are_isolated_and_tokens_not_forwarded) ... ok
+test_skill_only_codex_source_is_rejected (test_client_packaging.ClientPackagingTests.test_skill_only_codex_source_is_rejected) ... ok
+test_staged_bundle_preserves_all_skill_resources (test_client_packaging.ClientPackagingTests.test_staged_bundle_preserves_all_skill_resources) ... ok
+test_advance_validation_does_not_append (test_gates_ledger.Ledger.test_advance_validation_does_not_append) ... ok
+test_drift_marks_multi_artifact_claims (test_gates_ledger.Ledger.test_drift_marks_multi_artifact_claims) ... ok
+test_multi_artifact_advance_and_stale_propagation (test_gates_ledger.Ledger.test_multi_artifact_advance_and_stale_propagation) ... ok
+test_new_claim_refused_when_artifact_drifted (test_gates_ledger.Ledger.test_new_claim_refused_when_artifact_drifted) ... ok
+test_empty_inputs_block (test_gates_ledger.QaGate.test_empty_inputs_block) ... ok
+test_failing_ratio_blocks (test_gates_ledger.QaGate.test_failing_ratio_blocks) ... ok
+test_good_passes (test_gates_ledger.QaGate.test_good_passes) ... ok
+test_malformed_viewport_blocks (test_gates_ledger.QaGate.test_malformed_viewport_blocks) ... ok
+test_missing_viewport_vs_ref_blocks (test_gates_ledger.QaGate.test_missing_viewport_vs_ref_blocks) ... ok
+test_nonfinite_ratio_blocks (test_gates_ledger.QaGate.test_nonfinite_ratio_blocks) ... ok
+test_color_probe_measures_pixels (test_image_helpers.ImageHelperTests.test_color_probe_measures_pixels) ... ok
+test_invalid_comparison_options_fail (test_image_helpers.ImageHelperTests.test_invalid_comparison_options_fail) ... ok
+test_section_slices_follow_device_pixel_ratio (test_image_helpers.ImageHelperTests.test_section_slices_follow_device_pixel_ratio) ... ok
+test_single_pixel_image_resizes_without_false_mismatch (test_image_helpers.ImageHelperTests.test_single_pixel_image_resizes_without_false_mismatch) ... ok
+test_transparency_gate_rejects_opaque_asset (test_image_helpers.ImageHelperTests.test_transparency_gate_rejects_opaque_asset) ... ok
+test_bad_metadata_remains_unknown (test_mobile_inventory.MobileInventoryTests.test_bad_metadata_remains_unknown) ... ok
+test_entry_and_total_budgets_are_enforced (test_mobile_inventory.MobileInventoryTests.test_entry_and_total_budgets_are_enforced) ... ok
+test_flutter_and_unity_inventory_without_extraction (test_mobile_inventory.MobileInventoryTests.test_flutter_and_unity_inventory_without_extraction) ... ok
+test_invalid_archive_rejected (test_mobile_inventory.MobileInventoryTests.test_invalid_archive_rejected) ... ok
+test_ipa_framework_is_detected (test_mobile_inventory.MobileInventoryTests.test_ipa_framework_is_detected) ... ok
+test_member_traversal_is_rejected (test_mobile_inventory.MobileInventoryTests.test_member_traversal_is_rejected) ... ok
+test_symlink_is_rejected (test_mobile_inventory.MobileInventoryTests.test_symlink_is_rejected) ... ok
+test_unrecognized_package_does_not_guess_runtime (test_mobile_inventory.MobileInventoryTests.test_unrecognized_package_does_not_guess_runtime) ... ok
+test_imgdiff_reports_bad_input_with_exit_2 (test_shared_images.CliTests.test_imgdiff_reports_bad_input_with_exit_2) ... ok
+test_imgdiff_runs_from_other_cwd_and_preserves_schema_and_score (test_shared_images.CliTests.test_imgdiff_runs_from_other_cwd_and_preserves_schema_and_score) ... /root/replica-suite/tests/test_shared_images.py:138: ResourceWarning: unclosed file <_io.BufferedReader name='/tmp/tmpuzxn0l65/o/diff.png'>
+  self.assertEqual(Image.open(out).size, (60, 60))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_pixel_diff_corrupt_input_fails_nonzero (test_shared_images.CliTests.test_pixel_diff_corrupt_input_fails_nonzero) ... ok
+test_pixel_diff_runs_from_other_cwd_and_preserves_schema (test_shared_images.CliTests.test_pixel_diff_runs_from_other_cwd_and_preserves_schema) ... ok
+test_corrupt_truncated_and_non_png_rejected (test_shared_images.SharedImageTests.test_corrupt_truncated_and_non_png_rejected) ... ok
+test_gray16_uses_high_byte (test_shared_images.SharedImageTests.test_gray16_uses_high_byte) ... ok
+test_gray_low_depth_scales (test_shared_images.SharedImageTests.test_gray_low_depth_scales) ... ok
+test_invalid_sizes_and_buffers_rejected (test_shared_images.SharedImageTests.test_invalid_sizes_and_buffers_rejected) ... ok
+test_palette_with_trns (test_shared_images.SharedImageTests.test_palette_with_trns) ... ok
+test_pixel_limit_rejected_before_decode (test_shared_images.SharedImageTests.test_pixel_limit_rejected_before_decode) ... ok
+test_rgb_rows_roundtrip (test_shared_images.SharedImageTests.test_rgb_rows_roundtrip) ... ok
+test_rgba_roundtrip_preserves_alpha_and_creates_parents (test_shared_images.SharedImageTests.test_rgba_roundtrip_preserves_alpha_and_creates_parents) ... ok
+test_white_composite_uses_floor_division (test_shared_images.SharedImageTests.test_white_composite_uses_floor_division) ... ok
+test_auto_text_entity_is_incomplete_instead_of_false_failure (test_uiux_qt.QWidgetTests.test_auto_text_entity_is_incomplete_instead_of_false_failure) ... skipped '실제 QWidget 검사는 PySide6가 있는 인터프리터에서 별도로 실행한다'
+test_form_buddy_effective_accessible_name_is_recognized (test_uiux_qt.QWidgetTests.test_form_buddy_effective_accessible_name_is_recognized) ... skipped '실제 QWidget 검사는 PySide6가 있는 인터프리터에서 별도로 실행한다'
+test_group_title_fallback_is_incomplete_until_names_are_explicit (test_uiux_qt.QWidgetTests.test_group_title_fallback_is_incomplete_until_names_are_explicit) ... skipped '실제 QWidget 검사는 PySide6가 있는 인터프리터에서 별도로 실행한다'
+test_hidden_root_and_invalid_object_do_not_get_runtime_pass (test_uiux_qt.QWidgetTests.test_hidden_root_and_invalid_object_do_not_get_runtime_pass) ... skipped '실제 QWidget 검사는 PySide6가 있는 인터프리터에서 별도로 실행한다'
+test_real_scroll_panel_and_word_wrap_are_measured_correctly (test_uiux_qt.QWidgetTests.test_real_scroll_panel_and_word_wrap_are_measured_correctly) ... skipped '실제 QWidget 검사는 PySide6가 있는 인터프리터에서 별도로 실행한다'
+test_real_widgets_three_defects_then_zero (test_uiux_qt.QWidgetTests.test_real_widgets_three_defects_then_zero) ... skipped '실제 QWidget 검사는 PySide6가 있는 인터프리터에서 별도로 실행한다'
+test_rich_text_and_empty_window_do_not_get_runtime_pass (test_uiux_qt.QWidgetTests.test_rich_text_and_empty_window_do_not_get_runtime_pass) ... skipped '실제 QWidget 검사는 PySide6가 있는 인터프리터에서 별도로 실행한다'
+test_standard_label_size_hint_does_not_clip_font_leading (test_uiux_qt.QWidgetTests.test_standard_label_size_hint_does_not_clip_font_leading) ... skipped '실제 QWidget 검사는 PySide6가 있는 인터프리터에서 별도로 실행한다'
+test_accessible_name_resolves_icon_button (test_uiux_qt.SnapshotTests.test_accessible_name_resolves_icon_button) ... ok
+test_cli_huge_integer_and_deep_json_are_input_errors (test_uiux_qt.SnapshotTests.test_cli_huge_integer_and_deep_json_are_input_errors) ... ok
+test_cli_malformed_json_nonfinite_and_oversize_are_rejected (test_uiux_qt.SnapshotTests.test_cli_malformed_json_nonfinite_and_oversize_are_rejected) ... ok
+test_cli_valid_snapshot_exit_three_and_output (test_uiux_qt.SnapshotTests.test_cli_valid_snapshot_exit_three_and_output) ... ok
+test_expected_scroll_overflow_is_exempt (test_uiux_qt.SnapshotTests.test_expected_scroll_overflow_is_exempt) ... ok
+test_hidden_widgets_are_not_reported_as_rendered_defects (test_uiux_qt.SnapshotTests.test_hidden_widgets_are_not_reported_as_rendered_defects) ... ok
+test_invalid_shapes_types_ranges_and_duplicates_are_rejected (test_uiux_qt.SnapshotTests.test_invalid_shapes_types_ranges_and_duplicates_are_rejected) ... ok
+test_name_source_is_optional_and_validated (test_uiux_qt.SnapshotTests.test_name_source_is_optional_and_validated) ... ok
+test_normal_snapshot_does_not_claim_runtime_pass (test_uiux_qt.SnapshotTests.test_normal_snapshot_does_not_claim_runtime_pass) ... ok
+test_three_independent_defects_are_detected (test_uiux_qt.SnapshotTests.test_three_independent_defects_are_detected) ... ok
+test_unmeasured_text_is_explicitly_incomplete (test_uiux_qt.SnapshotTests.test_unmeasured_text_is_explicitly_incomplete) ... ok
+test_alpha_change_is_counted (test_visual_pipeline.PixelGateTests.test_alpha_change_is_counted) ... ok
+test_capture_rejects_unsafe_prefix_before_launch (test_visual_pipeline.PixelGateTests.test_capture_rejects_unsafe_prefix_before_launch) ... ok
+test_explicit_tolerance_accepts_small_change (test_visual_pipeline.PixelGateTests.test_explicit_tolerance_accepts_small_change) ... ok
+test_identical_images_pass (test_visual_pipeline.PixelGateTests.test_identical_images_pass) ... ok
+test_invalid_options_do_not_pass (test_visual_pipeline.PixelGateTests.test_invalid_options_do_not_pass) ... ok
+test_size_and_missing_pair_fail (test_visual_pipeline.PixelGateTests.test_size_and_missing_pair_fail) ... ok
+test_strict_catches_one_channel_step (test_visual_pipeline.PixelGateTests.test_strict_catches_one_channel_step) ... ok
+test_download_assets (test_web_files.WebFilesTest.test_download_assets) ... usage: d [-h] --inventory INVENTORY --dest DEST [--max-mb MAX_MB]
+         [--delay DELAY] [--referer REFERER]
+d: error: invalid inventory /tmp/tmpan__ljr_/inv.json: Expecting ',' delimiter: line 1 column 3 (char 2)
+ok
+test_local_path_contained (test_web_files.WebFilesTest.test_local_path_contained) ... ok
+test_mirror_rejects_non_http (test_web_files.WebFilesTest.test_mirror_rejects_non_http) ... usage: m [-h] [--overwrite] url output_dir
+m: error: url must be an absolute http(s) URL
+ok
+test_mirror_stays_in_output (test_web_files.WebFilesTest.test_mirror_stays_in_output) ... WARN failed http://127.0.0.1:38773/x/%2e%2e/%2e%2e/e2.txt: HTTP Error 404: Not Found
+ok
+
+----------------------------------------------------------------------
+Ran 96 tests in 6.840s
+
+OK (skipped=8)
+1/1 assets saved; 0 failed or invalid -> /tmp/tmpan__ljr_/d/assets-map.json
+Mirrored 2 assets into /tmp/tmplezmptzx/out
+Run locally with:
+  cd /tmp/tmplezmptzx/out
+  python3 -m http.server 8088

@@ -1,0 +1,7 @@
+{
+  "command": "npm run check",
+  "exit_code": 0,
+  "elapsed_seconds": 100.636,
+  "log": "check.log",
+  "execution": "레드팀 7건 교정 후"
+}

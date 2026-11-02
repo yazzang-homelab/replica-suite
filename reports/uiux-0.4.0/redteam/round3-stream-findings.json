@@ -1,0 +1,102 @@
+{
+  "verdict": "PASS",
+  "summary": "critical·high 결함은 확인되지 않았다. origin 탈출, 묶음 경로 탈출, 보고서 XSS로 이어지는 분기도 찾지 못했다. 다만 판정 정확도 결함이 있다. 오탐 fail은 Qt buddy 이름 미인식, 스트리밍 응답 버퍼링, 의도된 오류 상태의 일괄 fail에서 생긴다. 오탐 pass는 iframe을 axe가 조용히 건너뛰는 경우에 생긴다. 그 밖에 CLI 종료코드 혼선이 있다.",
+  "findings": [
+    {
+      "id": "R1",
+      "severity": "medium",
+      "file": "lib/uiux_qt.py",
+      "line": 130,
+      "title": "QLabel buddy로 이름을 받는 무텍스트 버튼을 이름 없음 fail로 판정",
+      "trigger": "QFormLayout.addRow(\"자동 저장\", QCheckBox()) 같은 표준 폼 관례를 쓴 경우",
+      "expected": "QAccessible 이름이 buddy 라벨 '자동 저장'이므로 통과",
+      "actual": "232행이 widget.accessibleName()만 읽는다. 그 결과 qt.name:QCheckBox:N이 fail로 기록되고 전체 status가 fail이 된다",
+      "repro": "w=QWidget();f=QFormLayout(w);f.addRow('자동 저장',QCheckBox());w.show();app.processEvents();audit_widgets(w)['status']=='fail'",
+      "recommendation": "QAccessible.queryAccessibleInterface(w).text(QAccessible.Name)을 사용하거나 buddy 라벨을 탐색한다",
+      "confidence": "high"
+    },
+    {
+      "id": "R2",
+      "severity": "medium",
+      "file": "lib/uiux-web.mjs",
+      "line": 291,
+      "title": "iframe 내용이 접근성 검사에서 조용히 제외되어 pass",
+      "trigger": "동일 origin iframe 안에 라벨 없는 input이 있는 페이지",
+      "expected": "iframe 위반 보고, 또는 미검사를 incomplete로 표시",
+      "actual": "axe를 main frame에만 주입한다. ping 무응답 frame은 건너뛰고, 이를 알리는 frame-tested 규칙은 best-practice 태그라 runOnly에서 빠진다. 결과는 위반 0개 pass",
+      "repro": "index: <h1>t</h1><iframe src=/f.html title=f>, f.html: <input>; 계약: goto / 후 assert-visible heading → a11y pass",
+      "recommendation": "page.frames() 각각에 axe를 주입하거나, iframe이 있으면 incomplete로 기록하고 한계 목록에 명시한다",
+      "confidence": "high"
+    },
+    {
+      "id": "R3",
+      "severity": "medium",
+      "file": "lib/uiux-web.mjs",
+      "line": 225,
+      "title": "route.fetch 전체 버퍼링으로 SSE·스트리밍 앱이 깨지고 오탐 fail 발생",
+      "trigger": "페이지가 EventSource·롱폴링·스트리밍 fetch를 쓰는 경우",
+      "expected": "실제 Chromium처럼 이벤트가 점진적으로 전달된다",
+      "actual": "본문이 끝나야 fulfill되므로 이벤트가 전달되지 않는다. timeoutMs 경과 후 request 오류가 나고 runtime fail이 된다. 또한 239행의 context.isClosed는 BrowserContext API가 아니어서 종료 중 끊긴 요청도 오류로 적재된다",
+      "repro": "/events가 data: ok를 보낸 뒤 연결을 유지한다. 페이지는 new EventSource('/events').onmessage로 #out을 갱신한다. 계약 assert-text #out 'ok' → step fail과 runtime fail",
+      "recommendation": "text/event-stream·스트리밍 요청은 route.continue로 처리하거나 별도 정책으로 분리한다. 종료 여부는 자체 closing 플래그로 판정한다",
+      "confidence": "high"
+    },
+    {
+      "id": "R4",
+      "severity": "medium",
+      "file": "lib/uiux-web.mjs",
+      "line": 345,
+      "title": "의도된 오류 상태를 계약으로 표현할 수 없어 항상 fail",
+      "trigger": "SKILL 30행 지침대로 입력 오류 흐름을 넣었고, API가 422를 반환하거나 confirm()을 쓰는 경우",
+      "expected": "UI가 오류를 올바르게 표시하면 해당 흐름 통과",
+      "actual": "234행 4xx, 260행 console.error, 264행 dialog를 무조건 runtime fail로 처리한다. confirm은 자동 dismiss되어 흐름 자체도 바뀐다. 결과는 exit 1",
+      "repro": "잘못된 이메일 제출 → POST /api 422 → '형식 오류' 표시 assert-text 통과 → web.v0.f0.runtime fail",
+      "recommendation": "계약에 expected_http_status, 허용 콘솔 패턴, dialog accept/dismiss 동작을 추가하거나 기대 오류를 advisory로 분리한다",
+      "confidence": "high"
+    },
+    {
+      "id": "R5",
+      "severity": "low",
+      "file": "lib/uiux_qt.py",
+      "line": 40,
+      "title": "큰 정수 입력 시 OverflowError가 잡히지 않아 종료코드 1(fail)",
+      "trigger": "rect 등에 400자리 정수 리터럴이 들어간 스냅샷",
+      "expected": "입력 오류로 exit 2",
+      "actual": "math.isfinite가 OverflowError를 던지고 294행 except에 걸리지 않는다. traceback과 함께 exit 1이 되어 'fail'과 구분되지 않는다. Node CLI에서는 ENOENT라는 엉뚱한 메시지로 끝난다",
+      "repro": "{\"schema_version\":1,\"widgets\":[{...\"rect\":[0,0,1000…(400자리),10]...}]} → python3 lib/uiux_qt.py --snapshot s.json; echo $? → 1",
+      "recommendation": "abs(value) 범위 검사를 isfinite보다 먼저 수행하고, except에 OverflowError·RecursionError를 추가한다",
+      "confidence": "high"
+    },
+    {
+      "id": "R6",
+      "severity": "low",
+      "file": "scripts/uiux.mjs",
+      "line": 68,
+      "title": "verify 입력 오류를 무결성 실패(exit 1)로 보고",
+      "trigger": "존재하지 않는 경로나 권한 없는 경로를 --bundle로 지정",
+      "expected": "도움말 기준 입력 오류 exit 2",
+      "actual": "모든 예외를 {\"integrity\":\"fail\"}와 exit 1로 처리한다",
+      "repro": "node scripts/uiux.mjs verify --bundle /없는/경로 → integrity fail, exit 1",
+      "recommendation": "ENOENT·EACCES 등 I/O 오류와 해시·판정 불일치를 구분해 각각 2와 1을 반환한다",
+      "confidence": "high"
+    },
+    {
+      "id": "R7",
+      "severity": "low",
+      "file": "lib/uiux_qt.py",
+      "line": 183,
+      "title": "AutoText 판정이 Qt::mightBeRichText와 달라 오탐 fail 가능",
+      "trigger": "QLabel(\"a &lt; b\")를 AutoText로 두고 sizeHint 폭에 맞춘 경우",
+      "expected": "Qt가 rich text로 렌더하는 'a < b' 폭을 측정",
+      "actual": "정규식은 태그만 보고 plain으로 분류해 '&lt;' 원문 폭을 측정한다. 결과는 qt.text fail",
+      "repro": "l=QLabel('a &lt; b');l.setFixedWidth(l.sizeHint().width());표시 후 audit_widgets → qt.text fail",
+      "recommendation": "AutoText 판별에 Qt.mightBeRichText를 사용한다",
+      "confidence": "medium"
+    }
+  ],
+  "reviewed_limits": [
+    "browser.mjs(launchBrowser, settlePage)와 references 문서는 제공되지 않아 검토하지 못함",
+    "Playwright route.fetch 타임아웃 범위, axe frame ping 동작, Qt 접근성 이름 규칙은 실행 없이 소스와 API 지식으로 판단함",
+    "Windows/macOS 파일시스템 동작(O_NOFOLLOW, 대소문자 구분), 실제 스타일별 Qt 기하, 수동 보조기술은 미확인"
+  ]
+}

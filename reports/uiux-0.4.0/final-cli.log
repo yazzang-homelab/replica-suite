@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "suite": "uiux-cli",
+  "verification_groups": 9,
+  "checks": [
+    "다른 CWD와 한글·공백 경로에서 init→validate 실행",
+    "CLI audit 종료0: 실제 두 viewport 저장·재로드 및 verify 무결성 통과",
+    "CLI audit 종료1과 무결성 종료0의 의미 구분, 기존 실패 증거 덮어쓰기 거부",
+    "브라우저 실행 누락은 CLI 종료3이며 무결성 통과와 실행 통과를 구분",
+    "잘못된 JSON·assert 없는 계약·origin·옵션 종료2, 출력 생성·원본 덮어쓰기 없음",
+    "Qt snapshot 정상도 미검증 종료3, 결함 종료1, 구조오류 종료2와 출력 생성 없음",
+    "실제 감사 묶음의 PNG 변조·누락·미등록 파일을 CLI verify 종료1로 검출",
+    "실제 HTML 보고서 3종 렌더·axe 위반/미확인0·링크 유효성·HTML 주입 실행 방지",
+    "CLI 종료 및 Linux에서 관측한 소유 자식 프로세스 잔존0"
+  ],
+  "report_accessibility_runs": 3,
+  "observed_owned_processes": 36,
+  "platform": "linux",
+  "browser": "141.0.7390.37",
+  "axe": "4.14.0",
+  "created_at": "2026-11-02T03:00:45.882Z"
+}

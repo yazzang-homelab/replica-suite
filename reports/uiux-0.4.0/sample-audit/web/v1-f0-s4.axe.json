@@ -1,0 +1,35 @@
+{
+  "violations": [],
+  "incomplete": [],
+  "frame_errors": [],
+  "frames": [
+    {
+      "frame_index": 0,
+      "url": "http://127.0.0.1:33057/",
+      "violations": [],
+      "incomplete": [],
+      "testEngine": {
+        "name": "axe-core",
+        "version": "4.14.0"
+      },
+      "testEnvironment": {
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.7390.37 Safari/537.36",
+        "windowWidth": 390,
+        "windowHeight": 700,
+        "orientationAngle": 0,
+        "orientationType": "landscape-primary"
+      }
+    }
+  ],
+  "testEngine": {
+    "name": "axe-core",
+    "version": "4.14.0"
+  },
+  "testEnvironment": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.7390.37 Safari/537.36",
+    "windowWidth": 390,
+    "windowHeight": 700,
+    "orientationAngle": 0,
+    "orientationType": "landscape-primary"
+  }
+}

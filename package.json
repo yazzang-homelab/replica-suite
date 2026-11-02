@@ -1,8 +1,8 @@
 {
   "name": "replica-suite",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
-  "description": "Evidence-backed app and website reconstruction skills with local verification tools",
+  "description": "앱 재구현과 UI·UX 설계·웹·Qt 실행 증거 검수를 연결하는 통합 플러그인",
   "license": "UNLICENSED",
   "engines": {
     "node": ">=20"
@@ -10,11 +10,13 @@
   "scripts": {
     "validate": "python3 scripts/validate_plugin.py",
     "test": "python3 -m unittest discover -s tests -v",
-    "test:e2e": "node tests/e2e_visual.mjs && node tests/e2e_runtime_mirror.mjs && node tests/e2e_shared_browser.mjs",
-    "check": "npm run validate && npm test",
+    "test:uiux": "node --test tests/uiux.test.mjs tests/uiux_proxy.test.mjs",
+    "test:e2e": "node tests/e2e_visual.mjs && node tests/e2e_runtime_mirror.mjs && node tests/e2e_shared_browser.mjs && node tests/e2e_uiux.mjs && node tests/e2e_uiux_cli.mjs && node tests/e2e_uiux_expectations.mjs",
+    "check": "npm run validate && npm test && npm run test:uiux",
     "check:clients": "python3 scripts/check_clients.py --client all"
   },
   "dependencies": {
+    "axe-core": "4.14.0",
     "pixelmatch": "7.1.0",
     "playwright": "1.56.1",
     "pngjs": "7.0.0",

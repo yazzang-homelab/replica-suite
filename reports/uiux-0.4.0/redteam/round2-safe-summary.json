@@ -1,0 +1,41 @@
+{
+  "requested_provider": "oci-opencodex",
+  "request_model": "anthropic/claude-opus-5-5",
+  "request_reasoning_effort": "xhigh",
+  "request_sha256": "85f56e59d4a9bcaaa15b8acfe43fc567fd21dfb66d6248fe6113d91dbf7f6325",
+  "source_manifest": "round2-source-manifest.json",
+  "attempts": [
+    {
+      "attempt": 1,
+      "http_status": 502,
+      "elapsed_seconds": 200.16
+    },
+    {
+      "attempt": 2,
+      "http_status": 502,
+      "elapsed_seconds": 200.14
+    }
+  ],
+  "started_at": "2026-11-02T02:21:07Z",
+  "result": "incomplete",
+  "reason": "provider_connect_timeout",
+  "error_code": "upstream_server_error",
+  "error_message": "Provider connect timeout after 200000ms",
+  "response_model": null,
+  "response_status": null,
+  "response_usage": null,
+  "review_verdict": null,
+  "finding_count": null,
+  "finished_at": "2026-11-02T02:31:21Z",
+  "limit": "최종 모델 응답을 받지 못했으므로 레드팀 판정이 없다. 모델 대체 없이 5xx 재시도1회 후 중단했다.",
+  "error_sha256": [
+    {
+      "attempt": 1,
+      "sha256": "97891fdb8077c7cdc7d6208452068f95df70fb345145bdae983f7fac5408cbce"
+    },
+    {
+      "attempt": 2,
+      "sha256": "97891fdb8077c7cdc7d6208452068f95df70fb345145bdae983f7fac5408cbce"
+    }
+  ]
+}

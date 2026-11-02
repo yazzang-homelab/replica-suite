@@ -1,0 +1,6 @@
+{
+  "exit_code": 3,
+  "stdout": "{\"status\":\"incomplete\",\"kind\":\"qt\",\"checks\":14,\"report\":\"<output>/snapshot-bundle/report.html\"}\n",
+  "stderr": "",
+  "paths_redacted": true
+}

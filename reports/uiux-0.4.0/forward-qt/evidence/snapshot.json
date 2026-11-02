@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "widgets": [
+    {
+      "id": "NotesWindow:0",
+      "kind": "NotesWindow",
+      "rect": [
+        2,
+        2,
+        360,
+        290
+      ],
+      "parent_rect": null,
+      "text": "",
+      "text_width": 0.0,
+      "text_height": 0.0,
+      "available_width": 360.0,
+      "available_height": 290.0,
+      "interactive": false,
+      "accessible_name": "",
+      "scroll_content": false,
+      "visible": true
+    },
+    {
+      "id": "page-title:1",
+      "kind": "QLabel",
+      "rect": [
+        24,
+        22,
+        312,
+        31
+      ],
+      "parent_rect": [
+        0,
+        0,
+        360,
+        290
+      ],
+      "text": "작업 메모",
+      "text_width": 103.0,
+      "text_height": 28.0,
+      "available_width": 312.0,
+      "available_height": 31.0,
+      "interactive": false,
+      "accessible_name": "",
+      "scroll_content": false,
+      "visible": true
+    },
+    {
+      "id": "page-description:2",
+      "kind": "QLabel",
+      "rect": [
+        24,
+        65,
+        312,
+        16
+      ],
+      "parent_rect": [
+        0,
+        0,
+        360,
+        290
+      ],
+      "text": "기억할 내용을 적고 저장하세요.",
+      "text_width": 171.0,
+      "text_height": 16.0,
+      "available_width": 312.0,
+      "available_height": 16.0,
+      "interactive": false,
+      "accessible_name": "",
+      "scroll_content": false,
+      "visible": true
+    },
+    {
+      "id": "QLabel:3",
+      "kind": "QLabel",
+      "rect": [
+        24,
+        101,
+        312,
+        16
+      ],
+      "parent_rect": [
+        0,
+        0,
+        360,
+        290
+      ],
+      "text": "메모",
+      "text_width": 24.0,
+      "text_height": 14.0,
+      "available_width": 312.0,
+      "available_height": 16.0,
+      "interactive": false,
+      "accessible_name": "",
+      "scroll_content": false,
+      "visible": true
+    },
+    {
+      "id": "note-input:4",
+      "kind": "QLineEdit",
+      "rect": [
+        24,
+        129,
+        312,
+        42
+      ],
+      "parent_rect": [
+        0,
+        0,
+        360,
+        290
+      ],
+      "text": "",
+      "text_width": 0.0,
+      "text_height": 0.0,
+      "available_width": 312.0,
+      "available_height": 42.0,
+      "interactive": false,
+      "accessible_name": "메모",
+      "scroll_content": false,
+      "visible": true
+    },
+    {
+      "id": "shortcut-hint:5",
+      "kind": "QLabel",
+      "rect": [
+        24,
+        183,
+        312,
+        16
+      ],
+      "parent_rect": [
+        0,
+        0,
+        360,
+        290
+      ],
+      "text": "Ctrl+S로도 저장할 수 있습니다.",
+      "text_width": 174.0,
+      "text_height": 16.0,
+      "available_width": 312.0,
+      "available_height": 16.0,
+      "interactive": false,
+      "accessible_name": "",
+      "scroll_content": false,
+      "visible": true
+    },
+    {
+      "id": "save-status:6",
+      "kind": "QLabel",
+      "rect": [
+        24,
+        228,
+        188,
+        40
+      ],
+      "parent_rect": [
+        0,
+        0,
+        360,
+        290
+      ],
+      "text": "저장 완료",
+      "text_width": 52.0,
+      "text_height": 16.0,
+      "available_width": 188.0,
+      "available_height": 40.0,
+      "interactive": false,
+      "accessible_name": "",
+      "scroll_content": false,
+      "visible": true
+    },
+    {
+      "id": "save-note:7",
+      "kind": "QPushButton",
+      "rect": [
+        224,
+        228,
+        112,
+        40
+      ],
+      "parent_rect": [
+        0,
+        0,
+        360,
+        290
+      ],
+      "text": "메모 저장",
+      "text_width": 52.0,
+      "text_height": 14.0,
+      "available_width": 84.0,
+      "available_height": 24.0,
+      "interactive": true,
+      "accessible_name": "",
+      "scroll_content": false,
+      "visible": true
+    }
+  ]
+}

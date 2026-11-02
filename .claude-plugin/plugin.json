@@ -1,7 +1,7 @@
 {
   "name": "replica-suite",
-  "version": "0.3.0",
-  "description": "Integrated plugin for analyzing and re-implementing apps, websites, screenshots, mobile apps and native programs. Skills are grouped by category: app-, web-, shot-, mobile-, native-.",
+  "version": "0.4.0",
+  "description": "앱·웹·모바일·네이티브 재구현과 UI·UX 설계, 웹·Qt 실행 검수를 통합한다.",
   "author": { "name": "Replica Suite maintainers" },
   "skills": "./skills"
 }

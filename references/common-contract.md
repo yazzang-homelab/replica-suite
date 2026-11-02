@@ -30,6 +30,7 @@
 ## 통합 도구 위치
 [클라이언트 공통 경로 규칙](runtime.md)을 먼저 읽고, 현재 선택한 SKILL.md의 실제 설치 경로에서 `REPLICA_SUITE_ROOT`를 명시적으로 설정한다. 이 변수는 호스트가 자동 제공하지 않는다.
 
+- UI·UX 명세·웹/Qt 검사·증거 무결성: `scripts/uiux.mjs`, [실행 계약](uiux-workbench.md).
 - 브랜드 검사·치환: `${REPLICA_SUITE_ROOT}/scripts/brand.py`의 `scan` / `replace`.
 - Python PNG I/O: `lib/images.py` (Pillow). layout용 흰색 합성과 RGBA 보존을 명시적으로 구분한다.
 - 브라우저 실행·대기·motion 안정화: `lib/browser.mjs` (Playwright). 개별 스킬은 상태 캡처·모바일 flow·WebGL 조건을 추가한다.

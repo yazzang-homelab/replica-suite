@@ -1,0 +1,37 @@
+{
+  "requested_provider": "oci-opencodex",
+  "request_model": "anthropic/claude-opus-5-5",
+  "request_reasoning_effort": "xhigh",
+  "request_sha256": "d5beb366739cfaee92e4ced5a2178e06e9f58dbb7af4f40b797b95249540e3e0",
+  "source_manifest": "round1-source-manifest.json",
+  "attempts": [
+    {
+      "attempt": 1,
+      "http_status": 200,
+      "elapsed_seconds": 197.72
+    }
+  ],
+  "started_at": "2026-11-02T02:16:46Z",
+  "response_model": "anthropic/claude-opus-5-5",
+  "response_status": "incomplete",
+  "response_reasoning": null,
+  "response_usage": {
+    "input_tokens": 49503,
+    "output_tokens": 20000,
+    "total_tokens": 69503,
+    "input_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 49499
+    },
+    "output_tokens_details": {
+      "reasoning_tokens": 20000
+    }
+  },
+  "response_sha256": "2117a7837199ddac585f66d259040bba7f72dbf63fc4810a3e6be4ddbed81f8c",
+  "incomplete_details": {
+    "reason": "max_output_tokens"
+  },
+  "finished_at": "2026-11-02T02:20:04Z",
+  "review_verdict": "UNPARSED",
+  "finding_count": 0
+}

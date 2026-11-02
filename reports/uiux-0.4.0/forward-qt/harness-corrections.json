@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "scope": "검수 하네스의 초기 오류를 교정한 이력. 제품 결함 수에 포함하지 않는다.",
+  "items": [
+    {
+      "type": "Qt 모듈 import 오류",
+      "observation": "QInputMethodEvent를 QtCore에서 가져오려다 초기화에 실패했다.",
+      "correction": "공식 Qt API 위치인 QtGui에서 import하도록 수정했다.",
+      "product_failure": false
+    },
+    {
+      "type": "빈 IME commit과 삭제의 혼동",
+      "observation": "빈 commit은 선택한 QLineEdit 텍스트를 삭제하지 않았다.",
+      "correction": "Ctrl+A와 Backspace로 실제 삭제한 뒤 비어 있지 않을 때만 IME commit을 보낸다.",
+      "product_failure": false
+    }
+  ],
+  "preservation": "초기 실패 코드와 로그 원본은 비공개 작업 캐시에 보존했다. 공개 사본에는 오류 유형과 수정 근거만 포함한다."
+}

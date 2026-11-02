@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "recorded_at": "2026-11-02T03:00:03.430611+00:00",
+  "commands": [
+    {
+      "command": "node --test tests/uiux_proxy.test.mjs",
+      "tests": 4,
+      "pass": 4,
+      "fail": 0
+    },
+    {
+      "command": "node tests/e2e_uiux.mjs",
+      "verification_groups": 15,
+      "pass": 15,
+      "fail": 0,
+      "browser": "141.0.7390.37",
+      "axe": "4.14.0"
+    }
+  ],
+  "redteam_fixes": {
+    "R2": "같은 origin 및 명시 허용한 cross-origin iframe을 개별 axe.run으로 검사하고 라벨 위반을 검출했다. 정상 frame은 통과했다.",
+    "R3": "끝내지 않는 SSE와 fetch 본문을 실제 Chromium이 점진적으로 받았다. 종료 때 상류 연결도 닫혔다.",
+    "origin_policy": "외부 직접 HTTP·WS·redirect와 worker redirect가 목적지에 도달하지 않았다. 허용 origin redirect와 외부 HTTP는 정상 동작했다.",
+    "plain_websocket": "실제 client.send→서버 echo→DOM assertion 왕복을 확인했다. 등록한 CONNECT라도 TLS·잘못된 Host·Connection 누락·절대 URI·프로토콜 상대 URI·일반 GET·POST·과대 헤더·payload 무응답을 상류 연결 전에 차단했다."
+  },
+  "source_sha256_at_completion": {
+    "lib/uiux-proxy.mjs": "dba85001fa8755bd498aa40e5110877a57a7d80a041ffc53fd86e96251c8b2da",
+    "lib/uiux-web.mjs": "c293e7b97258076472fb6a3e4dd8d5366013931af9adae958f10a231136409db",
+    "tests/uiux_proxy.test.mjs": "a77f1ef5e2142059ac605fd83fcc4ab26385bec801ffbe9fa3c57b28566eb334",
+    "tests/e2e_uiux.mjs": "8c6c2a6e5e1d6d57349d185d8de55fa45f1ada32fc4da3f356cc9d5868e2f1e9"
+  },
+  "review_scope": "Opus 후속 검토 snapshot은 마지막 plain WS CONNECT 보완 전이다. 마지막 WS 보완은 모델 검토 완료로 주장하지 않으며 루트 검토·단위4개·부정 payload9종·실제 browser 왕복으로 검증했다. R4의 루트 후속 변경은 별도 검수 대상이다. 해시는 검수 완료 기록 시점의 파일 값이다."
+}

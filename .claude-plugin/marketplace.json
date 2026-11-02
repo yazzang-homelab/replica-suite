@@ -6,8 +6,8 @@
     {
       "name": "replica-suite",
       "source": "./",
-      "description": "앱·웹·스크린샷·모바일·네이티브 분석과 재제작 통합 스킬",
-      "version": "0.3.0"
+      "description": "앱·웹·스크린샷·모바일·네이티브 재제작과 UI·UX 실행 검수 통합 스킬",
+      "version": "0.4.0"
     }
   ]
 }

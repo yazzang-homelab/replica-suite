@@ -1,0 +1,3 @@
+
+# 검수 원문 로그의 공백을 보존한다.
+reports/**/*.log -whitespace

@@ -5,9 +5,22 @@
 <p align="center"><a href="https://raw.githubusercontent.com/yazzang-homelab/replica-suite/assets/demo.mp4"><img src="https://raw.githubusercontent.com/yazzang-homelab/replica-suite/assets/demo.webp" alt="replica-suite in 18 seconds: web, screenshot, mobile and native skills, evidence to spec to build to verify, one install for Claude Code, Codex and GJC" width="100%"></a></p>
 <p align="center"><sub>18 s overview. Click for the 1080p MP4 with sound. Rendered in code with <a href="https://github.com/yazzang-homelab/motion-studio">motion-studio</a>.</sub></p>
 
-Version 0.3.0. One set of 41 shared skills for app and website reconstruction, installable in Codex, Claude Code and GJC. The workflow is evidence, then spec, then build, then verify.
+Version 0.4.0. One set of 42 shared skills for app and website reconstruction, installable in Codex, Claude Code and GJC. The workflow is evidence, then spec, then build, then verify.
 
 Repository: https://github.com/yazzang-homelab/replica-suite. Plugin name: `replica-suite`. Marketplace ID: `replica-suite-local`.
+
+## UI·UX 작업대 (0.4.0)
+
+기존 41개 스킬에 `uiux-workbench`를 추가했습니다. 웹·Electron·Qt의 사용자 흐름·상태·디자인 토큰을 명세로 연결하고 웹 브라우저의 실제 동작·접근성, Qt 위젯의 기하·텍스트·접근 이름을 검사합니다. [실행 계약과 한계](references/uiux-workbench.md)를 확인하세요.
+
+```bash
+node scripts/uiux.mjs init --name "프로젝트" --platform web --out /absolute/path/uiux-contract.json
+node scripts/uiux.mjs validate --contract /absolute/path/uiux-contract.json
+node scripts/uiux.mjs audit --contract /absolute/path/uiux-contract.json --base-url http://127.0.0.1:3000 --out /absolute/path/new-audit
+node scripts/uiux.mjs verify --bundle /absolute/path/new-audit
+```
+
+초안은 실제 작업과 assert로 수정해야 합니다. 증거·해시·HTML 보고서를 남기며 실패와 미확인을 구분합니다. 자동 검사만으로 미적 품질·원제품 동등성·Windows/macOS 실제 실행을 인증하지 않습니다. snapshot 검사는 정상이어도 미확인입니다. [검수 결과](reports/uiux-0.4.0/검수보고.md)는 검수를 마친 조건만 기록합니다.
 
 ## What this is
 
@@ -19,7 +32,7 @@ An agent-skill bundle for porting or re-implementing apps and sites. It covers:
 
 It is not a one-click tool that clones any app. Skills guide an agent through gathering evidence, writing a spec, building and verifying; results depend on the target, the model and your own review.
 
-## Skills (41)
+## Skills (42)
 
 | Category    | Count | Router skill   |
 | ----------- | ----- | -------------- |
@@ -28,6 +41,7 @@ It is not a one-click tool that clones any app. Skills guide an agent through ga
 | shot        | 8     | `shot-index`   |
 | mobile      | 7     | `mobile-index` |
 | native      | 7     | `native-index` |
+| UI·UX      | 1     | `uiux-workbench` |
 | root router | 1     | `replica`      |
 
 One copy of the skills is shared by all three clients. `lib/`, `scripts/` and `references/` sit beside `skills/` and are shared too. Do not copy individual skill folders out of the bundle.
@@ -87,7 +101,7 @@ gjc plugin list --json
 gjc skills discover --query replica-suite --limit 50 --json
 ```
 
-Discovery reported 41 candidates on GJC 0.19.0. In a new session run `/skill:replica-suite:replica`. `--dry-run` is ignored by marketplace install in this version; do not use it to verify an install.
+Discovery reported 42 candidates on GJC 0.19.0. In a new session run `/skill:replica-suite:replica`. `--dry-run` is ignored by marketplace install in this version; do not use it to verify an install.
 
 ### Installing from a local clone
 
@@ -134,9 +148,9 @@ python3 scripts/check_clients.py --client all
 
 `--client` accepts `codex`, `claude` or `gjc`. `check_clients.py` needs the client executables, uses temporary isolated settings and makes no paid model calls. The suite contains Python regression tests and three browser e2e suites; counts change as tests are added.
 
-Tested client versions: Codex 0.164.0, Claude Code 2.1.310, GJC 0.19.0. Older versions are not promised.
+Tested client versions: Codex 0.163.0, Claude Code 2.1.292, GJC 0.19.2. Older versions are not promised.
 
-The client check covers installation, skill discovery and shared resources. Unit and browser suites additionally exercise tool behavior, image comparison and offline replay. Neither verifies parity of LLM output between clients or real-device, Ghidra or Qt functionality.
+클라이언트 검사는 설치·탐색·공유 리소스를 확인합니다. 단위·브라우저 검사는 도구·이미지 비교·offline replay를 확인하며, 새 QWidget 검사는 Linux offscreen에서 별도 실행합니다. 클라이언트 간 LLM 생성 동등성, 실제 장비·Ghidra·Windows/macOS 실행은 확인하지 않았습니다.
 
 Platforms: client installation/discovery was checked on local Linux; unit and browser suites run on Ubuntu 24.04 CI. macOS and Windows were not runtime-tested. `.sh` helpers need a POSIX shell; on Windows the venv interpreter is `.venv/Scripts/python.exe`. Native tools are platform-specific.
 

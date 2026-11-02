@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "replica-suite",
-  "version": "0.3.0",
-  "description": "Evidence-backed reconstruction of apps, websites, screenshots, mobile packages and native programs.",
+  "version": "0.4.0",
+  "description": "앱·웹·모바일·네이티브 재구현과 UI·UX 설계·실행 증거 검수를 연결하는 통합 플러그인.",
   "author": { "name": "Replica Suite maintainers" },
   "repository": "https://github.com/yazzang-homelab/replica-suite",
   "license": "UNLICENSED",
@@ -10,6 +10,8 @@
     "reimplementation",
     "migration",
     "reverse-engineering",
-    "visual-testing"
+    "visual-testing",
+    "ui-ux",
+    "accessibility"
   ]
 }

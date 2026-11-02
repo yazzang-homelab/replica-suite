@@ -1,0 +1,36 @@
+[
+  {
+    "name": "final-cli",
+    "command": [
+      "node",
+      "tests/e2e_uiux_cli.mjs"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 17.227
+  },
+  {
+    "name": "final-python",
+    "command": [
+      "/root/replica-suite/.venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 7.045
+  },
+  {
+    "name": "final-clients",
+    "command": [
+      "/root/replica-suite/.venv/bin/python",
+      "scripts/check_clients.py",
+      "--client",
+      "all"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 10.894
+  }
+]

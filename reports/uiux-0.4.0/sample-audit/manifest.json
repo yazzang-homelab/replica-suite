@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "plugin": {
+    "name": "replica-suite",
+    "version": "0.4.0"
+  },
+  "created_at": "2026-11-02T03:00:31.021Z",
+  "status": "pass",
+  "kind": "web",
+  "files": [
+    {
+      "path": "web/v0-f0-s0.png",
+      "bytes": 9115,
+      "sha256": "2b584147d3c26a49e1e2828894bbe1b9d64a9e2d7cdf866f80861e587e634318"
+    },
+    {
+      "path": "web/v0-f0-s0.axe.json",
+      "bytes": 957,
+      "sha256": "459e51349ab134209b90529e074c8806d356fcb6d8d464a68131fff2d78abd7c"
+    },
+    {
+      "path": "web/v0-f0-s3.png",
+      "bytes": 11744,
+      "sha256": "6fd21af986985b3db5871678248b868466a304fb5a64fb06cd5d0e2003035f9a"
+    },
+    {
+      "path": "web/v0-f0-s3.axe.json",
+      "bytes": 957,
+      "sha256": "459e51349ab134209b90529e074c8806d356fcb6d8d464a68131fff2d78abd7c"
+    },
+    {
+      "path": "web/v0-f0-s4.png",
+      "bytes": 11744,
+      "sha256": "6fd21af986985b3db5871678248b868466a304fb5a64fb06cd5d0e2003035f9a"
+    },
+    {
+      "path": "web/v0-f0-s4.axe.json",
+      "bytes": 957,
+      "sha256": "459e51349ab134209b90529e074c8806d356fcb6d8d464a68131fff2d78abd7c"
+    },
+    {
+      "path": "web/v0-f0-s5.png",
+      "bytes": 11744,
+      "sha256": "6fd21af986985b3db5871678248b868466a304fb5a64fb06cd5d0e2003035f9a"
+    },
+    {
+      "path": "web/v0-f0-s5.axe.json",
+      "bytes": 957,
+      "sha256": "459e51349ab134209b90529e074c8806d356fcb6d8d464a68131fff2d78abd7c"
+    },
+    {
+      "path": "web/v1-f0-s0.png",
+      "bytes": 7104,
+      "sha256": "b094828b770ca87de503bfde8af98a1a1b6e2e6f014cca002c8c17c2dd2fab3d"
+    },
+    {
+      "path": "web/v1-f0-s0.axe.json",
+      "bytes": 955,
+      "sha256": "8cc91ee91d69c425cd48cb8b35fbc95a67387d40da3299c3b1d7a9dd4b527565"
+    },
+    {
+      "path": "web/v1-f0-s3.png",
+      "bytes": 9521,
+      "sha256": "ea05cc855e0ebebdd5f914bb7f9c48f0da2b99e17adfe488eb0388135ddc960e"
+    },
+    {
+      "path": "web/v1-f0-s3.axe.json",
+      "bytes": 955,
+      "sha256": "8cc91ee91d69c425cd48cb8b35fbc95a67387d40da3299c3b1d7a9dd4b527565"
+    },
+    {
+      "path": "web/v1-f0-s4.png",
+      "bytes": 9521,
+      "sha256": "ea05cc855e0ebebdd5f914bb7f9c48f0da2b99e17adfe488eb0388135ddc960e"
+    },
+    {
+      "path": "web/v1-f0-s4.axe.json",
+      "bytes": 955,
+      "sha256": "8cc91ee91d69c425cd48cb8b35fbc95a67387d40da3299c3b1d7a9dd4b527565"
+    },
+    {
+      "path": "web/v1-f0-s5.png",
+      "bytes": 9521,
+      "sha256": "ea05cc855e0ebebdd5f914bb7f9c48f0da2b99e17adfe488eb0388135ddc960e"
+    },
+    {
+      "path": "web/v1-f0-s5.axe.json",
+      "bytes": 955,
+      "sha256": "8cc91ee91d69c425cd48cb8b35fbc95a67387d40da3299c3b1d7a9dd4b527565"
+    },
+    {
+      "path": "contract.json",
+      "bytes": 1809,
+      "sha256": "b70e0898ff0177e0e9250e2b88868180ae310761ed61ce46bfd460920ac5032a"
+    },
+    {
+      "path": "result.json",
+      "bytes": 21214,
+      "sha256": "6ed9ac297ce631d16d7bac478d6668a9e1dfb9da5b87437aa6ef53839ba1a9ca"
+    },
+    {
+      "path": "report.html",
+      "bytes": 13391,
+      "sha256": "165e5bf0ea577ee37fc0649cae74a875a7d1988de333aa7074809d08f948d9fa"
+    }
+  ]
+}

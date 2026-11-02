@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI·UX 작업대"
+  short_description: "웹·Electron·Qt 화면 설계와 실제 흐름·접근성·기하 검수"
+  default_prompt: "$uiux-workbench로 이 앱의 사용자 흐름과 화면을 개선하고 실제 실행 증거로 검수해 주세요."

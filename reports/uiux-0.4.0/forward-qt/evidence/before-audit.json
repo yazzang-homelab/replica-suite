@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "kind": "qt",
+  "status": "fail",
+  "environment": {
+    "platform": "Linux",
+    "backend": "QWidget",
+    "pyside_version": "6.12.0",
+    "qt_version": "6.12.0",
+    "qpa_platform": "offscreen"
+  },
+  "checks": [
+    {
+      "id": "qt.bounds:QLabel:1",
+      "status": "pass",
+      "message": "부모 영역 안에 표시",
+      "evidence": {
+        "widget_id": "QLabel:1",
+        "kind": "QLabel",
+        "rect": [
+          11,
+          11,
+          358,
+          90
+        ],
+        "parent_rect": [
+          0,
+          0,
+          380,
+          190
+        ]
+      }
+    },
+    {
+      "id": "qt.text:QLabel:1",
+      "status": "pass",
+      "message": "텍스트 표시 공간 확보",
+      "evidence": {
+        "widget_id": "QLabel:1",
+        "kind": "QLabel",
+        "measured": [
+          151.0,
+          14.0
+        ],
+        "available": [
+          358.0,
+          90.0
+        ]
+      }
+    },
+    {
+      "id": "qt.bounds:note-input:2",
+      "status": "pass",
+      "message": "부모 영역 안에 표시",
+      "evidence": {
+        "widget_id": "note-input:2",
+        "kind": "QLineEdit",
+        "rect": [
+          11,
+          107,
+          358,
+          22
+        ],
+        "parent_rect": [
+          0,
+          0,
+          380,
+          190
+        ]
+      }
+    },
+    {
+      "id": "qt.bounds:save-note:3",
+      "status": "pass",
+      "message": "부모 영역 안에 표시",
+      "evidence": {
+        "widget_id": "save-note:3",
+        "kind": "QPushButton",
+        "rect": [
+          11,
+          135,
+          358,
+          22
+        ],
+        "parent_rect": [
+          0,
+          0,
+          380,
+          190
+        ]
+      }
+    },
+    {
+      "id": "qt.name:save-note:3",
+      "status": "fail",
+      "message": "텍스트 없는 버튼에 접근 이름이 없다",
+      "evidence": {
+        "widget_id": "save-note:3",
+        "kind": "QPushButton"
+      }
+    },
+    {
+      "id": "qt.bounds:QLabel:4",
+      "status": "pass",
+      "message": "부모 영역 안에 표시",
+      "evidence": {
+        "widget_id": "QLabel:4",
+        "kind": "QLabel",
+        "rect": [
+          11,
+          163,
+          120,
+          16
+        ],
+        "parent_rect": [
+          0,
+          0,
+          380,
+          190
+        ]
+      }
+    },
+    {
+      "id": "qt.text:QLabel:4",
+      "status": "fail",
+      "message": "텍스트 크기보다 표시 공간이 작다",
+      "evidence": {
+        "widget_id": "QLabel:4",
+        "kind": "QLabel",
+        "measured": [
+          218.0,
+          14.0
+        ],
+        "available": [
+          120.0,
+          16.0
+        ]
+      }
+    }
+  ],
+  "artifacts": [],
+  "limitations": [
+    "검사 범위는 표시된 QWidget의 부모 경계, 단순 텍스트 크기, 이름 없는 아이콘 버튼이다.",
+    "사용 흐름, 키보드 순서, 대비, 화면 읽기 프로그램, 미적 품질과 다른 OS의 동작은 검증하지 않는다.",
+    "텍스트 크기 측정은 QLabel과 QPushButton을 대상으로 하며 rich text 및 elide 동작은 별도 검토가 필요하다."
+  ]
+}

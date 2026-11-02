@@ -1,0 +1,172 @@
+
+> replica-suite@0.4.0 check
+> npm run validate && npm test && npm run test:uiux
+
+
+> replica-suite@0.4.0 validate
+> python3 scripts/validate_plugin.py
+
+{
+  "status": "PASS",
+  "skills": 42,
+  "scripts": 84,
+  "sources": 40,
+  "errors": []
+}
+
+> replica-suite@0.4.0 test
+> python3 -m unittest discover -s tests -v
+
+test_apply_longest_first_and_map_preserved (test_brand.ReplaceTests.test_apply_longest_first_and_map_preserved) ... ok
+test_dry_run_changes_nothing (test_brand.ReplaceTests.test_dry_run_changes_nothing) ... ok
+test_include_evidence (test_brand.ReplaceTests.test_include_evidence) ... ok
+test_invalid_map_and_root (test_brand.ReplaceTests.test_invalid_map_and_root) ... ok
+test_no_rename_reports_remaining_names (test_brand.ReplaceTests.test_no_rename_reports_remaining_names) ... ok
+test_skips_binary_non_utf8_symlink_and_exclusions (test_brand.ReplaceTests.test_skips_binary_non_utf8_symlink_and_exclusions) ... ok
+test_binary_content_excluded_but_name_checked (test_brand.ScanTests.test_binary_content_excluded_but_name_checked) ... ok
+test_config_merge_and_config_excluded (test_brand.ScanTests.test_config_merge_and_config_excluded) ... ok
+test_domain_is_literal (test_brand.ScanTests.test_domain_is_literal) ... ok
+test_exclusions_and_evidence_flag (test_brand.ScanTests.test_exclusions_and_evidence_flag) ... ok
+test_invalid_inputs_exit_2 (test_brand.ScanTests.test_invalid_inputs_exit_2) ... ok
+test_name_variants_domain_color (test_brand.ScanTests.test_name_variants_domain_color) ... ok
+test_path_hits_for_files_and_dirs (test_brand.ScanTests.test_path_hits_for_files_and_dirs) ... ok
+test_symlinks_not_followed (test_brand.ScanTests.test_symlinks_not_followed) ... ok
+test_text_output (test_brand.ScanTests.test_text_output) ... ok
+test_different_methods_and_path_params (test_catalog.CatalogTest.test_different_methods_and_path_params) ... ok
+test_invalid_catalog_input (test_catalog.CatalogTest.test_invalid_catalog_input) ... ok
+test_same_path_on_two_hosts_keeps_both (test_catalog.CatalogTest.test_same_path_on_two_hosts_keeps_both) ... ok
+test_secrets_not_copied (test_catalog.CatalogTest.test_secrets_not_copied) ... ok
+test_seed_unknown_verbs_and_url_hosts (test_catalog.CatalogTest.test_seed_unknown_verbs_and_url_hosts) ... ok
+test_unclassified_party_is_not_assumed_first_party (test_catalog.CatalogTest.test_unclassified_party_is_not_assumed_first_party) ... ok
+test_unknown_contract_fields_are_not_invented (test_catalog.CatalogTest.test_unknown_contract_fields_are_not_invented) ... ok
+test_unknown_method_skipped_unknown_auth_flagged (test_catalog.CatalogTest.test_unknown_method_skipped_unknown_auth_flagged) ... ok
+test_client_version_drift_is_rejected (test_client_packaging.ClientPackagingTests.test_client_version_drift_is_rejected) ... ok
+test_every_translation_is_required_and_cross_linked (test_client_packaging.ClientPackagingTests.test_every_translation_is_required_and_cross_linked) ... ok
+test_marketplace_drift_and_binding_only_manifest_are_rejected (test_client_packaging.ClientPackagingTests.test_marketplace_drift_and_binding_only_manifest_are_rejected) ... ok
+test_moved_resource_or_corrupt_copy_is_rejected (test_client_packaging.ClientPackagingTests.test_moved_resource_or_corrupt_copy_is_rejected) ... ok
+test_settings_are_isolated_and_tokens_not_forwarded (test_client_packaging.ClientPackagingTests.test_settings_are_isolated_and_tokens_not_forwarded) ... ok
+test_skill_only_codex_source_is_rejected (test_client_packaging.ClientPackagingTests.test_skill_only_codex_source_is_rejected) ... ok
+test_staged_bundle_preserves_all_skill_resources (test_client_packaging.ClientPackagingTests.test_staged_bundle_preserves_all_skill_resources) ... ok
+test_advance_validation_does_not_append (test_gates_ledger.Ledger.test_advance_validation_does_not_append) ... ok
+test_drift_marks_multi_artifact_claims (test_gates_ledger.Ledger.test_drift_marks_multi_artifact_claims) ... ok
+test_multi_artifact_advance_and_stale_propagation (test_gates_ledger.Ledger.test_multi_artifact_advance_and_stale_propagation) ... ok
+test_new_claim_refused_when_artifact_drifted (test_gates_ledger.Ledger.test_new_claim_refused_when_artifact_drifted) ... ok
+test_empty_inputs_block (test_gates_ledger.QaGate.test_empty_inputs_block) ... ok
+test_failing_ratio_blocks (test_gates_ledger.QaGate.test_failing_ratio_blocks) ... ok
+test_good_passes (test_gates_ledger.QaGate.test_good_passes) ... ok
+test_malformed_viewport_blocks (test_gates_ledger.QaGate.test_malformed_viewport_blocks) ... ok
+test_missing_viewport_vs_ref_blocks (test_gates_ledger.QaGate.test_missing_viewport_vs_ref_blocks) ... ok
+test_nonfinite_ratio_blocks (test_gates_ledger.QaGate.test_nonfinite_ratio_blocks) ... ok
+test_color_probe_measures_pixels (test_image_helpers.ImageHelperTests.test_color_probe_measures_pixels) ... ok
+test_invalid_comparison_options_fail (test_image_helpers.ImageHelperTests.test_invalid_comparison_options_fail) ... ok
+test_section_slices_follow_device_pixel_ratio (test_image_helpers.ImageHelperTests.test_section_slices_follow_device_pixel_ratio) ... ok
+test_single_pixel_image_resizes_without_false_mismatch (test_image_helpers.ImageHelperTests.test_single_pixel_image_resizes_without_false_mismatch) ... ok
+test_transparency_gate_rejects_opaque_asset (test_image_helpers.ImageHelperTests.test_transparency_gate_rejects_opaque_asset) ... ok
+test_bad_metadata_remains_unknown (test_mobile_inventory.MobileInventoryTests.test_bad_metadata_remains_unknown) ... ok
+test_entry_and_total_budgets_are_enforced (test_mobile_inventory.MobileInventoryTests.test_entry_and_total_budgets_are_enforced) ... ok
+test_flutter_and_unity_inventory_without_extraction (test_mobile_inventory.MobileInventoryTests.test_flutter_and_unity_inventory_without_extraction) ... ok
+test_invalid_archive_rejected (test_mobile_inventory.MobileInventoryTests.test_invalid_archive_rejected) ... ok
+test_ipa_framework_is_detected (test_mobile_inventory.MobileInventoryTests.test_ipa_framework_is_detected) ... ok
+test_member_traversal_is_rejected (test_mobile_inventory.MobileInventoryTests.test_member_traversal_is_rejected) ... ok
+test_symlink_is_rejected (test_mobile_inventory.MobileInventoryTests.test_symlink_is_rejected) ... ok
+test_unrecognized_package_does_not_guess_runtime (test_mobile_inventory.MobileInventoryTests.test_unrecognized_package_does_not_guess_runtime) ... ok
+test_imgdiff_reports_bad_input_with_exit_2 (test_shared_images.CliTests.test_imgdiff_reports_bad_input_with_exit_2) ... ok
+test_imgdiff_runs_from_other_cwd_and_preserves_schema_and_score (test_shared_images.CliTests.test_imgdiff_runs_from_other_cwd_and_preserves_schema_and_score) ... /root/replica-suite/tests/test_shared_images.py:138: ResourceWarning: unclosed file <_io.BufferedReader name='/tmp/tmpcinjf0bs/o/diff.png'>
+  self.assertEqual(Image.open(out).size, (60, 60))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_pixel_diff_corrupt_input_fails_nonzero (test_shared_images.CliTests.test_pixel_diff_corrupt_input_fails_nonzero) ... ok
+test_pixel_diff_runs_from_other_cwd_and_preserves_schema (test_shared_images.CliTests.test_pixel_diff_runs_from_other_cwd_and_preserves_schema) ... ok
+test_corrupt_truncated_and_non_png_rejected (test_shared_images.SharedImageTests.test_corrupt_truncated_and_non_png_rejected) ... ok
+test_gray16_uses_high_byte (test_shared_images.SharedImageTests.test_gray16_uses_high_byte) ... ok
+test_gray_low_depth_scales (test_shared_images.SharedImageTests.test_gray_low_depth_scales) ... ok
+test_invalid_sizes_and_buffers_rejected (test_shared_images.SharedImageTests.test_invalid_sizes_and_buffers_rejected) ... ok
+test_palette_with_trns (test_shared_images.SharedImageTests.test_palette_with_trns) ... ok
+test_pixel_limit_rejected_before_decode (test_shared_images.SharedImageTests.test_pixel_limit_rejected_before_decode) ... ok
+test_rgb_rows_roundtrip (test_shared_images.SharedImageTests.test_rgb_rows_roundtrip) ... ok
+test_rgba_roundtrip_preserves_alpha_and_creates_parents (test_shared_images.SharedImageTests.test_rgba_roundtrip_preserves_alpha_and_creates_parents) ... ok
+test_white_composite_uses_floor_division (test_shared_images.SharedImageTests.test_white_composite_uses_floor_division) ... ok
+test_auto_text_entity_is_incomplete_instead_of_false_failure (test_uiux_qt.QWidgetTests.test_auto_text_entity_is_incomplete_instead_of_false_failure) ... skipped '실제 QWidget 검사는 PySide6가 있는 인터프리터에서 별도로 실행한다'
+test_form_buddy_effective_accessible_name_is_recognized (test_uiux_qt.QWidgetTests.test_form_buddy_effective_accessible_name_is_recognized) ... skipped '실제 QWidget 검사는 PySide6가 있는 인터프리터에서 별도로 실행한다'
+test_hidden_root_and_invalid_object_do_not_get_runtime_pass (test_uiux_qt.QWidgetTests.test_hidden_root_and_invalid_object_do_not_get_runtime_pass) ... skipped '실제 QWidget 검사는 PySide6가 있는 인터프리터에서 별도로 실행한다'
+test_real_scroll_panel_and_word_wrap_are_measured_correctly (test_uiux_qt.QWidgetTests.test_real_scroll_panel_and_word_wrap_are_measured_correctly) ... skipped '실제 QWidget 검사는 PySide6가 있는 인터프리터에서 별도로 실행한다'
+test_real_widgets_three_defects_then_zero (test_uiux_qt.QWidgetTests.test_real_widgets_three_defects_then_zero) ... skipped '실제 QWidget 검사는 PySide6가 있는 인터프리터에서 별도로 실행한다'
+test_rich_text_and_empty_window_do_not_get_runtime_pass (test_uiux_qt.QWidgetTests.test_rich_text_and_empty_window_do_not_get_runtime_pass) ... skipped '실제 QWidget 검사는 PySide6가 있는 인터프리터에서 별도로 실행한다'
+test_standard_label_size_hint_does_not_clip_font_leading (test_uiux_qt.QWidgetTests.test_standard_label_size_hint_does_not_clip_font_leading) ... skipped '실제 QWidget 검사는 PySide6가 있는 인터프리터에서 별도로 실행한다'
+test_accessible_name_resolves_icon_button (test_uiux_qt.SnapshotTests.test_accessible_name_resolves_icon_button) ... ok
+test_cli_huge_integer_and_deep_json_are_input_errors (test_uiux_qt.SnapshotTests.test_cli_huge_integer_and_deep_json_are_input_errors) ... ok
+test_cli_malformed_json_nonfinite_and_oversize_are_rejected (test_uiux_qt.SnapshotTests.test_cli_malformed_json_nonfinite_and_oversize_are_rejected) ... ok
+test_cli_valid_snapshot_exit_three_and_output (test_uiux_qt.SnapshotTests.test_cli_valid_snapshot_exit_three_and_output) ... ok
+test_expected_scroll_overflow_is_exempt (test_uiux_qt.SnapshotTests.test_expected_scroll_overflow_is_exempt) ... ok
+test_hidden_widgets_are_not_reported_as_rendered_defects (test_uiux_qt.SnapshotTests.test_hidden_widgets_are_not_reported_as_rendered_defects) ... ok
+test_invalid_shapes_types_ranges_and_duplicates_are_rejected (test_uiux_qt.SnapshotTests.test_invalid_shapes_types_ranges_and_duplicates_are_rejected) ... ok
+test_normal_snapshot_does_not_claim_runtime_pass (test_uiux_qt.SnapshotTests.test_normal_snapshot_does_not_claim_runtime_pass) ... ok
+test_three_independent_defects_are_detected (test_uiux_qt.SnapshotTests.test_three_independent_defects_are_detected) ... ok
+test_unmeasured_text_is_explicitly_incomplete (test_uiux_qt.SnapshotTests.test_unmeasured_text_is_explicitly_incomplete) ... ok
+test_alpha_change_is_counted (test_visual_pipeline.PixelGateTests.test_alpha_change_is_counted) ... ok
+test_capture_rejects_unsafe_prefix_before_launch (test_visual_pipeline.PixelGateTests.test_capture_rejects_unsafe_prefix_before_launch) ... ok
+test_explicit_tolerance_accepts_small_change (test_visual_pipeline.PixelGateTests.test_explicit_tolerance_accepts_small_change) ... ok
+test_identical_images_pass (test_visual_pipeline.PixelGateTests.test_identical_images_pass) ... ok
+test_invalid_options_do_not_pass (test_visual_pipeline.PixelGateTests.test_invalid_options_do_not_pass) ... ok
+test_size_and_missing_pair_fail (test_visual_pipeline.PixelGateTests.test_size_and_missing_pair_fail) ... ok
+test_strict_catches_one_channel_step (test_visual_pipeline.PixelGateTests.test_strict_catches_one_channel_step) ... ok
+test_download_assets (test_web_files.WebFilesTest.test_download_assets) ... usage: d [-h] --inventory INVENTORY --dest DEST [--max-mb MAX_MB]
+         [--delay DELAY] [--referer REFERER]
+d: error: invalid inventory /tmp/tmpkro664j9/inv.json: Expecting ',' delimiter: line 1 column 3 (char 2)
+ok
+test_local_path_contained (test_web_files.WebFilesTest.test_local_path_contained) ... ok
+test_mirror_rejects_non_http (test_web_files.WebFilesTest.test_mirror_rejects_non_http) ... usage: m [-h] [--overwrite] url output_dir
+m: error: url must be an absolute http(s) URL
+ok
+test_mirror_stays_in_output (test_web_files.WebFilesTest.test_mirror_stays_in_output) ... WARN failed http://127.0.0.1:44881/x/%2e%2e/%2e%2e/e2.txt: HTTP Error 404: Not Found
+ok
+
+----------------------------------------------------------------------
+Ran 94 tests in 8.622s
+
+OK (skipped=7)
+1/1 assets saved; 0 failed or invalid -> /tmp/tmpkro664j9/d/assets-map.json
+Mirrored 2 assets into /tmp/tmppqmduizg/out
+Run locally with:
+  cd /tmp/tmppqmduizg/out
+  python3 -m http.server 8088
+
+> replica-suite@0.4.0 test:uiux
+> node --test tests/uiux.test.mjs tests/uiux_proxy.test.mjs
+
+✔ 계약 초안은 두 viewport와 실제 assertion 작성 위치를 제공한다 (2.764053ms)
+✔ 빈 검사·assertion 누락·첫 goto 누락은 거부한다 (1.370673ms)
+✔ 오타 필드·중복 식별자·없는 상태 흐름을 거부한다 (2.896209ms)
+✔ 원격 goto·프로토콜 경로·백슬래시·제어문자를 거부한다 (0.486417ms)
+✔ selector 형식 충돌과 의미 없는 assert 문자열을 거부한다 (2.188046ms)
+✔ 알 수 없는 action·행위와 무관한 필드·과도한 픽셀을 거부한다 (0.559032ms)
+✔ 디자인 토큰은 유한한 증가 수열과 색상값만 받는다 (0.918113ms)
+✔ 실패와 미확인 결과를 통과로 집계하지 않는다 (0.440254ms)
+✔ 증거 경로 이탈과 플랫폼별 절대 경로를 거부한다 (0.385671ms)
+✔ 기존 출력 디렉토리를 재사용하지 않는다 (38.952674ms)
+✔ 증거 묶음은 artifact·계약·보고서 해시를 재검증한다 (44.673628ms)
+✔ 증거 수정과 manifest에 없는 파일을 발견한다 (23.04242ms)
+✔ 빈 checks와 summary 판정 불일치는 보고서 생성 전 차단한다 (2.322575ms)
+✔ manifest duplicate·판정 거짓 변경·누락된 보고서를 거부한다 (9.034989ms)
+✔ 증거 파일과 중간 디렉토리 symlink를 읽지 않는다 (5.125672ms)
+✔ 보고서의 외부 텍스트는 HTML로 실행되지 않는다 (0.719682ms)
+✔ CLI는 기존 계약을 덮어쓰지 않고 잘못된 옵션을 거부한다 (319.858789ms)
+✔ readJson은 잘못된 JSON과 symlink를 거부한다 (5.270316ms)
+✔ verify의 잘못된 입력 경로와 묶음 내부 손상을 구분한다 (322.180654ms)
+✔ 기대 오류와 dialog는 정확한 상태·메시지·횟수로 한정한다 (2.195075ms)
+✔ 기대 HTTP 오류는 정확한 origin·method·path·status·count만 소비한다 (1.365268ms)
+✔ 예상한 응답의 브라우저 자동 오류만 실제 응답 횟수와 연결한다 (1.041731ms)
+✔ 기대 console 오류의 누락·초과와 dialog 순서 불일치는 숨기지 않는다 (0.379094ms)
+✔ 보고서에서 절단한 console 로그를 정확히 일치한 기대값으로 오인하지 않는다 (0.120357ms)
+✔ HTTP 본문이 끝나기 전 첫 SSE chunk를 전달하고 소유 연결을 닫는다 (69.935334ms)
+✔ 직접 외부 요청과 HTTP redirect를 목적지 연결 전에 차단한다 (22.484993ms)
+✔ CONNECT는 허용 HTTPS origin host/port만 터널링하고 다른 포트는 연결하지 않는다 (7.381816ms)
+✔ 등록한 plain WebSocket CONNECT도 TLS·Host 불일치·일반 HTTP·과대 헤더를 상류 연결 전에 차단한다 (5024.031344ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5285.518785

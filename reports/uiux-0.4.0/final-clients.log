@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "clients": [
+    {
+      "client": "codex",
+      "version": "codex-cli 0.163.0",
+      "status": "PASS",
+      "skills": 42,
+      "discovery": "app-server skills/list"
+    },
+    {
+      "client": "claude",
+      "version": "2.1.292 (Claude Code)",
+      "status": "PASS",
+      "skills": 42,
+      "discovery": "plugin details component inventory"
+    },
+    {
+      "client": "gjc",
+      "version": "gjc/0.19.2",
+      "status": "PASS",
+      "skills": 42,
+      "discovery": "skills discover marketplace provider"
+    }
+  ],
+  "limits": "Installation/discovery and shared-resource checks only; no model turns or native-device tests."
+}

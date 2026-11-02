@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "project": {
+    "name": "메모 편집기",
+    "platform": "web",
+    "audience": "키보드와 터치로 메모를 편집하는 테스트 사용자",
+    "locale": "ko-KR"
+  },
+  "goals": [
+    "메모를 저장하고 재로드 후 같은 내용을 확인한다"
+  ],
+  "tokens": {
+    "colors": {
+      "background": "#ffffff",
+      "text": "#17212b",
+      "accent": "#175cd3"
+    },
+    "spacing": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32
+    ],
+    "radii": [
+      0,
+      4,
+      8
+    ],
+    "font_sizes": [
+      14,
+      16,
+      20,
+      28
+    ]
+  },
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1100,
+      "height": 760
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 700
+    }
+  ],
+  "flows": [
+    {
+      "id": "save",
+      "title": "메모 저장·재로드",
+      "steps": [
+        {
+          "action": "goto",
+          "path": "/"
+        },
+        {
+          "action": "fill",
+          "target": {
+            "role": "textbox",
+            "name": "메모"
+          },
+          "value": "합성 메모"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "저장"
+          }
+        },
+        {
+          "action": "assert-text",
+          "target": {
+            "selector": "#status"
+          },
+          "text": "저장됨: 합성 메모"
+        },
+        {
+          "action": "reload"
+        },
+        {
+          "action": "assert-text",
+          "target": {
+            "selector": "#status"
+          },
+          "text": "저장됨: 합성 메모"
+        }
+      ]
+    }
+  ],
+  "states": [
+    {
+      "id": "saved",
+      "title": "저장 후 재로드",
+      "flow_id": "save"
+    }
+  ]
+}

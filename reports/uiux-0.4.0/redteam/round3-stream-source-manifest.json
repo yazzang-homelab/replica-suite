@@ -1,0 +1,32 @@
+[
+  {
+    "path": "lib/uiux.mjs",
+    "sha256": "5835a5aa624651ae1d7838d97c5fdd33018dd6d996910d242d1baf1c6363056e",
+    "bytes": 18540,
+    "lines": 259
+  },
+  {
+    "path": "lib/uiux-web.mjs",
+    "sha256": "286bd34e50218b80e71ff706430d6ffc11bcbfdc4c9b450919d66f73ef79db74",
+    "bytes": 21700,
+    "lines": 364
+  },
+  {
+    "path": "lib/uiux_qt.py",
+    "sha256": "edd3081664e002113999e201721ce48ede494de049ab8d8cd338dff949ce74ce",
+    "bytes": 15432,
+    "lines": 300
+  },
+  {
+    "path": "scripts/uiux.mjs",
+    "sha256": "3b0ef7a5ffb5ec636b3740bb2a1d0eb7babc7ffa38cb9c1604cf8fe305ebdee7",
+    "bytes": 6532,
+    "lines": 102
+  },
+  {
+    "path": "skills/uiux-workbench/SKILL.md",
+    "sha256": "11e7f77007e4e9fd4b97c65bd6e60013b68282197a76113c864b435de1600f6d",
+    "bytes": 5155,
+    "lines": 46
+  }
+]

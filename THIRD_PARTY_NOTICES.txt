@@ -1,6 +1,6 @@
 THIRD-PARTY NOTICES
 
-Original integration files are private; third-party rights remain unchanged.
+원 통합물의 라이선스는 LICENSE를 따릅니다. 외부 코드의 라이선스는 유지됩니다.
 The following full upstream licenses apply to the listed copied/adapted files.
 Consult upstreams.lock.json for full commit IDs and file hashes.
 
@@ -869,3 +869,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+========================================================================
+추가 실행 의존성 (0.4.0)
+
+axe-core 4.14.0 — MPL-2.0
+Source: https://github.com/dequelabs/axe-core
+설치 방식: npm package-lock.json에 버전·무결성을 고정합니다.
+원본 소스 수정이나 파일 복사는 하지 않습니다. 설치 패키지의 LICENSE 및
+LICENSE-3RD-PARTY.txt가 유지됩니다.
+
+UI·UX 계약·어댑터·스킬·보고서 생성기는 이 저장소에서 자체 작성했습니다.
+앞선 후보 조사에서 외부 스킬 본문·탐지 규칙을 복사하지 않았습니다.

@@ -1,0 +1,288 @@
+{
+  "R2": {
+    "status": "pass",
+    "checks": [
+      {
+        "id": "web.browser.launch",
+        "status": "pass",
+        "message": "Chromium을 실행했습니다.",
+        "kind": "runtime"
+      },
+      {
+        "id": "web.v0.f0.s0.settle",
+        "status": "pass",
+        "message": "문서·글꼴·이미지 로드가 정리됐습니다.",
+        "kind": "runtime",
+        "viewport": "desktop",
+        "flow": "repro",
+        "step": 0
+      },
+      {
+        "id": "web.v0.f0.s0.a11y",
+        "status": "pass",
+        "message": "WCAG 자동 검사: 위반 0개 규칙, 수동 확인 0개 규칙.",
+        "kind": "a11y",
+        "evidence": "web/v0-f0-s0.axe.json",
+        "violations": [],
+        "incomplete": [],
+        "viewport": "desktop",
+        "flow": "repro",
+        "step": 0
+      },
+      {
+        "id": "web.v0.f0.s1.settle",
+        "status": "pass",
+        "message": "문서·글꼴·이미지 로드가 정리됐습니다.",
+        "kind": "runtime",
+        "viewport": "desktop",
+        "flow": "repro",
+        "step": 1
+      },
+      {
+        "id": "web.v0.f0.s1.a11y",
+        "status": "pass",
+        "message": "WCAG 자동 검사: 위반 0개 규칙, 수동 확인 0개 규칙.",
+        "kind": "a11y",
+        "evidence": "web/v0-f0-s1.axe.json",
+        "violations": [],
+        "incomplete": [],
+        "viewport": "desktop",
+        "flow": "repro",
+        "step": 1
+      },
+      {
+        "id": "web.v0.f0.flow",
+        "status": "pass",
+        "message": "계약에 명시한 모든 동작과 assertion을 실행했습니다.",
+        "kind": "flow",
+        "viewport": "desktop",
+        "flow": "repro"
+      },
+      {
+        "id": "web.v0.f0.network",
+        "status": "pass",
+        "message": "정책에 의해 차단한 요청·창·다운로드 0건.",
+        "kind": "network",
+        "evidence": [],
+        "viewport": "desktop",
+        "flow": "repro"
+      },
+      {
+        "id": "web.v0.f0.runtime",
+        "status": "pass",
+        "message": "런타임 오류 0건, HTTP 오류 0건.",
+        "kind": "runtime",
+        "evidence": {
+          "errors": [],
+          "http_errors": []
+        },
+        "viewport": "desktop",
+        "flow": "repro"
+      },
+      {
+        "id": "web.browser.cleanup",
+        "status": "pass",
+        "message": "이 검사에서 실행한 Chromium을 종료했습니다.",
+        "kind": "runtime"
+      }
+    ],
+    "artifacts": 4
+  },
+  "R3": {
+    "status": "fail",
+    "checks": [
+      {
+        "id": "web.browser.launch",
+        "status": "pass",
+        "message": "Chromium을 실행했습니다.",
+        "kind": "runtime"
+      },
+      {
+        "id": "web.v0.f0.s0.settle",
+        "status": "pass",
+        "message": "문서·글꼴·이미지 로드가 정리됐습니다.",
+        "kind": "runtime",
+        "viewport": "desktop",
+        "flow": "repro",
+        "step": 0
+      },
+      {
+        "id": "web.v0.f0.s0.a11y",
+        "status": "pass",
+        "message": "WCAG 자동 검사: 위반 0개 규칙, 수동 확인 0개 규칙.",
+        "kind": "a11y",
+        "evidence": "web/v0-f0-s0.axe.json",
+        "violations": [],
+        "incomplete": [],
+        "viewport": "desktop",
+        "flow": "repro",
+        "step": 0
+      },
+      {
+        "id": "web.v0.f0.s1.settle",
+        "status": "pass",
+        "message": "문서·글꼴·이미지 로드가 정리됐습니다.",
+        "kind": "runtime",
+        "viewport": "desktop",
+        "flow": "repro",
+        "step": 1
+      },
+      {
+        "id": "web.v0.f0.s1.a11y",
+        "status": "pass",
+        "message": "WCAG 자동 검사: 위반 0개 규칙, 수동 확인 0개 규칙.",
+        "kind": "a11y",
+        "evidence": "web/v0-f0-s1.axe.json",
+        "violations": [],
+        "incomplete": [],
+        "viewport": "desktop",
+        "flow": "repro",
+        "step": 1
+      },
+      {
+        "id": "web.v0.f0.flow",
+        "status": "fail",
+        "message": "locator.innerText: Timeout 1ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#out')\u001b[22m\n",
+        "kind": "flow",
+        "viewport": "desktop",
+        "flow": "repro"
+      },
+      {
+        "id": "web.v0.f0.network",
+        "status": "pass",
+        "message": "정책에 의해 차단한 요청·창·다운로드 0건.",
+        "kind": "network",
+        "evidence": [],
+        "viewport": "desktop",
+        "flow": "repro"
+      },
+      {
+        "id": "web.v0.f0.runtime",
+        "status": "fail",
+        "message": "런타임 오류 2건, HTTP 오류 0건.",
+        "kind": "runtime",
+        "evidence": {
+          "errors": [
+            {
+              "type": "request",
+              "message": "route.fetch: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - → GET http://127.0.0.1:43227/events\u001b[22m\n\u001b[2m    - user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36\u001b[22m\n\u001b[2m    - accept: text/event-stream\u001b[22m\n\u001b[2m    - accept-encoding: gzip,deflate,br\u001b[22m\n\u001b[2m    - accept-language: ko-KR\u001b[22m\n\u001b[2m    - referer: http://127.0.0.1:43227/sse\u001b[22m\n\u001b[2m    - sec-ch-ua: \"Chromium\";v=\"155\", \"Not(A:Brand\";v=\"24\"\u001b[22m\n\u001b[2m    - sec-ch-ua-mobile: ?0\u001b[22m\n\u001b[2m    - sec-ch-ua-platform: \"Linux\"\u001b[22m\n\u001b[2m  - ← 200 OK\u001b[22m\n\u001b[2m    - content-type: text/event-stream\u001b[22m\n\u001b[2m    - cache-control: no-cache\u001b[22m\n\u001b[2m    - connection: keep-alive\u001b[22m\n\u001b[2m    - date: Mon, 02 Nov 2026 02:42:50 GMT\u001b[22m\n\u001b[2m    - transfer-encoding: chunked\u001b[22m\n"
+            },
+            {
+              "type": "console.error",
+              "message": "Failed to load resource: net::ERR_FAILED"
+            }
+          ],
+          "http_errors": []
+        },
+        "viewport": "desktop",
+        "flow": "repro"
+      },
+      {
+        "id": "web.browser.cleanup",
+        "status": "pass",
+        "message": "이 검사에서 실행한 Chromium을 종료했습니다.",
+        "kind": "runtime"
+      }
+    ],
+    "artifacts": 4
+  },
+  "R4": {
+    "status": "fail",
+    "checks": [
+      {
+        "id": "web.browser.launch",
+        "status": "pass",
+        "message": "Chromium을 실행했습니다.",
+        "kind": "runtime"
+      },
+      {
+        "id": "web.v0.f0.s0.settle",
+        "status": "pass",
+        "message": "문서·글꼴·이미지 로드가 정리됐습니다.",
+        "kind": "runtime",
+        "viewport": "desktop",
+        "flow": "repro",
+        "step": 0
+      },
+      {
+        "id": "web.v0.f0.s0.a11y",
+        "status": "pass",
+        "message": "WCAG 자동 검사: 위반 0개 규칙, 수동 확인 0개 규칙.",
+        "kind": "a11y",
+        "evidence": "web/v0-f0-s0.axe.json",
+        "violations": [],
+        "incomplete": [],
+        "viewport": "desktop",
+        "flow": "repro",
+        "step": 0
+      },
+      {
+        "id": "web.v0.f0.s2.settle",
+        "status": "pass",
+        "message": "문서·글꼴·이미지 로드가 정리됐습니다.",
+        "kind": "runtime",
+        "viewport": "desktop",
+        "flow": "repro",
+        "step": 2
+      },
+      {
+        "id": "web.v0.f0.s2.a11y",
+        "status": "pass",
+        "message": "WCAG 자동 검사: 위반 0개 규칙, 수동 확인 0개 규칙.",
+        "kind": "a11y",
+        "evidence": "web/v0-f0-s2.axe.json",
+        "violations": [],
+        "incomplete": [],
+        "viewport": "desktop",
+        "flow": "repro",
+        "step": 2
+      },
+      {
+        "id": "web.v0.f0.flow",
+        "status": "pass",
+        "message": "계약에 명시한 모든 동작과 assertion을 실행했습니다.",
+        "kind": "flow",
+        "viewport": "desktop",
+        "flow": "repro"
+      },
+      {
+        "id": "web.v0.f0.network",
+        "status": "pass",
+        "message": "정책에 의해 차단한 요청·창·다운로드 0건.",
+        "kind": "network",
+        "evidence": [],
+        "viewport": "desktop",
+        "flow": "repro"
+      },
+      {
+        "id": "web.v0.f0.runtime",
+        "status": "fail",
+        "message": "런타임 오류 1건, HTTP 오류 1건.",
+        "kind": "runtime",
+        "evidence": {
+          "errors": [
+            {
+              "type": "console.error",
+              "message": "Failed to load resource: the server responded with a status of 422 (Unprocessable Entity)"
+            }
+          ],
+          "http_errors": [
+            {
+              "status": 422,
+              "url": "http://127.0.0.1:43227/api"
+            }
+          ]
+        },
+        "viewport": "desktop",
+        "flow": "repro"
+      },
+      {
+        "id": "web.browser.cleanup",
+        "status": "pass",
+        "message": "이 검사에서 실행한 Chromium을 종료했습니다.",
+        "kind": "runtime"
+      }
+    ],
+    "artifacts": 4
+  }
+}

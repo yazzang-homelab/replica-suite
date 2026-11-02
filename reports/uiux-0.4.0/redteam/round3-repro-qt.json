@@ -1,0 +1,46 @@
+{
+  "R1": {
+    "status": "fail",
+    "explicit_accessible_name": "",
+    "effective_accessible_name": "자동 저장",
+    "failed_checks": [
+      {
+        "id": "qt.name:QCheckBox:2",
+        "status": "fail",
+        "message": "텍스트 없는 버튼에 접근 이름이 없다",
+        "evidence": {
+          "widget_id": "QCheckBox:2",
+          "kind": "QCheckBox"
+        }
+      }
+    ]
+  },
+  "R7": {
+    "auto_size_hint_width": 33,
+    "plain_size_hint_width": 44,
+    "status": "fail",
+    "checks": [
+      {
+        "id": "qt.text:QLabel:0",
+        "status": "fail",
+        "message": "텍스트 크기보다 표시 공간이 작다",
+        "evidence": {
+          "widget_id": "QLabel:0",
+          "kind": "QLabel",
+          "measured": [
+            44.0,
+            14.0
+          ],
+          "available": [
+            33.0,
+            14.0
+          ]
+        }
+      }
+    ]
+  },
+  "R5": {
+    "exception_type": "OverflowError",
+    "exception_message": "int too large to convert to float"
+  }
+}

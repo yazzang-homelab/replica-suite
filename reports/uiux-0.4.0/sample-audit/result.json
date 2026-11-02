@@ -1,0 +1,779 @@
+{
+  "schema_version": 1,
+  "kind": "web",
+  "status": "pass",
+  "environment": {
+    "platform": "linux",
+    "architecture": "x64",
+    "node": "v24.22.1",
+    "engine": "Chromium",
+    "browser": "141.0.7390.37",
+    "executable": "bundled-chromium",
+    "axe": "4.14.0",
+    "headless": true,
+    "browser_sandbox": "Playwright 기본값(Chromium sandbox 비활성)",
+    "allowed_origins": [
+      "http://127.0.0.1:33057"
+    ]
+  },
+  "checks": [
+    {
+      "id": "web.browser.launch",
+      "status": "pass",
+      "message": "Chromium을 실행했습니다.",
+      "kind": "runtime"
+    },
+    {
+      "id": "web.v0.f0.step0",
+      "status": "pass",
+      "message": "goto 실행 완료.",
+      "kind": "step",
+      "step": 0,
+      "viewport": "desktop",
+      "flow": "save"
+    },
+    {
+      "id": "web.v0.f0.s0.settle",
+      "status": "pass",
+      "message": "문서·글꼴·이미지 로드가 정리됐습니다.",
+      "kind": "runtime",
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 0
+    },
+    {
+      "id": "web.v0.f0.s0.capture",
+      "status": "pass",
+      "message": "viewport 스크린샷을 저장했습니다.",
+      "kind": "capture",
+      "evidence": "web/v0-f0-s0.png",
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 0
+    },
+    {
+      "id": "web.v0.f0.s0.a11y",
+      "status": "pass",
+      "message": "WCAG 자동 검사: 위반 0개 규칙, 수동 확인 0개 규칙, 미검사 frame 0개.",
+      "kind": "a11y",
+      "evidence": "web/v0-f0-s0.axe.json",
+      "violations": [],
+      "incomplete": [],
+      "frame_errors": [],
+      "inspected_frames": 1,
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 0
+    },
+    {
+      "id": "web.v0.f0.s0.overflow",
+      "status": "pass",
+      "message": "가로 넘침: 0px.",
+      "kind": "layout",
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 0,
+      "evidence": {
+        "viewport_width": 1100,
+        "scroll_width": 1100
+      }
+    },
+    {
+      "id": "web.v0.f0.s0.targets",
+      "status": "pass",
+      "message": "24 CSS px 미만 조작 대상 0개(문맥 확인 권고).",
+      "kind": "advisory",
+      "severity": "advisory",
+      "evidence": [],
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 0
+    },
+    {
+      "id": "web.v0.f0.step1",
+      "status": "pass",
+      "message": "fill 실행 완료.",
+      "kind": "step",
+      "step": 1,
+      "viewport": "desktop",
+      "flow": "save"
+    },
+    {
+      "id": "web.v0.f0.step2",
+      "status": "pass",
+      "message": "click 실행 완료.",
+      "kind": "step",
+      "step": 2,
+      "viewport": "desktop",
+      "flow": "save"
+    },
+    {
+      "id": "web.v0.f0.step3",
+      "status": "pass",
+      "message": "assert-text 실행 완료.",
+      "kind": "step",
+      "step": 3,
+      "viewport": "desktop",
+      "flow": "save"
+    },
+    {
+      "id": "web.v0.f0.s3.settle",
+      "status": "pass",
+      "message": "문서·글꼴·이미지 로드가 정리됐습니다.",
+      "kind": "runtime",
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 3
+    },
+    {
+      "id": "web.v0.f0.s3.capture",
+      "status": "pass",
+      "message": "viewport 스크린샷을 저장했습니다.",
+      "kind": "capture",
+      "evidence": "web/v0-f0-s3.png",
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 3
+    },
+    {
+      "id": "web.v0.f0.s3.a11y",
+      "status": "pass",
+      "message": "WCAG 자동 검사: 위반 0개 규칙, 수동 확인 0개 규칙, 미검사 frame 0개.",
+      "kind": "a11y",
+      "evidence": "web/v0-f0-s3.axe.json",
+      "violations": [],
+      "incomplete": [],
+      "frame_errors": [],
+      "inspected_frames": 1,
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 3
+    },
+    {
+      "id": "web.v0.f0.s3.overflow",
+      "status": "pass",
+      "message": "가로 넘침: 0px.",
+      "kind": "layout",
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 3,
+      "evidence": {
+        "viewport_width": 1100,
+        "scroll_width": 1100
+      }
+    },
+    {
+      "id": "web.v0.f0.s3.targets",
+      "status": "pass",
+      "message": "24 CSS px 미만 조작 대상 0개(문맥 확인 권고).",
+      "kind": "advisory",
+      "severity": "advisory",
+      "evidence": [],
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 3
+    },
+    {
+      "id": "web.v0.f0.step4",
+      "status": "pass",
+      "message": "reload 실행 완료.",
+      "kind": "step",
+      "step": 4,
+      "viewport": "desktop",
+      "flow": "save"
+    },
+    {
+      "id": "web.v0.f0.s4.settle",
+      "status": "pass",
+      "message": "문서·글꼴·이미지 로드가 정리됐습니다.",
+      "kind": "runtime",
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 4
+    },
+    {
+      "id": "web.v0.f0.s4.capture",
+      "status": "pass",
+      "message": "viewport 스크린샷을 저장했습니다.",
+      "kind": "capture",
+      "evidence": "web/v0-f0-s4.png",
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 4
+    },
+    {
+      "id": "web.v0.f0.s4.a11y",
+      "status": "pass",
+      "message": "WCAG 자동 검사: 위반 0개 규칙, 수동 확인 0개 규칙, 미검사 frame 0개.",
+      "kind": "a11y",
+      "evidence": "web/v0-f0-s4.axe.json",
+      "violations": [],
+      "incomplete": [],
+      "frame_errors": [],
+      "inspected_frames": 1,
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 4
+    },
+    {
+      "id": "web.v0.f0.s4.overflow",
+      "status": "pass",
+      "message": "가로 넘침: 0px.",
+      "kind": "layout",
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 4,
+      "evidence": {
+        "viewport_width": 1100,
+        "scroll_width": 1100
+      }
+    },
+    {
+      "id": "web.v0.f0.s4.targets",
+      "status": "pass",
+      "message": "24 CSS px 미만 조작 대상 0개(문맥 확인 권고).",
+      "kind": "advisory",
+      "severity": "advisory",
+      "evidence": [],
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 4
+    },
+    {
+      "id": "web.v0.f0.step5",
+      "status": "pass",
+      "message": "assert-text 실행 완료.",
+      "kind": "step",
+      "step": 5,
+      "viewport": "desktop",
+      "flow": "save"
+    },
+    {
+      "id": "web.v0.f0.s5.settle",
+      "status": "pass",
+      "message": "문서·글꼴·이미지 로드가 정리됐습니다.",
+      "kind": "runtime",
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 5
+    },
+    {
+      "id": "web.v0.f0.s5.capture",
+      "status": "pass",
+      "message": "viewport 스크린샷을 저장했습니다.",
+      "kind": "capture",
+      "evidence": "web/v0-f0-s5.png",
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 5
+    },
+    {
+      "id": "web.v0.f0.s5.a11y",
+      "status": "pass",
+      "message": "WCAG 자동 검사: 위반 0개 규칙, 수동 확인 0개 규칙, 미검사 frame 0개.",
+      "kind": "a11y",
+      "evidence": "web/v0-f0-s5.axe.json",
+      "violations": [],
+      "incomplete": [],
+      "frame_errors": [],
+      "inspected_frames": 1,
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 5
+    },
+    {
+      "id": "web.v0.f0.s5.overflow",
+      "status": "pass",
+      "message": "가로 넘침: 0px.",
+      "kind": "layout",
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 5,
+      "evidence": {
+        "viewport_width": 1100,
+        "scroll_width": 1100
+      }
+    },
+    {
+      "id": "web.v0.f0.s5.targets",
+      "status": "pass",
+      "message": "24 CSS px 미만 조작 대상 0개(문맥 확인 권고).",
+      "kind": "advisory",
+      "severity": "advisory",
+      "evidence": [],
+      "viewport": "desktop",
+      "flow": "save",
+      "step": 5
+    },
+    {
+      "id": "web.v0.f0.flow",
+      "status": "pass",
+      "message": "계약에 명시한 모든 동작과 assertion을 실행했습니다.",
+      "kind": "flow",
+      "viewport": "desktop",
+      "flow": "save"
+    },
+    {
+      "id": "web.v0.f0.proxy",
+      "status": "pass",
+      "message": "소유 프록시와 연결을 종료했습니다. 요청 기록으로 localhost 우회 비활성 여부를 확인합니다.",
+      "kind": "runtime",
+      "evidence": {
+        "http_requests": 2,
+        "connect_tunnels": 0,
+        "websocket_upgrades": 0,
+        "websocket_connects": 0,
+        "blocked_requests": 0
+      },
+      "viewport": "desktop",
+      "flow": "save"
+    },
+    {
+      "id": "web.v0.f0.network",
+      "status": "pass",
+      "message": "정책에 의해 차단한 요청·창·다운로드 0건.",
+      "kind": "network",
+      "evidence": [],
+      "viewport": "desktop",
+      "flow": "save"
+    },
+    {
+      "id": "web.v0.f0.runtime",
+      "status": "pass",
+      "message": "예상하지 않은 런타임 오류 0건, HTTP 오류 0건.",
+      "kind": "runtime",
+      "evidence": {
+        "errors": [],
+        "http_errors": [],
+        "observed_errors": [],
+        "observed_http_errors": []
+      },
+      "viewport": "desktop",
+      "flow": "save"
+    },
+    {
+      "id": "web.v1.f0.step0",
+      "status": "pass",
+      "message": "goto 실행 완료.",
+      "kind": "step",
+      "step": 0,
+      "viewport": "mobile",
+      "flow": "save"
+    },
+    {
+      "id": "web.v1.f0.s0.settle",
+      "status": "pass",
+      "message": "문서·글꼴·이미지 로드가 정리됐습니다.",
+      "kind": "runtime",
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 0
+    },
+    {
+      "id": "web.v1.f0.s0.capture",
+      "status": "pass",
+      "message": "viewport 스크린샷을 저장했습니다.",
+      "kind": "capture",
+      "evidence": "web/v1-f0-s0.png",
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 0
+    },
+    {
+      "id": "web.v1.f0.s0.a11y",
+      "status": "pass",
+      "message": "WCAG 자동 검사: 위반 0개 규칙, 수동 확인 0개 규칙, 미검사 frame 0개.",
+      "kind": "a11y",
+      "evidence": "web/v1-f0-s0.axe.json",
+      "violations": [],
+      "incomplete": [],
+      "frame_errors": [],
+      "inspected_frames": 1,
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 0
+    },
+    {
+      "id": "web.v1.f0.s0.overflow",
+      "status": "pass",
+      "message": "가로 넘침: 0px.",
+      "kind": "layout",
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 0,
+      "evidence": {
+        "viewport_width": 390,
+        "scroll_width": 390
+      }
+    },
+    {
+      "id": "web.v1.f0.s0.targets",
+      "status": "pass",
+      "message": "24 CSS px 미만 조작 대상 0개(문맥 확인 권고).",
+      "kind": "advisory",
+      "severity": "advisory",
+      "evidence": [],
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 0
+    },
+    {
+      "id": "web.v1.f0.step1",
+      "status": "pass",
+      "message": "fill 실행 완료.",
+      "kind": "step",
+      "step": 1,
+      "viewport": "mobile",
+      "flow": "save"
+    },
+    {
+      "id": "web.v1.f0.step2",
+      "status": "pass",
+      "message": "click 실행 완료.",
+      "kind": "step",
+      "step": 2,
+      "viewport": "mobile",
+      "flow": "save"
+    },
+    {
+      "id": "web.v1.f0.step3",
+      "status": "pass",
+      "message": "assert-text 실행 완료.",
+      "kind": "step",
+      "step": 3,
+      "viewport": "mobile",
+      "flow": "save"
+    },
+    {
+      "id": "web.v1.f0.s3.settle",
+      "status": "pass",
+      "message": "문서·글꼴·이미지 로드가 정리됐습니다.",
+      "kind": "runtime",
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 3
+    },
+    {
+      "id": "web.v1.f0.s3.capture",
+      "status": "pass",
+      "message": "viewport 스크린샷을 저장했습니다.",
+      "kind": "capture",
+      "evidence": "web/v1-f0-s3.png",
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 3
+    },
+    {
+      "id": "web.v1.f0.s3.a11y",
+      "status": "pass",
+      "message": "WCAG 자동 검사: 위반 0개 규칙, 수동 확인 0개 규칙, 미검사 frame 0개.",
+      "kind": "a11y",
+      "evidence": "web/v1-f0-s3.axe.json",
+      "violations": [],
+      "incomplete": [],
+      "frame_errors": [],
+      "inspected_frames": 1,
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 3
+    },
+    {
+      "id": "web.v1.f0.s3.overflow",
+      "status": "pass",
+      "message": "가로 넘침: 0px.",
+      "kind": "layout",
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 3,
+      "evidence": {
+        "viewport_width": 390,
+        "scroll_width": 390
+      }
+    },
+    {
+      "id": "web.v1.f0.s3.targets",
+      "status": "pass",
+      "message": "24 CSS px 미만 조작 대상 0개(문맥 확인 권고).",
+      "kind": "advisory",
+      "severity": "advisory",
+      "evidence": [],
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 3
+    },
+    {
+      "id": "web.v1.f0.step4",
+      "status": "pass",
+      "message": "reload 실행 완료.",
+      "kind": "step",
+      "step": 4,
+      "viewport": "mobile",
+      "flow": "save"
+    },
+    {
+      "id": "web.v1.f0.s4.settle",
+      "status": "pass",
+      "message": "문서·글꼴·이미지 로드가 정리됐습니다.",
+      "kind": "runtime",
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 4
+    },
+    {
+      "id": "web.v1.f0.s4.capture",
+      "status": "pass",
+      "message": "viewport 스크린샷을 저장했습니다.",
+      "kind": "capture",
+      "evidence": "web/v1-f0-s4.png",
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 4
+    },
+    {
+      "id": "web.v1.f0.s4.a11y",
+      "status": "pass",
+      "message": "WCAG 자동 검사: 위반 0개 규칙, 수동 확인 0개 규칙, 미검사 frame 0개.",
+      "kind": "a11y",
+      "evidence": "web/v1-f0-s4.axe.json",
+      "violations": [],
+      "incomplete": [],
+      "frame_errors": [],
+      "inspected_frames": 1,
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 4
+    },
+    {
+      "id": "web.v1.f0.s4.overflow",
+      "status": "pass",
+      "message": "가로 넘침: 0px.",
+      "kind": "layout",
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 4,
+      "evidence": {
+        "viewport_width": 390,
+        "scroll_width": 390
+      }
+    },
+    {
+      "id": "web.v1.f0.s4.targets",
+      "status": "pass",
+      "message": "24 CSS px 미만 조작 대상 0개(문맥 확인 권고).",
+      "kind": "advisory",
+      "severity": "advisory",
+      "evidence": [],
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 4
+    },
+    {
+      "id": "web.v1.f0.step5",
+      "status": "pass",
+      "message": "assert-text 실행 완료.",
+      "kind": "step",
+      "step": 5,
+      "viewport": "mobile",
+      "flow": "save"
+    },
+    {
+      "id": "web.v1.f0.s5.settle",
+      "status": "pass",
+      "message": "문서·글꼴·이미지 로드가 정리됐습니다.",
+      "kind": "runtime",
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 5
+    },
+    {
+      "id": "web.v1.f0.s5.capture",
+      "status": "pass",
+      "message": "viewport 스크린샷을 저장했습니다.",
+      "kind": "capture",
+      "evidence": "web/v1-f0-s5.png",
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 5
+    },
+    {
+      "id": "web.v1.f0.s5.a11y",
+      "status": "pass",
+      "message": "WCAG 자동 검사: 위반 0개 규칙, 수동 확인 0개 규칙, 미검사 frame 0개.",
+      "kind": "a11y",
+      "evidence": "web/v1-f0-s5.axe.json",
+      "violations": [],
+      "incomplete": [],
+      "frame_errors": [],
+      "inspected_frames": 1,
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 5
+    },
+    {
+      "id": "web.v1.f0.s5.overflow",
+      "status": "pass",
+      "message": "가로 넘침: 0px.",
+      "kind": "layout",
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 5,
+      "evidence": {
+        "viewport_width": 390,
+        "scroll_width": 390
+      }
+    },
+    {
+      "id": "web.v1.f0.s5.targets",
+      "status": "pass",
+      "message": "24 CSS px 미만 조작 대상 0개(문맥 확인 권고).",
+      "kind": "advisory",
+      "severity": "advisory",
+      "evidence": [],
+      "viewport": "mobile",
+      "flow": "save",
+      "step": 5
+    },
+    {
+      "id": "web.v1.f0.flow",
+      "status": "pass",
+      "message": "계약에 명시한 모든 동작과 assertion을 실행했습니다.",
+      "kind": "flow",
+      "viewport": "mobile",
+      "flow": "save"
+    },
+    {
+      "id": "web.v1.f0.proxy",
+      "status": "pass",
+      "message": "소유 프록시와 연결을 종료했습니다. 요청 기록으로 localhost 우회 비활성 여부를 확인합니다.",
+      "kind": "runtime",
+      "evidence": {
+        "http_requests": 2,
+        "connect_tunnels": 0,
+        "websocket_upgrades": 0,
+        "websocket_connects": 0,
+        "blocked_requests": 0
+      },
+      "viewport": "mobile",
+      "flow": "save"
+    },
+    {
+      "id": "web.v1.f0.network",
+      "status": "pass",
+      "message": "정책에 의해 차단한 요청·창·다운로드 0건.",
+      "kind": "network",
+      "evidence": [],
+      "viewport": "mobile",
+      "flow": "save"
+    },
+    {
+      "id": "web.v1.f0.runtime",
+      "status": "pass",
+      "message": "예상하지 않은 런타임 오류 0건, HTTP 오류 0건.",
+      "kind": "runtime",
+      "evidence": {
+        "errors": [],
+        "http_errors": [],
+        "observed_errors": [],
+        "observed_http_errors": []
+      },
+      "viewport": "mobile",
+      "flow": "save"
+    },
+    {
+      "id": "web.browser.cleanup",
+      "status": "pass",
+      "message": "이 검사에서 실행한 Chromium을 종료했습니다.",
+      "kind": "runtime"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "web/v0-f0-s0.png",
+      "sha256": "2b584147d3c26a49e1e2828894bbe1b9d64a9e2d7cdf866f80861e587e634318",
+      "bytes": 9115
+    },
+    {
+      "path": "web/v0-f0-s0.axe.json",
+      "sha256": "459e51349ab134209b90529e074c8806d356fcb6d8d464a68131fff2d78abd7c",
+      "bytes": 957
+    },
+    {
+      "path": "web/v0-f0-s3.png",
+      "sha256": "6fd21af986985b3db5871678248b868466a304fb5a64fb06cd5d0e2003035f9a",
+      "bytes": 11744
+    },
+    {
+      "path": "web/v0-f0-s3.axe.json",
+      "sha256": "459e51349ab134209b90529e074c8806d356fcb6d8d464a68131fff2d78abd7c",
+      "bytes": 957
+    },
+    {
+      "path": "web/v0-f0-s4.png",
+      "sha256": "6fd21af986985b3db5871678248b868466a304fb5a64fb06cd5d0e2003035f9a",
+      "bytes": 11744
+    },
+    {
+      "path": "web/v0-f0-s4.axe.json",
+      "sha256": "459e51349ab134209b90529e074c8806d356fcb6d8d464a68131fff2d78abd7c",
+      "bytes": 957
+    },
+    {
+      "path": "web/v0-f0-s5.png",
+      "sha256": "6fd21af986985b3db5871678248b868466a304fb5a64fb06cd5d0e2003035f9a",
+      "bytes": 11744
+    },
+    {
+      "path": "web/v0-f0-s5.axe.json",
+      "sha256": "459e51349ab134209b90529e074c8806d356fcb6d8d464a68131fff2d78abd7c",
+      "bytes": 957
+    },
+    {
+      "path": "web/v1-f0-s0.png",
+      "sha256": "b094828b770ca87de503bfde8af98a1a1b6e2e6f014cca002c8c17c2dd2fab3d",
+      "bytes": 7104
+    },
+    {
+      "path": "web/v1-f0-s0.axe.json",
+      "sha256": "8cc91ee91d69c425cd48cb8b35fbc95a67387d40da3299c3b1d7a9dd4b527565",
+      "bytes": 955
+    },
+    {
+      "path": "web/v1-f0-s3.png",
+      "sha256": "ea05cc855e0ebebdd5f914bb7f9c48f0da2b99e17adfe488eb0388135ddc960e",
+      "bytes": 9521
+    },
+    {
+      "path": "web/v1-f0-s3.axe.json",
+      "sha256": "8cc91ee91d69c425cd48cb8b35fbc95a67387d40da3299c3b1d7a9dd4b527565",
+      "bytes": 955
+    },
+    {
+      "path": "web/v1-f0-s4.png",
+      "sha256": "ea05cc855e0ebebdd5f914bb7f9c48f0da2b99e17adfe488eb0388135ddc960e",
+      "bytes": 9521
+    },
+    {
+      "path": "web/v1-f0-s4.axe.json",
+      "sha256": "8cc91ee91d69c425cd48cb8b35fbc95a67387d40da3299c3b1d7a9dd4b527565",
+      "bytes": 955
+    },
+    {
+      "path": "web/v1-f0-s5.png",
+      "sha256": "ea05cc855e0ebebdd5f914bb7f9c48f0da2b99e17adfe488eb0388135ddc960e",
+      "bytes": 9521
+    },
+    {
+      "path": "web/v1-f0-s5.axe.json",
+      "sha256": "8cc91ee91d69c425cd48cb8b35fbc95a67387d40da3299c3b1d7a9dd4b527565",
+      "bytes": 955
+    }
+  ],
+  "limitations": [
+    "자동 접근성 검사는 전체 WCAG 준수·사용성·미적 품질을 증명하지 않습니다.",
+    "각 viewport×flow는 독립된 임시 브라우저 context입니다. 기존 로그인과 파일·쿠키를 가져오지 않습니다.",
+    "HTTP(S) 요청·redirect는 소유 loopback 프록시에서 origin을 검사합니다. 허용 origin 안의 redirect와 SSE는 전달합니다.",
+    "origin 필터는 HTTP(S)/WebSocket 요청용입니다. 임의 악성 코드의 OS·네트워크 격리를 보장하지 않습니다.",
+    "검수는 goto/reload/assert 직후 상태를 측정합니다. 중간의 짧은 상태와 수동 보조기술 조작은 별도 검토가 필요합니다.",
+    "24 CSS px 미만 조작 대상은 간격·문맥 예외를 평가하지 않은 권고이며 WCAG 위반 판정이 아닙니다."
+  ]
+}

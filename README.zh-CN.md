@@ -5,12 +5,25 @@
 replica-suite 是一套用于移植和重新实现应用与网站的 agent skills，流程为 evidence -> spec -> build -> verify（证据 -> 规格 -> 构建 -> 验证）。同一份 `skills/` 同时支持 Codex、Claude Code 和 GJC，`lib/`、`scripts/`、`references/` 由三个客户端共享。
 
 - 仓库: https://github.com/yazzang-homelab/replica-suite
-- 插件名: `replica-suite`，版本 `0.3.0`
+- 插件名: `replica-suite`，版本 `0.4.0`
 - marketplace ID: `replica-suite-local`
 
 本项目不是“一键复制任意应用”的产品。它为分析、设计、实现和验证各阶段提供证据与检查门槛，最终结果取决于目标、模型和你的判断。
 
-## 包含的 41 个 skills
+## UI·UX 작업대 (0.4.0)
+
+기존 41개 스킬에 `uiux-workbench`를 추가했습니다. 웹·Electron·Qt의 사용자 흐름·상태·디자인 토큰을 명세로 연결하고 웹 브라우저의 실제 동작·접근성, Qt 위젯의 기하·텍스트·접근 이름을 검사합니다. [실행 계약과 한계](references/uiux-workbench.md)를 확인하세요.
+
+```bash
+node scripts/uiux.mjs init --name "프로젝트" --platform web --out /absolute/path/uiux-contract.json
+node scripts/uiux.mjs validate --contract /absolute/path/uiux-contract.json
+node scripts/uiux.mjs audit --contract /absolute/path/uiux-contract.json --base-url http://127.0.0.1:3000 --out /absolute/path/new-audit
+node scripts/uiux.mjs verify --bundle /absolute/path/new-audit
+```
+
+초안은 실제 작업과 assert로 수정해야 합니다. 증거·해시·HTML 보고서를 남기며 실패와 미확인을 구분합니다. 자동 검사만으로 미적 품질·원제품 동등성·Windows/macOS 실제 실행을 인증하지 않습니다. snapshot 검사는 정상이어도 미확인입니다. [검수 결과](reports/uiux-0.4.0/검수보고.md)는 검수를 마친 조건만 기록합니다.
+
+## 包含的 42 个 skills
 
 | 类别        | 数量 | 入口           | 用途                                          |
 | ----------- | ---: | -------------- | --------------------------------------------- |
@@ -19,9 +32,10 @@ replica-suite 是一套用于移植和重新实现应用与网站的 agent skill
 | shot        |    8 | `shot-index`   | 截图 -> HTML/React/Vue/Svelte/RN/UnoCSS/QML   |
 | mobile      |    7 | `mobile-index` | APK/IPA/Flutter/Unity 包、状态、API 证据分析  |
 | native      |    7 | `native-index` | Ghidra/native/C++/游戏的 Web 移植与等价性验证 |
+| UI·UX      | 1     | `uiux-workbench` |
 | root router |    1 | `replica`      | 按输入和目标分发到各类别 index                |
 
-合计 8 + 10 + 8 + 7 + 7 + 1 = 41。
+合计 8 + 10 + 8 + 7 + 7 + 1 = 42。
 
 ## 前置条件
 
@@ -80,7 +94,7 @@ gjc plugin list --json
 gjc skills discover --query replica-suite --limit 50 --json
 ```
 
-在新会话中输入 `/skill:replica-suite:replica`。在已验证的版本上，discover 命令会返回 41 个 candidates。本版本的 GJC marketplace install 会忽略 `--dry-run`，因此不要用它来验证安装。
+在新会话中输入 `/skill:replica-suite:replica`。在已验证的版本上，discover 命令会返回 42 个 candidates。本版本的 GJC marketplace install 会忽略 `--dry-run`，因此不要用它来验证安装。
 
 使用本地路径时，GJC 会复制整个目录。请用不含 `node_modules` 和 `.venv` 的干净 checkout 安装，然后在安装后的副本中准备依赖。
 
@@ -131,9 +145,9 @@ python3 scripts/check_clients.py --client all
 
 `check_clients.py` 需要三个客户端的可执行文件，使用临时隔离的 settings，不会调用付费模型。可用 `--client codex|claude|gjc` 只检查其中一个。
 
-测试包含回归测试和 3 个浏览器套件（数量可能增加）。客户端检查验证安装、skill 发现和共享资源；单元与浏览器测试还验证工具行为、图像比较和离线重放。它们不验证客户端之间 LLM 输出的一致性，也不验证真机、Ghidra 或 Qt 的实际功能。
+클라이언트 검사는 설치·탐색·공유 리소스를 확인합니다. 단위·브라우저 검사는 도구·이미지 비교·offline replay를 확인하며, 새 QWidget 검사는 Linux offscreen에서 별도 실행합니다. 클라이언트 간 LLM 생성 동등성, 실제 장비·Ghidra·Windows/macOS 실행은 확인하지 않았습니다.
 
-已测试的客户端版本: Codex 0.164.0、Claude Code 2.1.310、GJC 0.19.0。不承诺支持更旧的版本。在 Codex 0.164.0 上确认了 installed/enabled 状态以及 skills/list 的 namespace；在 GJC 0.19.0 上确认了 41 candidates。
+已测试的客户端版本: Codex 0.164.0、Claude Code 2.1.310、GJC 0.19.0。不承诺支持更旧的版本。在 Codex 0.164.0 上确认了 installed/enabled 状态以及 skills/list 的 namespace；在 GJC 0.19.0 上确认了 42 candidates。
 
 ## 许可与来源
 

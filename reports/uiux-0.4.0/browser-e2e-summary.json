@@ -1,0 +1,7 @@
+{
+  "command": "npm run test:e2e",
+  "exit_code": 0,
+  "elapsed_seconds": 58.488,
+  "log": "browser-e2e.log",
+  "execution": "순차 재검사"
+}

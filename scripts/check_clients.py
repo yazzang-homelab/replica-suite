@@ -23,7 +23,7 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 PLUGIN_ID = "replica-suite@replica-suite-local"
 CLIENTS = ("codex", "claude", "gjc")
-BUNDLE_DIRS = (".agents", ".claude-plugin", "skills", "lib", "scripts", "references", "tests")
+BUNDLE_DIRS = (".agents", ".claude-plugin", "skills", "lib", "scripts", "references", "tests", "reports")
 BUNDLE_FILES = ("plugin.json", "package.json", "package-lock.json", "requirements.txt", "LICENSE",
                 "THIRD_PARTY_NOTICES.txt", "upstreams.lock.json", "AGENTS.md",
                 "README.md", "README.ko.md", "README.zh-CN.md", "README.ja.md")
@@ -71,7 +71,9 @@ def verify_resources(installed, source, names):
     installed = Path(installed).resolve()
     expected = {"skills/" + name + "/SKILL.md" for name in names}
     expected.update({"lib/browser.mjs", "lib/images.py", "scripts/brand.py", "scripts/inspect_mobile.py",
-                     "references/common-contract.md", "references/runtime.md", "package.json"})
+                     "references/common-contract.md", "references/runtime.md", "package.json",
+                     "lib/uiux.mjs", "lib/uiux-web.mjs", "lib/uiux-proxy.mjs", "lib/uiux-expectations.mjs",
+                     "lib/uiux_qt.py", "scripts/uiux.mjs", "references/uiux-workbench.md"})
     for relative in sorted(expected):
         path = installed / relative
         if not path.is_file():

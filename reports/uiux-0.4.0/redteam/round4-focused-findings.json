@@ -1,0 +1,51 @@
+{
+  "verdict": "PASS",
+  "summary": "제공된 발췌 범위에서 proxy, 기대 이벤트 판정, 이전 지적 수정분을 검토했다. 허용하지 않은 origin으로 실제 트래픽이 나가는 fail-open은 확인하지 못했다. 다만 세 가지 오판정 결함이 있다. ① 허용된 http origin의 ws:// 연결을 CONNECT 단계에서 잘못 차단한다. ② Qt 계산 접근 이름이 QGroupBox 제목 폴백 때문에 무명 아이콘 버튼을 pass로 판정한다. ③ 4000자로 절단한 console.error를 정확 일치로 소비해 접두사만 같아도 pass가 된다. critical/high 등급은 없다.",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "medium",
+      "file": "lib/uiux-proxy.mjs",
+      "line": 116,
+      "title": "CONNECT authority를 항상 https origin으로 판정해 허용된 http origin의 ws:// 연결을 차단",
+      "trigger": "baseUrl과 allowOrigins가 http://127.0.0.1:P이다(예: Vite HMR). 페이지가 같은 origin으로 new WebSocket(\"ws://127.0.0.1:P/\")를 연다. Chromium은 HTTP 프록시를 거치는 WebSocket을 ws://여도 CONNECT 터널로 보낸다.",
+      "expected": "허용 origin 안의 WebSocket이므로 전달되고 network는 pass여야 한다(제한사항 216~217행 문구와도 일치).",
+      "actual": "routeWebSocket(284행)은 http origin으로 보고 허용한 뒤 connectToServer를 호출한다. 실제 전송은 CONNECT 127.0.0.1:P이고, 116~117행에서 https://127.0.0.1:P로 변환되어 allowed와 불일치한다. 결과는 403 응답과 blocked {kind:\"connect\"}이다. 따라서 network가 fail이 되고, 연결 실패 console.error 때문에 runtime도 fail이 된다. Chromium 경로에서는 146행 upgrade 핸들러에 도달하지 않는다.",
+      "repro": "127.0.0.1:P에 HTML과 ws 업그레이드를 모두 처리하는 http 서버를 띄운다. 페이지 스크립트가 같은 origin ws://로 연결한다. flow [goto \"/\"]로 runWebAudit({baseUrl:\"http://127.0.0.1:P/\"})를 실행한다. 기대 결과: web.v0.f0.network가 fail이고 evidence에 {kind:\"connect\",url:\"https://127.0.0.1:P\"}가 남는다.",
+      "recommendation": "CONNECT authority에는 scheme 정보가 없다. hostname과 유효 포트가 허용 origin(http 또는 https) 중 하나와 정확히 같으면 터널을 허용하라. 목적지 host:port가 동일하므로 origin 우회가 아니다. http loopback 위 ws:// 회귀 테스트도 추가하라.",
+      "confidence": "medium"
+    },
+    {
+      "id": "F2",
+      "severity": "medium",
+      "file": "lib/uiux_qt.py",
+      "line": 231,
+      "title": "Qt 계산 이름의 QGroupBox 제목 폴백 때문에 무명 아이콘 버튼을 pass로 판정",
+      "trigger": "QGroupBox(\"서식\") 레이아웃 안에 텍스트 없는 아이콘 QPushButton이 여러 개 있고, accessibleName과 buddy QLabel이 모두 없다.",
+      "expected": "버튼 자체의 접근 이름이 없으므로 qt.name:* 검사가 fail이어야 한다.",
+      "actual": "QAccessibleButton::text(Name)이 비면 QAccessibleWidget::text(Name)의 buddyString으로 넘어간다. buddyString은 buddy QLabel이 없을 때 부모 QGroupBox의 title을 반환한다. 그래서 모든 버튼의 이름이 \"서식\"이 되고 named=True로 pass된다. buddy를 반영하려던 수정이 컨테이너 제목까지 버튼 이름으로 인정하게 만든 것이다.",
+      "repro": "app=QApplication([]); g=QGroupBox(\"서식\"); l=QVBoxLayout(g); b=QPushButton(); b.setIcon(app.style().standardIcon(QStyle.StandardPixmap.SP_DialogSaveButton)); l.addWidget(b); g.show(); app.processEvents(); snapshot_widgets(g) 결과에서 QPushButton의 accessible_name이 \"서식\"이고 qt.name 검사가 pass인지 확인한다.",
+      "recommendation": "이름 출처를 명시 accessibleName, 버튼 텍스트, buddy()가 해당 위젯인 QLabel(QFormLayout labelForField 포함)로 제한하라. 계산 이름이 부모 QGroupBox title 폴백과 같으면 fail 또는 incomplete로 처리하라.",
+      "confidence": "medium"
+    },
+    {
+      "id": "F3",
+      "severity": "low",
+      "file": "lib/uiux-web.mjs",
+      "line": 298,
+      "title": "4000자 절단 후 정확 일치 비교로 긴 console.error가 접두사만으로 소비됨",
+      "trigger": "flow.expected_console_errors=[{message:\"E\".repeat(4000)}]이고, 페이지가 console.error(\"E\".repeat(4000)+\" 다른 실패\")를 호출한다.",
+      "expected": "정확 문자열이 다르므로 expected.console.0은 fail이어야 하고, 해당 오류는 예상하지 않은 runtime 오류로 보존되어야 한다.",
+      "actual": "298행이 slice(0,4000)으로 접두사만 저장한다. uiux-expectations.mjs 23행의 === 비교가 이를 일치로 보고 소비한다. 결과적으로 expected.console.0과 runtime이 모두 pass가 된다.",
+      "repro": "위 계약과 페이지로 runWebAudit을 실행한다. web.v0.f0.expected.console.0이 pass이고 web.v0.f0.runtime의 unexpected errors가 0건인지 확인한다.",
+      "recommendation": "원문 길이와 truncated 플래그(또는 전체 해시)를 보존하라. 절단된 메시지는 기대 소비 대상에서 제외하고 unexpectedRuntime으로 남겨라.",
+      "confidence": "high"
+    }
+  ],
+  "reviewed_limits": [
+    "validateInput/validateContract, bounded, settlePage, measureLayout, 단계 실행부(uiux-web.mjs 354~373행), uiux_qt.py 198~224행과 버튼 텍스트 추출부는 제공되지 않아 검사했다고 가정하지 않았다.",
+    "F1은 Chromium이 HTTP 프록시 경유 WebSocket을 CONNECT로 터널링한다는 네트워크 스택 동작과, Playwright routeWebSocket의 connectToServer가 페이지 내 실제 WebSocket을 쓴다는 구현 지식에 근거한다. 실행으로 확인하지 않았다.",
+    "F2는 Qt QAccessibleWidget buddyString의 QGroupBox title 폴백 소스 지식에 근거하며, Qt/PySide6 버전에 따라 다를 수 있다.",
+    "CONNECT authority 파싱과 실제 연결 대상이 일관되는지, 그리고 redirect·origin-form 경로는 발췌 코드 기준으로만 판단했다. DNS 재바인딩과 OS 격리는 명시된 한계로 보고 제외했다."
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "plugin_version": "0.4.0",
+  "platform": "Linux x64",
+  "python": {
+    "total": 96,
+    "passed": 88,
+    "skipped_actual_qt": 8
+  },
+  "actual_qt": {
+    "total": 19,
+    "passed": 19,
+    "platform": "offscreen",
+    "duplicates_with_general": 11
+  },
+  "node_unit": {
+    "total": 28,
+    "passed": 28
+  },
+  "browser": {
+    "legacy_suites_passed": 3,
+    "uiux_web_groups_passed": 15,
+    "uiux_cli_groups_passed": 9,
+    "uiux_expectations_groups_passed": 5,
+    "report_accessibility_runs": 3,
+    "report_axe_violations": 0,
+    "report_axe_incomplete": 0
+  },
+  "skill_forward": {
+    "checks": 44,
+    "passed": 44,
+    "scope": "합성 메모 앱 1개"
+  },
+  "sample_audit": {
+    "status": "pass",
+    "checks": 62
+  },
+  "redteam": {
+    "provider": "oci-opencodex",
+    "model": "anthropic/claude-opus-5-5",
+    "effort": "xhigh",
+    "completed_reviews": 2,
+    "tracked_findings": 10,
+    "critical": 0,
+    "high": 0,
+    "scope_note": "최종 WS 보완은 모델 검토 이후이며 독립 코드·단위·실제 브라우저 검수로 확인"
+  },
+  "limits": [
+    "미적 우열·일반 앱 전체 품질 측정 아님",
+    "Windows/macOS 실제 실행 미검증",
+    "LLM 생성 결과의 클라이언트 간 동등성 미검증"
+  ]
+}

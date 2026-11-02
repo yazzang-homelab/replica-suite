@@ -8,6 +8,7 @@ __pycache__/
 coverage/
 artifacts/
 appclone/
+.gjc/
 *.apk
 *.ipa
 *.har

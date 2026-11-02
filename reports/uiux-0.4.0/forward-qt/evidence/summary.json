@@ -1,0 +1,385 @@
+{
+  "status": "pass",
+  "scope": "단일 합성 PySide6 메모 앱의 UI 리비전 독립 실사용 검수",
+  "skill": "replica-suite:uiux-workbench",
+  "schema_version": 1,
+  "environment": {
+    "platform": "linux",
+    "backend": "QWidget",
+    "qpa_platform": "offscreen",
+    "pyside_version": "6.12.0",
+    "qt_version": "6.12.0"
+  },
+  "checks": [
+    {
+      "id": "original-source-preserved",
+      "status": "pass",
+      "observed": "72c3a50718a304c96a68f88e8924b0961ef3db7e7d91481a0e1998ac958be019"
+    },
+    {
+      "id": "before-png-written",
+      "status": "pass",
+      "observed": [
+        380,
+        190
+      ]
+    },
+    {
+      "id": "ime-input-2",
+      "status": "pass",
+      "observed": "원본 한글 메모: 기능 기준 확인"
+    },
+    {
+      "id": "original-mouse-save",
+      "status": "pass",
+      "observed": "기존 note JSON 형식 저장"
+    },
+    {
+      "id": "ime-input-4",
+      "status": "pass",
+      "observed": "원본 Ctrl+S 저장 확인"
+    },
+    {
+      "id": "original-ctrl-s-save",
+      "status": "pass",
+      "observed": "기존 단축키 저장"
+    },
+    {
+      "id": "original-fresh-process-exit-6",
+      "status": "pass",
+      "observed": 0
+    },
+    {
+      "id": "original-fresh-process-reload",
+      "status": "pass",
+      "observed": "새 Python 프로세스에서 같은 메모 로드"
+    },
+    {
+      "id": "visible-primary-action",
+      "status": "pass",
+      "observed": "메모 저장"
+    },
+    {
+      "id": "editor-accessible-name",
+      "status": "pass",
+      "observed": "메모"
+    },
+    {
+      "id": "initial-empty-state",
+      "status": "pass",
+      "observed": "아직 저장한 메모가 없습니다."
+    },
+    {
+      "id": "ime-input-11",
+      "status": "pass",
+      "observed": "한글 메모: 오후 회의 전 자료 확인"
+    },
+    {
+      "id": "dirty-state",
+      "status": "pass",
+      "observed": "저장하지 않은 변경사항이 있습니다."
+    },
+    {
+      "id": "mouse-save-feedback",
+      "status": "pass",
+      "observed": "저장 완료"
+    },
+    {
+      "id": "mouse-save-compatible-json",
+      "status": "pass",
+      "observed": {
+        "note": "한글 메모: 오후 회의 전 자료 확인"
+      }
+    },
+    {
+      "id": "revised-fresh-process-exit-15",
+      "status": "pass",
+      "observed": 0
+    },
+    {
+      "id": "mouse-save-fresh-process-reload",
+      "status": "pass",
+      "observed": "저장한 한글 메모 재실행 로드"
+    },
+    {
+      "id": "ime-input-17",
+      "status": "pass",
+      "observed": "Ctrl+S 저장: 재실행 후에도 유지"
+    },
+    {
+      "id": "ctrl-s-feedback",
+      "status": "pass",
+      "observed": "저장 완료"
+    },
+    {
+      "id": "ctrl-s-json",
+      "status": "pass",
+      "observed": "키보드 저장 데이터 일치"
+    },
+    {
+      "id": "revised-fresh-process-exit-20",
+      "status": "pass",
+      "observed": 0
+    },
+    {
+      "id": "ctrl-s-fresh-process-reload",
+      "status": "pass",
+      "observed": "새 프로세스에서 Ctrl+S 저장 메모 로드"
+    },
+    {
+      "id": "tab-editor-to-save",
+      "status": "pass",
+      "observed": "편집기→저장 버튼으로 포커스 이동"
+    },
+    {
+      "id": "shift-tab-save-to-editor",
+      "status": "pass",
+      "observed": "저장 버튼→편집기로 포커스 복원"
+    },
+    {
+      "id": "after-default-png-written",
+      "status": "pass",
+      "observed": [
+        560,
+        340
+      ]
+    },
+    {
+      "id": "default-widget-audit",
+      "status": "pass",
+      "observed": "pass"
+    },
+    {
+      "id": "after-narrow-png-written",
+      "status": "pass",
+      "observed": [
+        360,
+        290
+      ]
+    },
+    {
+      "id": "narrow-widget-audit",
+      "status": "pass",
+      "observed": "pass"
+    },
+    {
+      "id": "ime-input-28",
+      "status": "pass",
+      "observed": "변경사항 상태와 좁은 창에서 긴 한글 안내 확인"
+    },
+    {
+      "id": "dirty-narrow-widget-audit",
+      "status": "pass",
+      "observed": "pass"
+    },
+    {
+      "id": "loaded-feedback",
+      "status": "pass",
+      "observed": "저장한 메모를 불러왔습니다."
+    },
+    {
+      "id": "loaded-narrow-widget-audit",
+      "status": "pass",
+      "observed": "pass"
+    },
+    {
+      "id": "ime-input-32",
+      "status": "pass",
+      "observed": ""
+    },
+    {
+      "id": "empty-note-save-preserved",
+      "status": "pass",
+      "observed": "빈 메모 저장 동작 유지"
+    },
+    {
+      "id": "revised-fresh-process-exit-34",
+      "status": "pass",
+      "observed": 0
+    },
+    {
+      "id": "empty-note-fresh-process-reload",
+      "status": "pass",
+      "observed": "빈 메모 재실행 로드"
+    },
+    {
+      "id": "ime-input-36",
+      "status": "pass",
+      "observed": "저장 실패 시에도 편집 내용 유지"
+    },
+    {
+      "id": "write-error-feedback",
+      "status": "pass",
+      "observed": "저장하지 못했습니다. 저장 위치를 확인하고 다시 시도하세요."
+    },
+    {
+      "id": "write-error-preserves-input",
+      "status": "pass",
+      "observed": "저장 실패 시에도 편집 내용 유지"
+    },
+    {
+      "id": "write-error-narrow-png-written",
+      "status": "pass",
+      "observed": [
+        360,
+        290
+      ]
+    },
+    {
+      "id": "write-error-narrow-widget-audit",
+      "status": "pass",
+      "observed": "pass"
+    },
+    {
+      "id": "write-error-retry",
+      "status": "pass",
+      "observed": "저장 완료"
+    },
+    {
+      "id": "snapshot-cli-honest-incomplete",
+      "status": "pass",
+      "observed": 3
+    },
+    {
+      "id": "snapshot-bundle-integrity",
+      "status": "pass",
+      "observed": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "before.png",
+      "bytes": 5516,
+      "sha256": "e8b3b87b180371ce2b567d8a5e71067de74f109120edefc76fb6f951fc2e8063"
+    },
+    {
+      "path": "before-audit.json",
+      "bytes": 3168,
+      "sha256": "bc2084e4bff834ce3ef4b278a158cf557b495aa34e969417ba547c3fa1bf99b1"
+    },
+    {
+      "path": "after-default.png",
+      "bytes": 15297,
+      "sha256": "5c57e9b200b818341bb46245a42922db342f2d4367867f43325aa13f2616671d"
+    },
+    {
+      "path": "after-default-audit.json",
+      "bytes": 5520,
+      "sha256": "1edaebc2bd96ed88cce2aaf783161c20b1913023b45902a2d059f335b35b6dcb"
+    },
+    {
+      "path": "after-narrow-audit.json",
+      "bytes": 5520,
+      "sha256": "6e6067cf57541b3e9993cc31761de8d509517a1f422fe2db3bc5c4f75eb503f6"
+    },
+    {
+      "path": "after-narrow.png",
+      "bytes": 14604,
+      "sha256": "3ce4c1a83a9284678c280018f64f3a0dd9695ee6404214bd25a6e7a4c24ec4b7"
+    },
+    {
+      "path": "snapshot.json",
+      "bytes": 3845,
+      "sha256": "9bcbe8cdb198fd679bf2fce06aa7a35e9d75f6c0c247ea31778654f644860842"
+    },
+    {
+      "path": "after-dirty-narrow-audit.json",
+      "bytes": 5521,
+      "sha256": "0080cd2df15aa0dc7cebc5f6a4979a959da43bb8001129d388af2cbefb26ac5f"
+    },
+    {
+      "path": "after-loaded-narrow-audit.json",
+      "bytes": 5521,
+      "sha256": "caa7736ae39e0c79584b17adc34b2cc15793b5609c4365a0d93e1ad3384a0fd6"
+    },
+    {
+      "path": "after-write-error-narrow-audit.json",
+      "bytes": 5521,
+      "sha256": "740c0ca8d02e49896b6273dd541844bdc3dbb1af3061c1e1d2acad4453e5f4c5"
+    },
+    {
+      "path": "after-write-error-narrow.png",
+      "bytes": 18390,
+      "sha256": "48d232f1fe4c6ab5125498551d4e58a0c4e84e3d2b7f63e1922d4a9807adbc34"
+    },
+    {
+      "path": "snapshot-cli.json",
+      "bytes": 190,
+      "sha256": "2979e7abb096bffcbcc5a2fe454a209ef739a94b924b1e1d30df3e27caec6f78"
+    },
+    {
+      "path": "snapshot-bundle-verification.json",
+      "bytes": 297,
+      "sha256": "8878e018680ed0de6f909e397999f87df8f81ae9c641f78fc77f749c988f88a8"
+    },
+    {
+      "path": "execution.log",
+      "bytes": 2482,
+      "sha256": "f8aa46ce36dd6ec366839ff6c12ccccc38737523d3cdd59c1af60c9a3c09619e"
+    }
+  ],
+  "limitations": [
+    "미적 품질의 객관적인 우열 또는 모든 Qt 앱에 대한 일반화 근거가 아니다.",
+    "Linux offscreen 합성 화면이며 Windows/macOS, 실제 모니터 DPI, 화면 읽기 프로그램은 검증하지 않았다.",
+    "단순 QWidget 검사와 실제 QtTest 동작을 구분했다. 픽셀 정확도 점수·사용자 만족도 점수는 측정하지 않았다.",
+    "before는 380×190, after 기본 화면은 560×340이며 같은 크기 픽셀 비교로 사용하지 않았다.",
+    "저장하지 않은 메모의 닫기 경고, 다중 메모, 동시 파일 수정 충돌은 이 작은 리비전 범위에 포함하지 않았다."
+  ],
+  "sources": {
+    "original": {
+      "path": "app.py",
+      "sha256": "72c3a50718a304c96a68f88e8924b0961ef3db7e7d91481a0e1998ac958be019"
+    },
+    "revised": {
+      "path": "app_revised.py",
+      "sha256": "1ca8b71583bfd4a3e9caacbed1e40e5f0932539f2e00f193057816ac5f2e2262"
+    },
+    "harness": {
+      "path": "run_verification.py",
+      "sha256": "04ea1539e10b359542c56ddd9ac8cb7e34ed88e19cdf40e2b54eb1217047748f"
+    },
+    "skill": {
+      "path": "skills/uiux-workbench/SKILL.md",
+      "base": "plugin",
+      "sha256": "11e7f77007e4e9fd4b97c65bd6e60013b68282197a76113c864b435de1600f6d"
+    },
+    "qt_auditor": {
+      "path": "lib/uiux_qt.py",
+      "base": "plugin",
+      "sha256": "edd3081664e002113999e201721ce48ede494de049ab8d8cd338dff949ce74ce"
+    }
+  },
+  "before_observed_failures": [
+    {
+      "id": "qt.name:save-note:3",
+      "status": "fail",
+      "message": "텍스트 없는 버튼에 접근 이름이 없다",
+      "evidence": {
+        "widget_id": "save-note:3",
+        "kind": "QPushButton"
+      }
+    },
+    {
+      "id": "qt.text:QLabel:4",
+      "status": "fail",
+      "message": "텍스트 크기보다 표시 공간이 작다",
+      "evidence": {
+        "widget_id": "QLabel:4",
+        "kind": "QLabel",
+        "measured": [
+          218.0,
+          14.0
+        ],
+        "available": [
+          120.0,
+          16.0
+        ]
+      }
+    }
+  ],
+  "passed_checks": 44,
+  "failed_checks": 0,
+  "run_directory": ".",
+  "harness_corrections": "harness-corrections.json (예제 디렉토리 기준)",
+  "output_policy": "기존 결과를 덮어쓰지 않는다. --out은 새 디렉토리여야 하며 기본값은 임시 디렉토리다."
+}

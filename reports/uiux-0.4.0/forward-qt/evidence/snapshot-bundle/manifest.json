@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "plugin": {
+    "name": "replica-suite",
+    "version": "0.4.0"
+  },
+  "created_at": "2026-11-02T02:43:10.343Z",
+  "status": "incomplete",
+  "kind": "qt",
+  "files": [
+    {
+      "path": "qt-snapshot-result.json",
+      "bytes": 5624,
+      "sha256": "98659a1436cae717c40219cdc8fdc66813c3e00894f1dfeab92422e07dfeb203"
+    },
+    {
+      "path": "result.json",
+      "bytes": 5715,
+      "sha256": "34c035b81063b99d35a12d74706aa0574d901cf111cea4196fb9555c3d250aa8"
+    },
+    {
+      "path": "report.html",
+      "bytes": 3797,
+      "sha256": "77ba8581bc1fd0e4701d77d36462c84dd10b3112e084078e6d5cf91cd6d50f00"
+    }
+  ]
+}

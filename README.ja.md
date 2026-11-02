@@ -5,12 +5,25 @@
 replica-suite は、アプリやサイトの移植・再実装のための agent skills 集です。進め方は evidence -> spec -> build -> verify (証拠 -> 仕様 -> 実装 -> 検証) です。1 セットの `skills/` を Codex、Claude Code、GJC が共通で使い、`lib/`、`scripts/`、`references/` も 3 クライアントで共有します。
 
 - リポジトリ: https://github.com/yazzang-homelab/replica-suite
-- プラグイン名: `replica-suite`、バージョン `0.3.0`
+- プラグイン名: `replica-suite`、バージョン `0.4.0`
 - marketplace ID: `replica-suite-local`
 
 どんなアプリもワンクリックで複製する製品ではありません。分析、設計、実装、検証の各段階で証拠と確認ゲートを提供するもので、結果は対象、モデル、利用者の判断に左右されます。
 
-## 含まれる 41 個の skills
+## UI·UX 작업대 (0.4.0)
+
+기존 41개 스킬에 `uiux-workbench`를 추가했습니다. 웹·Electron·Qt의 사용자 흐름·상태·디자인 토큰을 명세로 연결하고 웹 브라우저의 실제 동작·접근성, Qt 위젯의 기하·텍스트·접근 이름을 검사합니다. [실행 계약과 한계](references/uiux-workbench.md)를 확인하세요.
+
+```bash
+node scripts/uiux.mjs init --name "프로젝트" --platform web --out /absolute/path/uiux-contract.json
+node scripts/uiux.mjs validate --contract /absolute/path/uiux-contract.json
+node scripts/uiux.mjs audit --contract /absolute/path/uiux-contract.json --base-url http://127.0.0.1:3000 --out /absolute/path/new-audit
+node scripts/uiux.mjs verify --bundle /absolute/path/new-audit
+```
+
+초안은 실제 작업과 assert로 수정해야 합니다. 증거·해시·HTML 보고서를 남기며 실패와 미확인을 구분합니다. 자동 검사만으로 미적 품질·원제품 동등성·Windows/macOS 실제 실행을 인증하지 않습니다. snapshot 검사는 정상이어도 미확인입니다. [검수 결과](reports/uiux-0.4.0/검수보고.md)는 검수를 마친 조건만 기록합니다.
+
+## 含まれる 42 個の skills
 
 | カテゴリ    |  数 | 入口           | 用途                                                      |
 | ----------- | --: | -------------- | --------------------------------------------------------- |
@@ -19,9 +32,10 @@ replica-suite は、アプリやサイトの移植・再実装のための agent
 | shot        |   8 | `shot-index`   | スクリーンショット -> HTML/React/Vue/Svelte/RN/UnoCSS/QML |
 | mobile      |   7 | `mobile-index` | APK/IPA/Flutter/Unity のパッケージ・状態・API 証拠の分析  |
 | native      |   7 | `native-index` | Ghidra/native/C++/ゲームの Web 移植と等価性検証           |
+| UI·UX      | 1     | `uiux-workbench` |
 | root router |   1 | `replica`      | 入力と目的に応じて各カテゴリの index へ振り分け           |
 
-合計は 8 + 10 + 8 + 7 + 7 + 1 = 41 です。
+合計は 8 + 10 + 8 + 7 + 7 + 1 = 42 です。
 
 ## 前提条件
 
@@ -80,7 +94,7 @@ gjc plugin list --json
 gjc skills discover --query replica-suite --limit 50 --json
 ```
 
-新しいセッションで `/skill:replica-suite:replica` を実行します。確認済みバージョンでは、discover は 41 candidates を返します。このバージョンの GJC marketplace install は `--dry-run` を無視するため、インストール検証には使わないでください。
+新しいセッションで `/skill:replica-suite:replica` を実行します。確認済みバージョンでは、discover は 42 candidates を返します。このバージョンの GJC marketplace install は `--dry-run` を無視するため、インストール検証には使わないでください。
 
 ローカルパスを指定すると、GJC はディレクトリ全体をコピーします。`node_modules` や `.venv` のないクリーンな checkout でインストールし、その後インストールされたコピーで依存関係を準備することを推奨します。
 
@@ -131,9 +145,9 @@ python3 scripts/check_clients.py --client all
 
 `check_clients.py` は 3 クライアントの実行ファイルが必要で、一時的に隔離した settings を使い、有料モデルは呼び出しません。`--client codex|claude|gjc` で 1 つだけ選べます。
 
-テストには回帰テストと 3 つのブラウザスイートがあります (数は増える可能性があります)。クライアントの検査はインストール、skill の検出、共有リソースを確認し、単体・ブラウザテストはツールの動作、画像比較、オフライン再生も確認します。クライアント間の LLM 出力の同等性や、実機、Ghidra、Qt の実際の動作は検証していません。
+클라이언트 검사는 설치·탐색·공유 리소스를 확인합니다. 단위·브라우저 검사는 도구·이미지 비교·offline replay를 확인하며, 새 QWidget 검사는 Linux offscreen에서 별도 실행합니다. 클라이언트 간 LLM 생성 동등성, 실제 장비·Ghidra·Windows/macOS 실행은 확인하지 않았습니다.
 
-テストしたクライアントのバージョン: Codex 0.164.0、Claude Code 2.1.310、GJC 0.19.0。これより古いバージョンは保証しません。Codex 0.164.0 では installed/enabled と skills/list の namespace を、GJC 0.19.0 では 41 candidates を確認しています。
+テストしたクライアントのバージョン: Codex 0.164.0、Claude Code 2.1.310、GJC 0.19.0。これより古いバージョンは保証しません。Codex 0.164.0 では installed/enabled と skills/list の namespace を、GJC 0.19.0 では 42 candidates を確認しています。
 
 ## ライセンスと出典
 

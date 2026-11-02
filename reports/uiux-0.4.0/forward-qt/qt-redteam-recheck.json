@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "scope": "레드팀 R1/R5/R7 및 후속 F2 수정 후 Qt 모듈 단위·실제 offscreen 회귀 검사",
+  "tests": {
+    "total": 19,
+    "passed": 19,
+    "failed": 0,
+    "skipped": 0,
+    "duration_seconds": 0.548,
+    "runtime": "PySide6 6.12.0 / Linux offscreen"
+  },
+  "command": "QT_QPA_PLATFORM=offscreen PYTHONDONTWRITEBYTECODE=1 /path/to/pyside-env/python -m unittest discover -s tests -p test_uiux_qt.py -v",
+  "findings": [
+    {
+      "id": "R1",
+      "resolution": "QAccessible의 실제 Name을 읽어 QFormLayout buddy 이름을 인식한다.",
+      "observed": "explicit accessibleName이 빈 QCheckBox의 actual Name=자동 저장, audit pass"
+    },
+    {
+      "id": "R5",
+      "resolution": "abs 범위 거부를 float 변환보다 앞에 두고 OverflowError/RecursionError를 입력 오류로 처리한다.",
+      "observed": "400자리 정수와 2000단계 JSON 입력 모두 CLI exit2, traceback 없음"
+    },
+    {
+      "id": "R7",
+      "resolution": "AutoText에 < 또는 &가 있으면 rich text 여부를 정규식으로 단정하지 않고 incomplete로 둔다.",
+      "observed": "a &lt; b의 AutoText sizeHint가 PlainText보다 작음을 실제 확인하고 false fail 대신 incomplete; 명시 PlainText는 pass"
+    },
+    {
+      "id": "F2",
+      "before": {
+        "observed": "QGroupBox(서식)의 무명 아이콘 버튼2개가 계산 이름 서식으로 qt.name 및 전체 pass",
+        "actual_names": [
+          "서식",
+          "서식"
+        ],
+        "name_check_statuses": [
+          "pass",
+          "pass"
+        ],
+        "audit_status": "pass"
+      },
+      "resolution": "실제 QAccessible 이름을 보존하고 optional accessible_name_source로 명시 속성·실제 QLabel buddy·그 외 computed·empty 출처를 구분한다. live computed 이름은 incomplete다.",
+      "after": {
+        "actual_names": [
+          "서식",
+          "서식"
+        ],
+        "name_sources": [
+          "computed",
+          "computed"
+        ],
+        "name_check_statuses": [
+          "incomplete",
+          "incomplete"
+        ],
+        "audit_status": "incomplete"
+      },
+      "correction_check": "서로 다른 명시 accessibleName 저장/취소를 주면 explicit/pass로 교정된다. QFormLayout buddy/pass와 이름 없는 버튼/fail도 유지한다."
+    }
+  ],
+  "source_hashes": {
+    "lib/uiux_qt.py": "4565388b9891788b9da305a86e5c3813600fcee84e142a67cc5d21b0c876f2b8",
+    "tests/test_uiux_qt.py": "3791c9f5824b5b2715c2d6d43be7efc2e9432830a73de9e39e1a0bb9bf51a8fe"
+  },
+  "prior_forward_evidence": "기존44개 통과 증거와 검사 당시 소스 해시는 그대로 보존했다. 이번 후속 변경은 이름 출처를 읽는 검사 메타데이터이며 앱 동작을 변경하지 않는다. 해당 합성 앱에는 모호한 AutoText·무텍스트 buddy 버튼·컨테이너 제목에 기대는 아이콘 버튼·극단 JSON 입력이 없다.",
+  "limitations": [
+    "Linux offscreen 검사이며 Windows/macOS·실제 화면 읽기 프로그램 검증이 아니다.",
+    "AutoText의 rich text 레이아웃을 측정했다고 주장하지 않는다.",
+    "computed 접근 이름의 실제 용도와 적절성은 자동 통과로 간주하지 않고 수동 확인이 필요하다."
+  ],
+  "previous_runs": [
+    {
+      "scope": "레드팀 R1/R5/R7 수정 후 Qt 모듈 단위·실제 offscreen 회귀 검사",
+      "tests": {
+        "total": 17,
+        "passed": 17,
+        "failed": 0,
+        "skipped": 0,
+        "duration_seconds": 0.542,
+        "runtime": "PySide6 6.12.0 / Linux offscreen"
+      },
+      "source_hashes": {
+        "lib/uiux_qt.py": "68d29e1b1b4d564bac18d02b82b57c2390317159ba6d4a60be6c5b2b2f2c9feb",
+        "tests/test_uiux_qt.py": "aadfb0975f876e02828e94c9775438cdb73a70c5428549f4571d92d7c5502886"
+      }
+    }
+  ],
+  "snapshot_compatibility": {
+    "schema_version": 1,
+    "new_optional_field": "accessible_name_source",
+    "allowed_values": [
+      "explicit",
+      "buddy",
+      "computed",
+      "empty"
+    ],
+    "existing_required_fields": "변경 없음. 필드가 없는 기존 snapshot을 계속 허용한다.",
+    "unknown_fields": "이 optional 필드 외 알 수 없는 필드는 계속 거부한다.",
+    "static_verdict": "직접 제공된 snapshot은 실제 실행을 증명하지 않으므로 정상이어도 runtime incomplete를 유지한다."
+  }
+}

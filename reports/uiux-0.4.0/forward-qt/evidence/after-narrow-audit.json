@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "kind": "qt",
+  "status": "pass",
+  "environment": {
+    "platform": "Linux",
+    "backend": "QWidget",
+    "pyside_version": "6.12.0",
+    "qt_version": "6.12.0",
+    "qpa_platform": "offscreen"
+  },
+  "checks": [
+    {
+      "id": "qt.bounds:page-title:1",
+      "status": "pass",
+      "message": "부모 영역 안에 표시",
+      "evidence": {
+        "widget_id": "page-title:1",
+        "kind": "QLabel",
+        "rect": [
+          24,
+          22,
+          312,
+          31
+        ],
+        "parent_rect": [
+          0,
+          0,
+          360,
+          290
+        ]
+      }
+    },
+    {
+      "id": "qt.text:page-title:1",
+      "status": "pass",
+      "message": "텍스트 표시 공간 확보",
+      "evidence": {
+        "widget_id": "page-title:1",
+        "kind": "QLabel",
+        "measured": [
+          103.0,
+          28.0
+        ],
+        "available": [
+          312.0,
+          31.0
+        ]
+      }
+    },
+    {
+      "id": "qt.bounds:page-description:2",
+      "status": "pass",
+      "message": "부모 영역 안에 표시",
+      "evidence": {
+        "widget_id": "page-description:2",
+        "kind": "QLabel",
+        "rect": [
+          24,
+          65,
+          312,
+          16
+        ],
+        "parent_rect": [
+          0,
+          0,
+          360,
+          290
+        ]
+      }
+    },
+    {
+      "id": "qt.text:page-description:2",
+      "status": "pass",
+      "message": "텍스트 표시 공간 확보",
+      "evidence": {
+        "widget_id": "page-description:2",
+        "kind": "QLabel",
+        "measured": [
+          171.0,
+          16.0
+        ],
+        "available": [
+          312.0,
+          16.0
+        ]
+      }
+    },
+    {
+      "id": "qt.bounds:QLabel:3",
+      "status": "pass",
+      "message": "부모 영역 안에 표시",
+      "evidence": {
+        "widget_id": "QLabel:3",
+        "kind": "QLabel",
+        "rect": [
+          24,
+          101,
+          312,
+          16
+        ],
+        "parent_rect": [
+          0,
+          0,
+          360,
+          290
+        ]
+      }
+    },
+    {
+      "id": "qt.text:QLabel:3",
+      "status": "pass",
+      "message": "텍스트 표시 공간 확보",
+      "evidence": {
+        "widget_id": "QLabel:3",
+        "kind": "QLabel",
+        "measured": [
+          24.0,
+          14.0
+        ],
+        "available": [
+          312.0,
+          16.0
+        ]
+      }
+    },
+    {
+      "id": "qt.bounds:note-input:4",
+      "status": "pass",
+      "message": "부모 영역 안에 표시",
+      "evidence": {
+        "widget_id": "note-input:4",
+        "kind": "QLineEdit",
+        "rect": [
+          24,
+          129,
+          312,
+          42
+        ],
+        "parent_rect": [
+          0,
+          0,
+          360,
+          290
+        ]
+      }
+    },
+    {
+      "id": "qt.bounds:shortcut-hint:5",
+      "status": "pass",
+      "message": "부모 영역 안에 표시",
+      "evidence": {
+        "widget_id": "shortcut-hint:5",
+        "kind": "QLabel",
+        "rect": [
+          24,
+          183,
+          312,
+          16
+        ],
+        "parent_rect": [
+          0,
+          0,
+          360,
+          290
+        ]
+      }
+    },
+    {
+      "id": "qt.text:shortcut-hint:5",
+      "status": "pass",
+      "message": "텍스트 표시 공간 확보",
+      "evidence": {
+        "widget_id": "shortcut-hint:5",
+        "kind": "QLabel",
+        "measured": [
+          174.0,
+          16.0
+        ],
+        "available": [
+          312.0,
+          16.0
+        ]
+      }
+    },
+    {
+      "id": "qt.bounds:save-status:6",
+      "status": "pass",
+      "message": "부모 영역 안에 표시",
+      "evidence": {
+        "widget_id": "save-status:6",
+        "kind": "QLabel",
+        "rect": [
+          24,
+          228,
+          188,
+          40
+        ],
+        "parent_rect": [
+          0,
+          0,
+          360,
+          290
+        ]
+      }
+    },
+    {
+      "id": "qt.text:save-status:6",
+      "status": "pass",
+      "message": "텍스트 표시 공간 확보",
+      "evidence": {
+        "widget_id": "save-status:6",
+        "kind": "QLabel",
+        "measured": [
+          52.0,
+          16.0
+        ],
+        "available": [
+          188.0,
+          40.0
+        ]
+      }
+    },
+    {
+      "id": "qt.bounds:save-note:7",
+      "status": "pass",
+      "message": "부모 영역 안에 표시",
+      "evidence": {
+        "widget_id": "save-note:7",
+        "kind": "QPushButton",
+        "rect": [
+          224,
+          228,
+          112,
+          40
+        ],
+        "parent_rect": [
+          0,
+          0,
+          360,
+          290
+        ]
+      }
+    },
+    {
+      "id": "qt.text:save-note:7",
+      "status": "pass",
+      "message": "텍스트 표시 공간 확보",
+      "evidence": {
+        "widget_id": "save-note:7",
+        "kind": "QPushButton",
+        "measured": [
+          52.0,
+          14.0
+        ],
+        "available": [
+          84.0,
+          24.0
+        ]
+      }
+    }
+  ],
+  "artifacts": [],
+  "limitations": [
+    "검사 범위는 표시된 QWidget의 부모 경계, 단순 텍스트 크기, 이름 없는 아이콘 버튼이다.",
+    "사용 흐름, 키보드 순서, 대비, 화면 읽기 프로그램, 미적 품질과 다른 OS의 동작은 검증하지 않는다.",
+    "텍스트 크기 측정은 QLabel과 QPushButton을 대상으로 하며 rich text 및 elide 동작은 별도 검토가 필요하다."
+  ]
+}

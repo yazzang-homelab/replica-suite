@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-02T03:01:46.444974+00:00",
+  "files": [
+    {
+      "path": "lib/uiux.mjs",
+      "bytes": 20895,
+      "sha256": "859aa4216672cbd831f5361c4e282575d817e5f7292b3d5e4ce26ea54c5ac4b2"
+    },
+    {
+      "path": "lib/uiux-web.mjs",
+      "bytes": 25359,
+      "sha256": "c293e7b97258076472fb6a3e4dd8d5366013931af9adae958f10a231136409db"
+    },
+    {
+      "path": "lib/uiux-proxy.mjs",
+      "bytes": 13427,
+      "sha256": "dba85001fa8755bd498aa40e5110877a57a7d80a041ffc53fd86e96251c8b2da"
+    },
+    {
+      "path": "lib/uiux-expectations.mjs",
+      "bytes": 3599,
+      "sha256": "95a26236bb37a64bf441d9c9b4b20e83c781235d7b25776b710ba75f7c4537ca"
+    },
+    {
+      "path": "lib/uiux_qt.py",
+      "bytes": 18600,
+      "sha256": "4565388b9891788b9da305a86e5c3813600fcee84e142a67cc5d21b0c876f2b8"
+    },
+    {
+      "path": "scripts/uiux.mjs",
+      "bytes": 6785,
+      "sha256": "dfa42b670b87c2dee3c4217c5e4c432f37059656995c64958b169e91f403e110"
+    },
+    {
+      "path": "skills/uiux-workbench/SKILL.md",
+      "bytes": 5155,
+      "sha256": "11e7f77007e4e9fd4b97c65bd6e60013b68282197a76113c864b435de1600f6d"
+    },
+    {
+      "path": "tests/uiux.test.mjs",
+      "bytes": 13134,
+      "sha256": "4e006db3fccefe491e22bc0e81603326cb2f54f77ca83f8f74f317a634a732c3"
+    },
+    {
+      "path": "tests/uiux_proxy.test.mjs",
+      "bytes": 8855,
+      "sha256": "a77f1ef5e2142059ac605fd83fcc4ab26385bec801ffbe9fa3c57b28566eb334"
+    },
+    {
+      "path": "tests/e2e_uiux.mjs",
+      "bytes": 21924,
+      "sha256": "8c6c2a6e5e1d6d57349d185d8de55fa45f1ada32fc4da3f356cc9d5868e2f1e9"
+    },
+    {
+      "path": "tests/e2e_uiux_cli.mjs",
+      "bytes": 19019,
+      "sha256": "3a5ee249057d3d1a084fdaef4381a66f8f756cb363b91a31ccf535fa6360ed62"
+    },
+    {
+      "path": "tests/e2e_uiux_expectations.mjs",
+      "bytes": 7799,
+      "sha256": "8528ac5d4a886901f6d1c97e144c8620b8b363ddd0e7ca257d16e811b2135d83"
+    },
+    {
+      "path": "tests/test_uiux_qt.py",
+      "bytes": 16191,
+      "sha256": "3791c9f5824b5b2715c2d6d43be7efc2e9432830a73de9e39e1a0bb9bf51a8fe"
+    }
+  ]
+}

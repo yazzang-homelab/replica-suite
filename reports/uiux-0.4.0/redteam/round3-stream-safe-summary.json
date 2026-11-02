@@ -1,0 +1,58 @@
+{
+  "requested_provider": "oci-opencodex",
+  "request_model": "anthropic/claude-opus-5-5",
+  "request_reasoning_effort": "xhigh",
+  "request_stream": true,
+  "request_max_output_tokens": 65536,
+  "request_sha256": "0836dd64d667383a9bd0a4add90adf93e44a1a567db5634167ad042856035218",
+  "source_manifest": "round3-stream-source-manifest.json",
+  "started_at": "2026-11-02T02:31:54Z",
+  "walltime_limit_seconds": 900,
+  "attempts": 1,
+  "http_status": 200,
+  "event_count": 808,
+  "event_types": {
+    "response.created": 1,
+    "response.in_progress": 1,
+    "response.heartbeat": 279,
+    "response.output_item.added": 2,
+    "response.reasoning_summary_part.added": 1,
+    "response.reasoning_summary_text.delta": 1,
+    "response.reasoning_summary_text.done": 1,
+    "response.reasoning_summary_part.done": 1,
+    "response.output_item.done": 2,
+    "response.content_part.added": 1,
+    "response.output_text.delta": 515,
+    "response.output_text.done": 1,
+    "response.content_part.done": 1,
+    "response.completed": 1
+  },
+  "reasoning_delta_received": true,
+  "output_text_delta_received": true,
+  "response_completed": true,
+  "result": "completed",
+  "headers_received_at": "2026-11-02T02:31:55Z",
+  "last_event_type": "response.completed",
+  "last_event_at": "2026-11-02T02:41:55Z",
+  "first_event_at": "2026-11-02T02:31:55Z",
+  "response_model": "anthropic/claude-opus-5-5",
+  "response_status": "completed",
+  "response_usage": {
+    "input_tokens": 30789,
+    "output_tokens": 60284,
+    "total_tokens": 91073,
+    "input_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 30785
+    },
+    "output_tokens_details": {
+      "reasoning_tokens": 57365
+    }
+  },
+  "elapsed_seconds": 600.81,
+  "sse_done": true,
+  "review_verdict": "PASS",
+  "finding_count": 7,
+  "finished_at": "2026-11-02T02:41:55Z",
+  "response_sha256": "2d8a78950aa720dd55ede8711a3fb98a5070371cfbb922a247948ae5d41e870f"
+}

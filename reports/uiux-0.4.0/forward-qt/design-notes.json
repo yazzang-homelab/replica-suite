@@ -1,0 +1,110 @@
+{
+  "mode": "기존 앱의 UI 리비전 및 실제 Qt 동작 검수",
+  "user": "하나의 작업 메모를 작성하고 나중에 다시 불러오는 사용자",
+  "preserved_contract": {
+    "input": "QLineEdit 한 줄 메모",
+    "storage": "UTF-8 JSON {note: string}",
+    "actions": [
+      "저장 버튼 클릭",
+      "Ctrl+S 저장",
+      "새 프로세스 실행 시 불러오기",
+      "빈 메모 저장"
+    ]
+  },
+  "observed_before": [
+    "저장 버튼에 표시 텍스트와 접근 이름이 없어 행동을 식별하기 어려웠다.",
+    "상태 문구의 실제 텍스트 폭 218px이 고정 공간120px보다 커 화면에서 잘렸다."
+  ],
+  "design_decisions": [
+    "화면 제목→짧은 설명→입력 레이블·필드→단축키 안내→저장 상태·주 행동 순서로 배치했다.",
+    "저장 버튼에 메모 저장을 표시하고 입력 필드에 레이블과 접근 이름을 연결했다.",
+    "저장 전 변경·저장 완료·불러오기·쓰기 실패 안내를 구별하고 실패 시 편집 내용과 재시도를 유지했다.",
+    "고정380×190 대신 기본560×340·최소360×290의 조절 가능한 창과 줄바꿈 상태 레이블을 사용했다."
+  ],
+  "tokens": {
+    "background": "#f6f7fb",
+    "text": "#182333",
+    "secondary_text": "#526176",
+    "primary": "#204e8a",
+    "horizontal_margin": 24,
+    "vertical_margin": 22,
+    "spacing": 12,
+    "radius": 6,
+    "title_points": 18
+  },
+  "flows": [
+    {
+      "flow_id": "mouse-save",
+      "states": [
+        "초기 빈 메모",
+        "한글 입력",
+        "저장 전 변경",
+        "저장 완료"
+      ],
+      "evidence_check_ids": [
+        "initial-empty-state",
+        "dirty-state",
+        "mouse-save-feedback",
+        "mouse-save-compatible-json",
+        "mouse-save-fresh-process-reload"
+      ]
+    },
+    {
+      "flow_id": "keyboard-save",
+      "states": [
+        "편집",
+        "Ctrl+S",
+        "재실행"
+      ],
+      "evidence_check_ids": [
+        "ctrl-s-feedback",
+        "ctrl-s-json",
+        "ctrl-s-fresh-process-reload",
+        "tab-editor-to-save",
+        "shift-tab-save-to-editor"
+      ]
+    },
+    {
+      "flow_id": "empty-and-recovery",
+      "states": [
+        "빈 메모 저장",
+        "쓰기 실패",
+        "입력 보존",
+        "재시도"
+      ],
+      "evidence_check_ids": [
+        "empty-note-save-preserved",
+        "empty-note-fresh-process-reload",
+        "write-error-feedback",
+        "write-error-preserves-input",
+        "write-error-retry"
+      ]
+    },
+    {
+      "flow_id": "narrow-layout",
+      "states": [
+        "저장 완료",
+        "저장 전 변경",
+        "불러온 상태",
+        "쓰기 실패"
+      ],
+      "evidence_check_ids": [
+        "narrow-widget-audit",
+        "dirty-narrow-widget-audit",
+        "loaded-narrow-widget-audit",
+        "write-error-narrow-widget-audit"
+      ]
+    }
+  ],
+  "visual_observations": [
+    "실제 before/after PNG를 열어 제목·입력·저장 행동과 상태 문구를 확인했다.",
+    "좁은 창의 쓰기 실패 문구가 두 줄로 표시되며 저장 버튼이 함께 보였다."
+  ],
+  "not_measured": [
+    "미적 품질의 객관적 우열",
+    "사용자 만족도",
+    "전체 Qt 앱으로의 일반화",
+    "실제 모니터 DPI 및 Windows/macOS 실행",
+    "스크린리더 및 WCAG 전체 적합성"
+  ]
+}

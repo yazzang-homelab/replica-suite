@@ -2,9 +2,22 @@
 
 [English](README.md) | [한국어](README.ko.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
 
-버전 0.3.0. 앱과 웹사이트 이식·재구현을 위한 41개 공통 skills를 Codex, Claude Code, GJC에서 설치해 쓸 수 있습니다. 흐름은 증거, 명세, 구현, 검증 순서입니다.
+버전 0.4.0. 앱과 웹사이트 이식·재구현을 위한 42개 공통 skills를 Codex, Claude Code, GJC에서 설치해 쓸 수 있습니다. 흐름은 증거, 명세, 구현, 검증 순서입니다.
 
 저장소: https://github.com/yazzang-homelab/replica-suite. 플러그인 이름: `replica-suite`. 마켓플레이스 ID: `replica-suite-local`.
+
+## UI·UX 작업대 (0.4.0)
+
+기존 41개 스킬에 `uiux-workbench`를 추가했습니다. 웹·Electron·Qt의 사용자 흐름·상태·디자인 토큰을 명세로 연결하고 웹 브라우저의 실제 동작·접근성, Qt 위젯의 기하·텍스트·접근 이름을 검사합니다. [실행 계약과 한계](references/uiux-workbench.md)를 확인하세요.
+
+```bash
+node scripts/uiux.mjs init --name "프로젝트" --platform web --out /absolute/path/uiux-contract.json
+node scripts/uiux.mjs validate --contract /absolute/path/uiux-contract.json
+node scripts/uiux.mjs audit --contract /absolute/path/uiux-contract.json --base-url http://127.0.0.1:3000 --out /absolute/path/new-audit
+node scripts/uiux.mjs verify --bundle /absolute/path/new-audit
+```
+
+초안은 실제 작업과 assert로 수정해야 합니다. 증거·해시·HTML 보고서를 남기며 실패와 미확인을 구분합니다. 자동 검사만으로 미적 품질·원제품 동등성·Windows/macOS 실제 실행을 인증하지 않습니다. snapshot 검사는 정상이어도 미확인입니다. [검수 결과](reports/uiux-0.4.0/검수보고.md)는 검수를 마친 조건만 기록합니다.
 
 ## 무엇인가
 
@@ -16,7 +29,7 @@
 
 임의의 앱을 원클릭으로 복제하는 제품이 아닙니다. skill은 증거 수집, 명세 작성, 구현, 검증 과정을 에이전트에게 안내할 뿐이며, 결과는 대상과 모델, 사용자의 검토에 달려 있습니다.
 
-## Skills (41개)
+## Skills (42개)
 
 | 분류        | 개수 | 라우터 skill   |
 | ----------- | ---- | -------------- |
@@ -25,6 +38,7 @@
 | shot        | 8    | `shot-index`   |
 | mobile      | 7    | `mobile-index` |
 | native      | 7    | `native-index` |
+| UI·UX      | 1     | `uiux-workbench` |
 | 루트 라우터 | 1    | `replica`      |
 
 skills 한 벌을 세 클라이언트가 공유합니다. `lib/`, `scripts/`, `references/`도 `skills/` 옆에서 공유됩니다. 개별 skill 폴더만 따로 복사하지 마세요.
@@ -84,7 +98,7 @@ gjc plugin list --json
 gjc skills discover --query replica-suite --limit 50 --json
 ```
 
-GJC 0.19.0에서 discover 결과는 41개 후보였습니다. 새 세션에서 `/skill:replica-suite:replica`를 실행합니다. 이 버전에서는 marketplace install의 `--dry-run`이 무시되므로 설치 검증에 쓰지 마세요.
+GJC 0.19.0에서 discover 결과는 42개 후보였습니다. 새 세션에서 `/skill:replica-suite:replica`를 실행합니다. 이 버전에서는 marketplace install의 `--dry-run`이 무시되므로 설치 검증에 쓰지 마세요.
 
 ### 로컬 clone으로 설치
 
@@ -131,7 +145,7 @@ python3 scripts/check_clients.py --client all
 
 `--client`는 `codex`, `claude`, `gjc`를 받습니다. `check_clients.py`는 클라이언트 실행 파일이 필요하고, 임시 격리 설정을 쓰며, 유료 모델 호출을 하지 않습니다. 테스트는 Python 회귀 테스트와 브라우저 e2e 3종이며 개수는 늘어날 수 있습니다.
 
-테스트한 클라이언트 버전: Codex 0.164.0, Claude Code 2.1.310, GJC 0.19.0. 이전 버전은 보장하지 않습니다.
+테스트한 클라이언트 버전: Codex 0.163.0, Claude Code 2.1.292, GJC 0.19.2. 이전 버전은 보장하지 않습니다.
 
 클라이언트 검사는 설치, skill 탐색, 공유 리소스를 확인합니다. 단위·브라우저 테스트는 도구 동작, 이미지 비교, 오프라인 재생도 확인합니다. 클라이언트 간 LLM 출력 동등성이나 실제 기기·Ghidra·Qt 기능을 검증한 것은 아닙니다.
 

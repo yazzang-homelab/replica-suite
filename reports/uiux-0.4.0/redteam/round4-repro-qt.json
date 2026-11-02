@@ -1,0 +1,85 @@
+{
+  "F2": {
+    "status": "pass",
+    "explicit_names": [
+      "",
+      ""
+    ],
+    "effective_names": [
+      "서식",
+      "서식"
+    ],
+    "button_snapshot": [
+      {
+        "id": "QPushButton:1",
+        "kind": "QPushButton",
+        "rect": [
+          14,
+          31,
+          34,
+          24
+        ],
+        "parent_rect": [
+          0,
+          0,
+          62,
+          99
+        ],
+        "text": "",
+        "text_width": 0.0,
+        "text_height": 0.0,
+        "available_width": 12.0,
+        "available_height": 22.0,
+        "interactive": true,
+        "accessible_name": "서식",
+        "scroll_content": false,
+        "visible": true
+      },
+      {
+        "id": "QPushButton:2",
+        "kind": "QPushButton",
+        "rect": [
+          14,
+          61,
+          34,
+          24
+        ],
+        "parent_rect": [
+          0,
+          0,
+          62,
+          99
+        ],
+        "text": "",
+        "text_width": 0.0,
+        "text_height": 0.0,
+        "available_width": 12.0,
+        "available_height": 22.0,
+        "interactive": true,
+        "accessible_name": "서식",
+        "scroll_content": false,
+        "visible": true
+      }
+    ],
+    "name_checks": [
+      {
+        "id": "qt.name:QPushButton:1",
+        "status": "pass",
+        "message": "아이콘 버튼의 접근 이름 존재",
+        "evidence": {
+          "widget_id": "QPushButton:1",
+          "kind": "QPushButton"
+        }
+      },
+      {
+        "id": "qt.name:QPushButton:2",
+        "status": "pass",
+        "message": "아이콘 버튼의 접근 이름 존재",
+        "evidence": {
+          "widget_id": "QPushButton:2",
+          "kind": "QPushButton"
+        }
+      }
+    ]
+  }
+}

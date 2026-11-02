@@ -1,0 +1,95 @@
+[
+  {
+    "path": "lib/uiux-proxy.mjs",
+    "sha256": "c89cf74dfa7bf23c26b6878fd137282604684a928d2766e3d0ce838beb3e937e",
+    "bytes": 9772,
+    "lines": 208,
+    "excerpt_ranges": [
+      [
+        1,
+        208
+      ]
+    ],
+    "complete_file": true
+  },
+  {
+    "path": "lib/uiux-expectations.mjs",
+    "sha256": "f2d997fc17d42240946fd18fd90fe755504237da1e87c47790d51b7578fb324a",
+    "bytes": 3571,
+    "lines": 47,
+    "excerpt_ranges": [
+      [
+        1,
+        47
+      ]
+    ],
+    "complete_file": true
+  },
+  {
+    "path": "lib/uiux-web.mjs",
+    "sha256": "4b1131d6400a0f0722b0bf648570f7a7d6cab1be21eb24321e3237ff1f8e52b8",
+    "bytes": 25209,
+    "lines": 415,
+    "excerpt_ranges": [
+      [
+        1,
+        19
+      ],
+      [
+        159,
+        197
+      ],
+      [
+        204,
+        353
+      ],
+      [
+        374,
+        415
+      ]
+    ],
+    "complete_file": false
+  },
+  {
+    "path": "lib/uiux_qt.py",
+    "sha256": "68d29e1b1b4d564bac18d02b82b57c2390317159ba6d4a60be6c5b2b2f2c9feb",
+    "bytes": 16244,
+    "lines": 309,
+    "excerpt_ranges": [
+      [
+        38,
+        47
+      ],
+      [
+        117,
+        139
+      ],
+      [
+        161,
+        197
+      ],
+      [
+        225,
+        245
+      ],
+      [
+        303,
+        307
+      ]
+    ],
+    "complete_file": false
+  },
+  {
+    "path": "scripts/uiux.mjs",
+    "sha256": "dfa42b670b87c2dee3c4217c5e4c432f37059656995c64958b169e91f403e110",
+    "bytes": 6785,
+    "lines": 107,
+    "excerpt_ranges": [
+      [
+        66,
+        74
+      ]
+    ],
+    "complete_file": false
+  }
+]

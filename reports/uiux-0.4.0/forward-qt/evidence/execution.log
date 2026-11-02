@@ -1,0 +1,44 @@
+pass: original-source-preserved: 72c3a50718a304c96a68f88e8924b0961ef3db7e7d91481a0e1998ac958be019
+pass: before-png-written: [380, 190]
+pass: ime-input-2: 원본 한글 메모: 기능 기준 확인
+pass: original-mouse-save: 기존 note JSON 형식 저장
+pass: ime-input-4: 원본 Ctrl+S 저장 확인
+pass: original-ctrl-s-save: 기존 단축키 저장
+pass: original-fresh-process-exit-6: 0
+pass: original-fresh-process-reload: 새 Python 프로세스에서 같은 메모 로드
+pass: visible-primary-action: 메모 저장
+pass: editor-accessible-name: 메모
+pass: initial-empty-state: 아직 저장한 메모가 없습니다.
+pass: ime-input-11: 한글 메모: 오후 회의 전 자료 확인
+pass: dirty-state: 저장하지 않은 변경사항이 있습니다.
+pass: mouse-save-feedback: 저장 완료
+pass: mouse-save-compatible-json: {'note': '한글 메모: 오후 회의 전 자료 확인'}
+pass: revised-fresh-process-exit-15: 0
+pass: mouse-save-fresh-process-reload: 저장한 한글 메모 재실행 로드
+pass: ime-input-17: Ctrl+S 저장: 재실행 후에도 유지
+pass: ctrl-s-feedback: 저장 완료
+pass: ctrl-s-json: 키보드 저장 데이터 일치
+pass: revised-fresh-process-exit-20: 0
+pass: ctrl-s-fresh-process-reload: 새 프로세스에서 Ctrl+S 저장 메모 로드
+pass: tab-editor-to-save: 편집기→저장 버튼으로 포커스 이동
+pass: shift-tab-save-to-editor: 저장 버튼→편집기로 포커스 복원
+pass: after-default-png-written: [560, 340]
+pass: default-widget-audit: pass
+pass: after-narrow-png-written: [360, 290]
+pass: narrow-widget-audit: pass
+pass: ime-input-28: 변경사항 상태와 좁은 창에서 긴 한글 안내 확인
+pass: dirty-narrow-widget-audit: pass
+pass: loaded-feedback: 저장한 메모를 불러왔습니다.
+pass: loaded-narrow-widget-audit: pass
+pass: ime-input-32: 
+pass: empty-note-save-preserved: 빈 메모 저장 동작 유지
+pass: revised-fresh-process-exit-34: 0
+pass: empty-note-fresh-process-reload: 빈 메모 재실행 로드
+pass: ime-input-36: 저장 실패 시에도 편집 내용 유지
+pass: write-error-feedback: 저장하지 못했습니다. 저장 위치를 확인하고 다시 시도하세요.
+pass: write-error-preserves-input: 저장 실패 시에도 편집 내용 유지
+pass: write-error-narrow-png-written: [360, 290]
+pass: write-error-narrow-widget-audit: pass
+pass: write-error-retry: 저장 완료
+pass: snapshot-cli-honest-incomplete: 3
+pass: snapshot-bundle-integrity: 0

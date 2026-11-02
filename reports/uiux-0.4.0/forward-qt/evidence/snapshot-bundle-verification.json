@@ -1,0 +1,6 @@
+{
+  "exit_code": 0,
+  "stdout": "{\"schema_version\":1,\"integrity\":\"pass\",\"audit_status\":\"incomplete\",\"files\":3,\"limitation\":\"무결성만 검사합니다. 작성자의 신원·검사 결론의 진실성은 인증하지 않습니다.\"}\n",
+  "stderr": "",
+  "paths_redacted": true
+}
