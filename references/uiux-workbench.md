@@ -6,6 +6,8 @@
 
 플러그인 실제 설치 루트에서 `npm ci`를 수행한다. 웹 검사는 Playwright 1.56.1과 axe-core 4.14.0을 사용한다. 브라우저는 `node node_modules/playwright/cli.js install chromium`으로 준비한다. `--browser-executable /absolute/path/chromium`으로 명시적으로 설치된 실행 파일을 선택할 수도 있다. 자동 fallback은 없다. Python snapshot 검사는 표준 라이브러리만 필요하고 실제 QWidget API에는 사용자의 PySide6 앱 환경이 필요하다.
 
+Ubuntu 24.04의 최소 CI 환경에서 실제 Qt를 실행하려면 `libegl1`, `libopengl0` 시스템 라이브러리도 필요하다. Playwright의 시스템 의존성 설치만으로 Qt 의존성이 전부 준비된다고 가정하지 않는다. CI는 이를 명시적으로 설치하고 QWidget 검사를 실행한다.
+
 ```bash
 node scripts/uiux.mjs init --out /tmp/uiux-contract.json --name "메모 편집기" --platform web
 node scripts/uiux.mjs validate --contract /tmp/uiux-contract.json

@@ -1,0 +1,13 @@
+{
+  "initial_run": "https://github.com/yazzang-homelab/replica-suite/actions/runs/41380983028",
+  "source_commit": "0ec9d624f68f5f7b694707e2baa491dcf4fac499",
+  "passed_steps": [
+    "npm run check",
+    "npm run test:e2e"
+  ],
+  "failed_step": "실제 Qt offscreen 위젯 검사",
+  "error": "ImportError: libEGL.so.1: cannot open shared object file: No such file or directory",
+  "root_cause": "Ubuntu 24.04 GitHub 러너의 Qt 시스템 의존성 누락",
+  "fix": "Qt 검사 전에 libegl1, libopengl0을 명시 설치",
+  "test_removed": false
+}

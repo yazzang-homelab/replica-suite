@@ -24,6 +24,7 @@ jobs:
       - run: npm run test:e2e
       - name: 실제 Qt offscreen 위젯 검사
         run: |
+          sudo apt-get install --yes --no-install-recommends libegl1 libopengl0
           python -m pip install PySide6==6.12.0
           QT_QPA_PLATFORM=offscreen python -m unittest discover -s tests -p test_uiux_qt.py -v
       - run: npm audit --omit=dev --audit-level=high
